@@ -1,0 +1,40 @@
+
+<header>
+  <div class="">
+    <img src="../assets/img/logo.png" alt="Logo de la page de login">
+  </div>
+</header>
+
+<section>
+  <div class="loginPageContainer">
+    <div class="loginPageImg">
+      <img class="imgLogin" src="../assets/img/imgLoginPage.png" alt="Image d'illustration pour la page de login">
+    </div>
+
+    <div class="loginPageForm">
+      <h1>Identification</h1>
+      <p>Lorem ipsum magna aliqua. ut enim ad minim veniam, quis
+        nostrud exercietaon ullamco laboris nisi consequat.</p>
+      <form>
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <mat-label class="">Votre nom et prénom</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div class="example-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Votre courriel</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email">
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <button>
+          Accéder maintenant
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

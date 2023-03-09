@@ -1,0 +1,42 @@
+header{
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+section{
+  background-color: grey;
+ 
+}
+
+h1{
+  font-size: 50px;
+}
+
+input{
+  border-color: green;
+}
+  
+.loginPageContainer{
+  width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.loginPageImg{
+
+}
+
+.loginPageForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imgLogin{
+
+}
