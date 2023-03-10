@@ -1,36 +1,38 @@
-
+<!-- Entête de la page avec logo -->
 <header>
   <div class="">
     <img src="../assets/img/logo.png" alt="Logo de la page de login">
   </div>
 </header>
 
+<!-- Contenu de la page avec image et formulaire -->
 <section>
   <div class="loginPageContainer">
+
+    <!--Partie image -->
     <div class="loginPageImg">
       <img class="imgLogin" src="../assets/img/imgLoginPage.png" alt="Image d'illustration pour la page de login">
     </div>
 
+    <!--Partie formulaire -->
     <div class="loginPageForm">
       <h1>Identification</h1>
-      <p>Lorem ipsum magna aliqua. ut enim ad minim veniam, quis
+      <p>Lorem ipsum magna aliqua. ut enim ad minim veniam, quis <br>
         nostrud exercietaon ullamco laboris nisi consequat.</p>
+
+      <!-- Formulaire de login -->
       <form>
-        <div class="example-container">
-          <mat-form-field appearance="fill">
-            <mat-label class="">Votre nom et prénom</mat-label>
-            <input matInput>
-          </mat-form-field>
+        <div>
+          <label for="nomPrenom"></label><br>
+          <input type="text" id="nomPrenom" name="nomPrenom" value="Votre nom et prénom"><br>
         </div>
 
-        <div class="example-container">
-          <mat-form-field appearance="fill">
-            <mat-label>Votre courriel</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email">
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-          </mat-form-field>
+        <div>
+          <label for="email"></label>
+          <input type="email" id="email" pattern=".+@globex\.com" size="30" value="Votre courriel">
         </div>
 
+        <!-- Bouton de validation -->
         <button>
           Accéder maintenant
         </button>
