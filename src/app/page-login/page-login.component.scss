@@ -50,21 +50,17 @@ button:hover {
 }
 
 .loginPageContainer{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100vh; 
-  width: 100%; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 102px)
 }
 
 .loginPageImg{
- width: 50%;
- height: 100vh; 
+ height: 100%; 
 }
 
 .loginPageForm{
-   
-  height: 100vh; 
+  height: 100%; 
   padding-left: 70px;
   display: flex;
   flex-direction: column;
