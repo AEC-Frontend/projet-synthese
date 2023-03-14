@@ -5,8 +5,11 @@ import { DemandesDeStagePageComponent } from './pages/demandes-de-stage-page/dem
 import { EntreprisesPageComponent } from './pages/entreprises-page/entreprises-page.component';
 import { OffresDeStagePageComponent } from './pages/offres-de-stage-page/offres-de-stage-page.component';
 import { CandidatsPageComponent } from './pages/candidats-page/candidats-page.component';
+import { PageLoginComponent } from './pages/page-login/page-login.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'page-login', pathMatch: 'full' },
+  { path: 'page-login', component: PageLoginComponent },
   { path: 'tableau-de-bord', component: TableauDeBordPageComponent },
   { path: 'demandes-de-stage', component: DemandesDeStagePageComponent },
   { path: 'entreprises', component: EntreprisesPageComponent },
