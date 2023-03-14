@@ -46,16 +46,18 @@ export class CandidatService {
   updateCandidat(
     candidat: Partial<Candidat>,
     _id: string
-  ): Observable<{ updateCandiadte: Candidat }> {
-    return this.http.patch<{ updateCandiadte: Candidat }>(
+  ): Observable<{ success: boolean; data?: Candidat }> {
+    return this.http.patch<{ success: boolean; data?: Candidat }>(
       `${this.url}/${_id}`,
       candidat,
       this.httpOptions
     );
   }
 
-  deleteCandidat(_id: string): Observable<{ deleteCandiadte: Candidat }> {
-    return this.http.delete<{ deleteCandiadte: Candidat }>(
+  deleteCandidat(
+    _id: string
+  ): Observable<{ success: boolean; data?: Candidat }> {
+    return this.http.delete<{ success: boolean; data?: Candidat }>(
       `${this.url}/${_id}`,
       this.httpOptions
     );
