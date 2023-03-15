@@ -3,20 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
-import { PageLoginComponent } from './page-login/page-login.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PageLoginComponent } from './pages/page-login/page-login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    PageLoginComponent
-  ],
-=======
+import { TableauDeBordPageComponent } from './pages/tableau-de-bord-page/tableau-de-bord-page.component';
+import { DemandesDeStagePageComponent } from './pages/demandes-de-stage-page/demandes-de-stage-page.component';
+import { OffresDeStagePageComponent } from './pages/offres-de-stage-page/offres-de-stage-page.component';
+import { EntreprisesPageComponent } from './pages/entreprises-page/entreprises-page.component';
+import { CandidatsPageComponent } from './pages/candidats-page/candidats-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DemandeDeStageService } from './services/demande-de-stage/demande-de-stage.service';
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
@@ -24,28 +21,32 @@ import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
 
 @NgModule({
-  declarations: [AppComponent],
->>>>>>> 6dd3b22 (generate services)
+  declarations: [
+    AppComponent,
+    PageLoginComponent,
+    TableauDeBordPageComponent,
+    DemandesDeStagePageComponent,
+    OffresDeStagePageComponent,
+    EntreprisesPageComponent,
+    CandidatsPageComponent,
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
-    
-=======
+    ReactiveFormsModule,
     HttpClientModule,
->>>>>>> 6dd3b22 (generate services)
   ],
   providers: [
-    CandidatService,
+    DemandeDeStageService,
     OffreDeStageService,
     EntrepriseService,
-    DemandeDeStageService,
+    CandidatService,
   ],
   bootstrap: [AppComponent],
 })
