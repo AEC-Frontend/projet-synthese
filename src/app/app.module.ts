@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +14,11 @@ import { DemandesDeStagePageComponent } from './pages/demandes-de-stage-page/dem
 import { OffresDeStagePageComponent } from './pages/offres-de-stage-page/offres-de-stage-page.component';
 import { EntreprisesPageComponent } from './pages/entreprises-page/entreprises-page.component';
 import { CandidatsPageComponent } from './pages/candidats-page/candidats-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DemandeDeStageService } from './services/demande-de-stage/demande-de-stage.service';
+import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
+import { EntrepriseService } from './services/entreprise/entreprise.service';
+import { CandidatService } from './services/candidat/candidat.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,7 @@ import { CandidatsPageComponent } from './pages/candidats-page/candidats-page.co
     EntreprisesPageComponent,
     CandidatsPageComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,8 +40,14 @@ import { CandidatsPageComponent } from './pages/candidats-page/candidats-page.co
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    DemandeDeStageService,
+    OffreDeStageService,
+    EntrepriseService,
+    CandidatService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
