@@ -1,0 +1,55 @@
+@import "../../SCSS/vars";
+
+
+mat-sidenav-container{
+    height: 100%;
+}
+
+mat-sidenav, mat-sidenav-content{
+    padding: 16px;
+}
+
+mat-sidenav{
+    width: 250px;
+}
+
+.space{
+     padding-right: 50px;
+}
+
+ul, li a {
+     padding: 0;
+     margin: 0;
+     list-style-type: none;
+ }
+
+.tableau-de-bord-active{
+    border-right: 3px solid $bleu-fonce;
+    padding-right: 3px;
+}
+
+.demandes-de-stage-active{
+    border-right: 3px solid $jaune-fonce;
+    padding-right: 3px;
+}
+
+.offres-de-stage-active{
+    border-right: 3px solid $rouge;
+    padding-right: 3px;
+}
+
+.candidats-active{
+    border-right: 3px solid $mauve;
+    padding-right: 3px;
+}
+
+.entreprises-active{
+    border-right: 3px solid $bleu;
+    padding-right: 3px;
+}
+
+ul li a.couleur-tableau-de-bord{
+    
+    background-color: $bleu-fonce;
+    color: white;
+}

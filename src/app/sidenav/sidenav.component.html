@@ -1,0 +1,41 @@
+<mat-toolbar>
+    <img class="space" src="../assets/img/logo.png" alt="Logo de la page de login" />
+        
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+      </button>
+      
+  
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+
+    <mat-sidenav #sidenav>
+
+      <mat-nav-list>
+
+        <ul>
+            <li>
+                <a class="couleur-tableau-de-bord" mat-list-item routerLink="tableau-de-bord" routerLinkActive="tableau-de-bord-active"><mat-icon class="space">slow_motion_video</mat-icon>Tableau de bord</a>
+            </li>
+            <li>
+                <a mat-list-item routerLink="demandes-de-stage" routerLinkActive="demandes-de-stage-active"><mat-icon class="space">event_note</mat-icon>Demande de stage</a>
+            </li>
+            <li>
+                <a mat-list-item routerLink="offres-de-stage" routerLinkActive="offres-de-stage-active"><mat-icon class="space">near_me</mat-icon>Offres de stage</a>
+            </li>
+            <li>
+                <a mat-list-item routerLink="candidats" routerLinkActive="candidats-active"><mat-icon class="space">person</mat-icon>Candidats</a>
+            </li>
+            <li>
+                <a mat-list-item routerLink="entreprises" routerLinkActive="entreprises-active"><mat-icon class="space">dashboard</mat-icon>Entreprises</a>
+            </li>
+       
+       
+      </ul>
+
+      </mat-nav-list>
+  
+    </mat-sidenav>
+    
+  </mat-sidenav-container>
