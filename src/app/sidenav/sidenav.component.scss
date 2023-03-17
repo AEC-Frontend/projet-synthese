@@ -1,89 +1,82 @@
 @import "../../SCSS/vars";
 
-
-mat-sidenav-container{
-    height: 100%;
+mat-sidenav-container {
+  height: 100%;
 }
 
-mat-sidenav, mat-sidenav-content{
-    padding: 0;
+mat-sidenav,
+mat-sidenav-content {
+  padding: 0;
 }
 
-mat-sidenav{
-    width: 250px;
+mat-sidenav {
+  width: 250px;
 }
 
-.space{
-     padding-right: 50px;
+.space {
+  padding-right: 50px;
+}
+
+ul {
+  margin-top: 6rem;
 }
 
 ul li {
-    width: 100%;
-     
-     margin: 0px;
-     list-style-type: none;
- }
+  width: 100%;
 
- ul li a{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 16px 10px;
- }
-
-.tableau-de-bord-active{
-    border-right: 3px solid $bleu-fonce;
-    padding-right: 3px;
+  margin: 0px;
+  list-style-type: none;
 }
 
-.demandes-de-stage-active{
-    border-right: 3px solid $jaune-fonce;
-    padding-right: 3px;
+ul li a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  font-weight: 700;
 }
 
-.offres-de-stage-active{
-    border-right: 3px solid $rouge;
-    padding-right: 3px;
+.tableau-de-bord-active {
+  border-right: 3px solid $vert-turquoise;
+  padding-right: 3px;
 }
 
-.candidats-active{
-    border-right: 3px solid $mauve;
-    padding-right: 3px;
+.demandes-de-stage-active {
+  border-right: 3px solid $jaune-fonce;
+  padding-right: 3px;
 }
 
-.entreprises-active{
-    border-right: 3px solid $bleu;
-    padding-right: 3px;
+.offres-de-stage-active {
+  border-right: 3px solid $rouge;
+  padding-right: 3px;
 }
 
-ul li a.couleur-tableau-de-bord{
-    
-    background-color: $bleu-fonce;
-    color: white;
+.candidats-active {
+  border-right: 3px solid $mauve;
+  padding-right: 3px;
 }
 
-
-.texte-tableau{
-
-    color: $bleu-fonce;
+.entreprises-active {
+  border-right: 3px solid $bleu;
+  padding-right: 3px;
 }
 
-.texte-demande{
-
-    color: $jaune-fonce;
+.texte-tableau {
+  color: $vert-turquoise;
 }
 
-.texte-offres{
-
-    color: $rouge;
+.texte-demande {
+  color: $jaune-fonce;
 }
 
-.texte-candidats{
-
-    color: $mauve;
+.texte-offres {
+  color: $rouge;
 }
 
-.texte-entreprises{
+.texte-candidats {
+  color: $mauve;
+}
 
-    color: $bleu;
+.texte-entreprises {
+  color: $bleu;
 }
