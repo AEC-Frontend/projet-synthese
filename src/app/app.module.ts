@@ -19,6 +19,12 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +35,8 @@ import { CandidatService } from './services/candidat/candidat.service';
     OffresDeStagePageComponent,
     EntreprisesPageComponent,
     CandidatsPageComponent,
+    SidenavComponent,
+    
   ],
 
   imports: [
@@ -41,12 +49,16 @@ import { CandidatService } from './services/candidat/candidat.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   providers: [
     DemandeDeStageService,
     OffreDeStageService,
     EntrepriseService,
     CandidatService,
+    MatButtonModule
   ],
   bootstrap: [AppComponent],
 })
