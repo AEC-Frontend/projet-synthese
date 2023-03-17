@@ -18,12 +18,11 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
-
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component';
@@ -39,7 +38,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     EntreprisesPageComponent,
     CandidatsPageComponent,
     SidenavComponent,
-    
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
   ],
@@ -54,22 +52,19 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-<<<<<<< HEAD
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-=======
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
->>>>>>> 6e33df7 (add style to form)
   ],
   providers: [
     DemandeDeStageService,
     OffreDeStageService,
     EntrepriseService,
     CandidatService,
-    MatButtonModule
+    MatButtonModule,
   ],
   bootstrap: [AppComponent],
 })
