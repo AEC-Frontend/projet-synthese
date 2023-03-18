@@ -4,7 +4,6 @@ export interface PeriodicElement {
   profil: string;
   etablissement: string;
   date: number;
-  
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -25,7 +24,7 @@ templateUrl: './tableau-bord-demandes-stage.component.html',
 styleUrls: ['./tableau-bord-demandes-stage.component.scss']
 })
 export class TableauBordDemandesStageComponent {
-  displayedColumns: string[] = ['etablissement', 'profil', 'date'];
+  displayedColumns: string[] = ['profil', 'etablissement', 'date'];
   dataSource = ELEMENT_DATA;
 }
 

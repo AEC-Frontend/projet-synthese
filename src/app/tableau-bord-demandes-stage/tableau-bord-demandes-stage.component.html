@@ -1,33 +1,42 @@
-<p>tableau-bord-demandes-stage works!</p>
-
 <!-- Entête du tableau  -->
-<div>
+<div class="entetePlacement">
     <div>
-        <h2>Dèrnières <span>demandes</span> de stage</h2>
-        <p>En attente de validation</p>
+        <h2>Dernières <span>demandes</span> de stage</h2>
+        <p class="sousTitre__couleur">En attente de validation</p>
     </div>
-    <button type="button">
+    <button type="button" class="">
         Valider toutes les demandes
     </button>
 </div>
 
-<table mat-table [dataSource]="dataSource" class="table__border">
- 
+<!-- Tableau -->
+<table mat-table [dataSource]="dataSource" class="table__border" matSort>
     <!-- Profil Column -->
     <ng-container matColumnDef="profil">
-      <th mat-header-cell *matHeaderCellDef> Profil </th>
+       
+      <th mat-header-cell *matHeaderCellDef> 
+        Profil
+        <div class="enteteTableau__bordure"></div>
+        </th>
       <td mat-cell *matCellDef="let element"> {{element.profil}} </td>
+
     </ng-container>
 
      <!-- Etablissement Column -->
      <ng-container matColumnDef="etablissement">
-        <th mat-header-cell *matHeaderCellDef> Etablissement </th>
+        <th mat-header-cell *matHeaderCellDef> 
+            Etablissement 
+            <div class="enteteTableau__bordure"></div>
+        </th>
         <td mat-cell *matCellDef="let element"> {{element.etablissement}} </td>
       </ng-container>
   
     <!-- Date Column -->
     <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <th mat-header-cell *matHeaderCellDef> 
+        Date 
+        <div class="enteteTableau__bordure"></div>
+    </th>
       <td mat-cell *matCellDef="let element"> {{element.date}} </td>
     </ng-container>
   

@@ -1,0 +1,65 @@
+h2 {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #5e5e5e;
+}
+
+span {
+  color: #cd9635;
+}
+
+td {
+  border-bottom: 1px solid #5e5e5e;
+  vertical-align: middle;
+}
+
+th {
+  border: none;
+}
+
+button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background-color: #0c9da4;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+button:hover {
+  background-color: #098389;
+  cursor: pointer;
+}
+
+.entetePlacement {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.sousTitre__couleur {
+  color: #ff010e;
+}
+
+.table__border {
+  border: none;
+}
+
+.enteteTableau__bordure {
+  border: 3px solid #5e5e5e;
+}
+
+.mat-mdc-table .mdc-data-table__header-row {
+  height: 0px;
+}
+
+.mdc-data-table__cell, .mdc-data-table__header-cell {
+  padding-left: 0px;
+  padding-right: 30px;
+}
+
+.mat-mdc-table .mdc-data-table__row {
+  height: 70px;
+}/*# sourceMappingURL=tableau-bord-demandes-stage.component.css.map */

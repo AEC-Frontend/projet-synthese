@@ -1,4 +1,74 @@
+@import "../../SCSS/vars";
+
+h2{
+    margin-bottom: 0;
+    font-weight: 600;
+    color: $gris-fonce;
+}
+
+span{
+    color: $jaune;
+}
+
+td{
+    border-bottom: 1px solid $gris-fonce;
+    vertical-align: middle;
+}
+
+th{
+    border: none;
+}
+
+
+button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: #0c9da4;
+    color: white;
+    border-radius: 5px;
+    border: none;
+  }
+
+  button:hover {
+    background-color: #098389;
+    cursor: pointer;
+  }
+
+.entetePlacement{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.sousTitre__couleur{
+    color: $titre-inactif;
+}
+
 .table__border{
     border: none;
-    margin: 50px;
 }
+
+.enteteTableau__bordure{
+    border: 3px solid $gris-fonce;
+}
+
+.mat-mdc-table .mdc-data-table__header-row {
+  height: 0px;
+}
+
+.mdc-data-table__cell, .mdc-data-table__header-cell {
+    padding-left: 0px;
+    padding-right: 30px;
+    
+
+}
+
+.mat-mdc-table .mdc-data-table__row {
+    height: 70px;
+}
+
+// .mat-mdc-table {
+//     height: 70px;
+// }
