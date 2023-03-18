@@ -19,7 +19,11 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
+import { TableauBordDemandesStageComponent } from './tableau-bord-demandes-stage/tableau-bord-demandes-stage.component';
 
+import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +33,8 @@ import { CandidatService } from './services/candidat/candidat.service';
     OffresDeStagePageComponent,
     EntreprisesPageComponent,
     CandidatsPageComponent,
+    TableauBordDemandesStageComponent,
+
   ],
 
   imports: [
@@ -41,6 +47,9 @@ import { CandidatService } from './services/candidat/candidat.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [
     DemandeDeStageService,
