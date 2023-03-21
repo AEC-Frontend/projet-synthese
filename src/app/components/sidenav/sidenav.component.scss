@@ -1,7 +1,16 @@
-@import "../../SCSS/vars";
+@import "../../../SCSS/vars";
+
+:host {
+  display: block;
+  height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
 
 mat-sidenav-container {
-  height: 100%;
+  height: calc(100vh - 4rem);
 }
 
 mat-sidenav,
