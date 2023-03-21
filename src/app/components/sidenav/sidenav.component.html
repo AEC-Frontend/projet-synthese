@@ -11,7 +11,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side">
+  <mat-sidenav #sidenav [mode]="screenWidth > 992 ? 'side' : 'over'">
     <mat-nav-list>
       <ul>
         <li>

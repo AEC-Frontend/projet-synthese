@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,13 +7,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
+  screenWidth: any;
+
   constructor(private router: Router) {}
 
   isLoginPage() {
     return this.router.url === '/page-login';
   }
 
-  ngDoCheck() {
-    console.log(this.isLoginPage(), this.router.url);
+  ngOnInit() {
+    this.screenWidth = window.innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.screenWidth = window.innerWidth;
   }
 }

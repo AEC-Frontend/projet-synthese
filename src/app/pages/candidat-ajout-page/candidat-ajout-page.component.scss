@@ -13,14 +13,14 @@
     letter-spacing: 0.1rem;
     margin-bottom: 10rem;
     padding: 0.25rem 1rem;
-    border-left: 0.4rem solid $mauve-fonce;
+    border-left: 0.6rem solid $mauve-fonce;
   }
 
   &__buttonGroup {
     display: flex;
     justify-content: flex-end;
     column-gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 
     &--cancel {
       color: $gris-fonce !important;
@@ -69,9 +69,12 @@
   &__detailed {
     background-color: white;
     padding: 5rem 3rem;
+    margin-bottom: 5rem;
   }
 
   &__description {
+    margin-bottom: 3rem;
+
     label {
       display: inline-block;
       font-size: 2rem;
@@ -81,6 +84,107 @@
 
     .mat-mdc-form-field {
       width: 100%;
+    }
+  }
+
+  &__personalInfo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+
+    p {
+      color: $vert-turquoise;
+      flex-basis: 100%;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__textField {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    border-left: 0.6rem solid $gris-fonce;
+    padding-left: 1rem;
+
+    mat-form-field {
+      transform: translateY(22px);
+    }
+  }
+}
+
+@media only screen and (max-width: $w-xlarge) {
+  .candidatAjout {
+    &__nameAndJobContainer {
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: 1rem;
+      justify-items: stretch;
+
+      &--textField {
+        row-gap: 1rem;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $w-large) {
+  .candidatAjout {
+    &__nameAndJobContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1rem;
+      justify-items: stretch;
+
+      &--textField {
+        flex-direction: column;
+        row-gap: 1rem;
+        width: 100%;
+
+        .mat-mdc-form-field {
+          width: 100%;
+        }
+      }
+    }
+
+    &__personalInfo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__description {
+      label {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__personalInfo {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $w-medium) {
+  .candidatAjout {
+    &__nameAndJobContainer {
+      grid-template-columns: 1fr;
+
+      &--textField {
+        .mat-mdc-form-field {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $w-small) {
+  .candidatAjout {
+    &__textField {
+      font-size: 1rem;
     }
   }
 }
