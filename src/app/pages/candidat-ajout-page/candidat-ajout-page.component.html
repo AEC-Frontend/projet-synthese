@@ -31,13 +31,12 @@
         </mat-form-field>
         <div
           *ngIf="
-            candidatForm.controls.name.invalid &&
-            (candidatForm.controls.name.dirty ||
-              candidatForm.controls.name.touched)
+            getFormControl('name')!.invalid &&
+            (getFormControl('name')!.dirty || getFormControl('name')!.touched)
           "
           class="candidatAjout__error"
         >
-          <div *ngIf="candidatForm.controls.name.errors?.['required']">
+          <div *ngIf="getFormControl('name')!.errors?.['required']">
             Ce champs est requis
           </div>
         </div>
@@ -53,12 +52,13 @@
         </mat-form-field>
         <div
           *ngIf="
-            candidatForm.controls.jobTitle.invalid &&
-            (candidatForm.controls.jobTitle.dirty || candidatForm.touched)
+            getFormControl('jobTitle')!.invalid &&
+            (getFormControl('jobTitle')!.dirty ||
+              getFormControl('jobTitle')!.touched)
           "
           class="candidatAjout__error"
         >
-          <div *ngIf="candidatForm.controls.jobTitle.errors?.['required']">
+          <div *ngIf="getFormControl('jobTitle')!.errors?.['required']">
             Ce champs est requis
           </div>
         </div>
@@ -78,13 +78,13 @@
         </mat-form-field>
         <div
           *ngIf="
-            candidatForm.controls.description.invalid &&
-            (candidatForm.controls.description.dirty ||
-              candidatForm.controls.description.touched)
+            getFormControl('description')!.invalid &&
+            (getFormControl('description')!.dirty ||
+              getFormControl('description')!.touched)
           "
           class="candidatAjout__error"
         >
-          <div *ngIf="candidatForm.controls.description.errors?.['required']">
+          <div *ngIf="getFormControl('description')!.errors?.['required']">
             Ce champs est requis
           </div>
         </div>

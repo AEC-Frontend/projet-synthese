@@ -46,8 +46,14 @@
       font-size: 1.2rem;
       justify-content: space-between;
       flex-wrap: wrap;
+      position: relative;
       .mat-mdc-form-field {
         width: 75%;
+      }
+
+      .candidatAjout__error {
+        position: absolute;
+        bottom: -1.1rem;
       }
     }
   }
@@ -107,9 +113,16 @@
     flex-direction: column;
     border-left: 0.6rem solid $gris-fonce;
     padding-left: 1rem;
+    position: relative;
 
     mat-form-field {
       transform: translateY(22px);
+    }
+
+    .candidatAjout__error {
+      position: absolute;
+      bottom: -2.7rem;
+      right: 0px;
     }
   }
 }
