@@ -4,6 +4,10 @@ h2 {
   color: #5e5e5e;
 }
 
+p {
+  margin: 0;
+}
+
 span {
   color: #cd9635;
 }
@@ -17,7 +21,7 @@ th {
   border: none;
 }
 
-button {
+.boutonValidationDemande {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 16px;
@@ -27,7 +31,7 @@ button {
   border: none;
 }
 
-button:hover {
+.boutonValidationDemande:hover {
   background-color: #098389;
   cursor: pointer;
 }
@@ -49,6 +53,15 @@ button:hover {
 
 .enteteTableau__bordure {
   border: 3px solid #5e5e5e;
+  margin: none;
+}
+
+.enteteTableauEnd__bordure {
+  border: 3px solid #5e5e5e;
+}
+
+.coteTableau__bordure {
+  border-left: 5px solid #cd9635;
 }
 
 .mat-mdc-table .mdc-data-table__header-row {
@@ -62,4 +75,88 @@ button:hover {
 
 .mat-mdc-table .mdc-data-table__row {
   height: 70px;
+}
+
+.iconBordure {
+  border-radius: 5px;
+  border: 1px solid #cd9635;
+  background-color: #d6b477;
+  color: #70582e;
+  padding: 5px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.mat-icon {
+  font-size: 25px;
+}
+
+.profilColonneElement {
+  display: flex;
+  align-items: center;
+}
+
+.elementProfil {
+  display: flex;
+  flex-direction: column;
+}
+
+.elementProfilPoste {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tableBtnRefuser {
+  background-color: #eccdcd;
+  color: #bb2026;
+  padding: 2px 10px 2px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.tableBtnRefuser:hover {
+  background-color: #d7adad;
+  cursor: pointer;
+}
+
+.tableBtnAccepter {
+  background-color: #cdecda;
+  color: #64ae5e;
+  padding: 2px 10px 2px 10px;
+  border-radius: 5px;
+  margin-right: 50px;
+}
+
+.tableBtnAccepter:hover {
+  background-color: #b7d8c5;
+  cursor: pointer;
+}
+
+.iconVisibilite {
+  color: #0c9da4;
+  margin-right: 20px;
+}
+
+.iconVisibilite:hover {
+  color: #098389;
+  cursor: pointer;
+}
+
+.iconModifier {
+  color: #f89747;
+  margin-right: 20px;
+}
+
+.iconModifier:hover {
+  color: #d2813e;
+  cursor: pointer;
+}
+
+.iconSupprimer {
+  color: #bb2026;
+}
+
+.iconSupprimer:hover {
+  color: #821519;
+  cursor: pointer;
 }/*# sourceMappingURL=tableau-bord-demandes-stage.component.css.map */

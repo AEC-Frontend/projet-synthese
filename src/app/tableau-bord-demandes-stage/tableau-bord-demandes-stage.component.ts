@@ -2,16 +2,17 @@ import { Component, ViewChild } from '@angular/core';
 
 export interface PeriodicElement {
   profil: string;
+  nom: string;
   etablissement: string;
-  date: number;
+  date: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { profil: 'Hydrogen',etablissement: 'Cégep de Trois-Rivières', date: 1.0079},
-  { profil: 'Helium', etablissement: 'Cégep de Trois-Rivières', date: 4.0026},
-  { profil: 'Lithium', etablissement: 'Cégep de Trois-Rivières', date: 6.941},
-  { profil: 'Beryllium', etablissement: 'Cégep de Trois-Rivières', date: 9.0122},
-  { profil: 'Boron', etablissement: 'Cégep de Trois-Rivières', date: 10.811},
+  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
+  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
+  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
+  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
+  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
   
 ];
 
@@ -24,7 +25,7 @@ templateUrl: './tableau-bord-demandes-stage.component.html',
 styleUrls: ['./tableau-bord-demandes-stage.component.scss']
 })
 export class TableauBordDemandesStageComponent {
-  displayedColumns: string[] = ['profil', 'etablissement', 'date'];
+  displayedColumns: string[] = ['profil', 'etablissement', 'date','actions'];
   dataSource = ELEMENT_DATA;
 }
 

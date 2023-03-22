@@ -1,26 +1,29 @@
 @import "../../SCSS/vars";
 
-h2{
+//Header
+h2 {
     margin-bottom: 0;
     font-weight: 600;
     color: $gris-fonce;
 }
 
-span{
+span {
     color: $jaune;
 }
 
-td{
-    border-bottom: 1px solid $gris-fonce;
-    vertical-align: middle;
+.sousTitre__couleur{
+    color: $titre-inactif;
 }
 
-th{
-    border: none;
+.entetePlacement {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
 }
 
-
-button{
+.boutonValidationDemande {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 16px;
@@ -28,47 +31,157 @@ button{
     color: white;
     border-radius: 5px;
     border: none;
-  }
-
-  button:hover {
-    background-color: #098389;
-    cursor: pointer;
-  }
-
-.entetePlacement{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 100px;
 }
 
-.sousTitre__couleur{
-    color: $titre-inactif;
+.boutonValidationDemande:hover {
+    background-color: #098389;
+    cursor: pointer;
+}
+
+
+//Tableau
+p {
+    margin: 0;
+}
+
+td {
+    border-bottom: 1px solid $gris-fonce;
+    vertical-align: middle;
+}
+
+th {
+    border: none;
+}
+
+.mdc-data-table__header-cell {
+    padding: 0px;
+}
+
+.mat-mdc-table .mdc-data-table__header-row {
+    height: 0px;
+}
+  
+.mat-mdc-table .mdc-data-table__row {
+    height: 70px;
+}
+  
+.mdc-data-table__cell, .mdc-data-table__header-cell {
+    padding: 0px;
+}
+ 
+.mat-icon {
+    font-size: 25px;
+}
+
+.iconBordure {
+    border-radius: 5px;
+    border: 1px solid $jaune;
+    background-color: $icon-demande-stage-bg;
+    color: $icon-demande-stage;
+    padding: 5px;
+    margin-left: 30px;
+    margin-right: 10px;
 }
 
 .table__border{
     border: none;
 }
 
-.enteteTableau__bordure{
+.enteteTableauProfil__bordure {
     border: 3px solid $gris-fonce;
+    width: 90%;
 }
 
-.mat-mdc-table .mdc-data-table__header-row {
-  height: 0px;
+.enteteTableauEtablissement__bordure {
+    border: 3px solid $gris-fonce;
+    width: 80%;
 }
 
-.mdc-data-table__cell, .mdc-data-table__header-cell {
-    padding-left: 0px;
-    padding-right: 30px;
-    
-
+.enteteTableauDate__bordure {
+    border: 3px solid $gris-fonce;
+    width: 70%;
 }
 
-.mat-mdc-table .mdc-data-table__row {
-    height: 70px;
+.enteteTableauActions__bordure {
+    border: 3px solid $gris-fonce;
+    width: 100%;
 }
 
-// .mat-mdc-table {
-//     height: 70px;
-// }
+.coteTableau__bordure {
+    border-left: 5px solid $jaune;
+}
+
+.profilColonneElement {
+    display: flex;
+    align-items: center;
+}
+
+.elementProfil {
+    display: flex;
+    flex-direction: column;
+}
+
+.elementProfilPoste {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tableauBtnAction__flex {
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.tableBtnRefuser {
+    background-color:$btn-refuser-bg;
+    color: $btn-refuser;
+    padding: 3px 10px 3px 10px;
+    margin-right:20px;
+    border-radius: 5px;
+}
+
+.tableBtnRefuser:hover {
+    background-color:#d7adad;
+    cursor: pointer;
+}
+
+.tableBtnAccepter {
+    background-color:$btn-accepter-bg;
+    color: $btn-accepter;
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+}
+
+.tableBtnAccepter:hover {
+    background-color:#b7d8c5;
+    cursor: pointer;
+}
+
+.iconVisibilite {
+    color: $vert-turquoise;
+    margin-right: 20px;
+}
+
+.iconVisibilite:hover {
+    color: #098389;
+    cursor: pointer;
+}
+
+.iconModifier {
+    color: #f89747;
+    margin-right: 20px;
+}
+
+.iconModifier:hover {
+    color: #d2813e;
+    cursor: pointer;
+}
+
+.iconSupprimer {
+    color: $rouge;
+}
+
+.iconSupprimer:hover {
+    color: $rouge-fonce;
+    cursor: pointer;
+}
+
