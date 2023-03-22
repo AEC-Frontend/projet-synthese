@@ -1,7 +1,5 @@
-@import "../../../SCSS/vars";
-
 header {
-  background-color: $blanc;
+  background-color: #ffffff;
   width: 90%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -9,7 +7,7 @@ header {
 }
 
 section {
-  background-color: $gris-clair;
+  background-color: #eeeeee;
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -27,8 +25,8 @@ p {
 }
 
 input {
-  border: 2px solid $vert-turquoise;
-  color: $gris-fonce;
+  border: 2px solid #0c9da4;
+  color: #5e5e5e;
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 14px;
@@ -40,14 +38,14 @@ button {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 16px;
-  background-color: $vert-turquoise;
+  background-color: #0c9da4;
   color: white;
   border-radius: 5px;
   border: none;
 }
 
 button:hover {
-  background-color: $vert-turquoise-fonce;
+  background-color: #098389;
   cursor: pointer;
 }
 
@@ -76,60 +74,49 @@ button:hover {
 }
 
 /* MEDIA QUERIES xxlarge () - 1500pxpx */
-@media screen and (max-width: $w-xxlarge) {
+@media screen and (max-width: 1500px) {
   h1 {
     font-size: 54px;
   }
-
   p {
     margin-right: 30px;
   }
-
   .loginPageForm {
     padding-left: 50px;
   }
-
   input {
     width: 60%;
   }
 }
-
 /* MEDIA QUERIES : xlarge - 1200px */
-@media screen and (max-width: $w-xlarge) {
+@media screen and (max-width: 1200px) {
   section {
     position: absolute;
     height: auto;
   }
-
   h1 {
     font-size: 60px;
   }
-
   p {
     margin-bottom: 30px;
     margin-right: 0;
   }
-
   input {
     width: 100%;
   }
-
   .loginPageContainer {
     display: flex;
     flex-direction: column;
     height: auto;
   }
-
   .loginPageImg {
     max-height: 50%;
     margin-bottom: 50px;
   }
-
   .imgLogin {
     width: 100%;
     max-height: 800px;
   }
-
   .loginPageForm {
     text-align: center;
     padding-left: 0;
@@ -139,25 +126,20 @@ button:hover {
     width: 100%;
   }
 }
-
 /* MEDIA QUERIES large () - 1500pxpx */
-@media screen and (max-width: $w-large) {
+@media screen and (max-width: 992px) {
   h1 {
     font-size: 50px;
   }
-
   .loginPageContainer {
     width: 100%;
   }
-
   .loginPageImg {
     width: 100%;
     height: auto;
   }
-
   .imgLogin {
     width: 100%;
-
     min-width: 0;
   }
-}
+}/*# sourceMappingURL=page-login.component.css.map */
