@@ -38,7 +38,7 @@ export class CandidatService {
   ): Observable<{ success: boolean; data?: Candidat }> {
     return this.http.post<{ success: boolean; data?: Candidat }>(
       this.url,
-      candidat,
+      { input: candidat },
       this.httpOptions
     );
   }
