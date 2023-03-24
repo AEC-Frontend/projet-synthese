@@ -19,11 +19,11 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -35,8 +35,7 @@ import {MatButtonModule} from '@angular/material/button';
     OffresDeStagePageComponent,
     EntreprisesPageComponent,
     CandidatsPageComponent,
-    SidenavComponent,
-    
+
   ],
 
   imports: [
@@ -52,6 +51,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatCardModule
   ],
   providers: [
     DemandeDeStageService,
