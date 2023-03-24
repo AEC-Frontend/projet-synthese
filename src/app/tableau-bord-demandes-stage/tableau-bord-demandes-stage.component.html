@@ -17,7 +17,7 @@
     <!-- Profil Column -->
     <ng-container matColumnDef="profil">
         <th mat-header-cell *matHeaderCellDef > 
-            Profil
+          <p> Profil </p> 
             <div class="enteteTableauProfil__bordure"></div>
         </th>
         <td  mat-cell *matCellDef="let element"  >
@@ -27,12 +27,8 @@
                         <mat-icon>school</mat-icon>
                     </div>
                     <div class="elementProfil" >
-                        <p class="elementProfilPoste"> 
-                            {{element.profil}} 
-                        </p>
-                        <p>
-                            {{element.nom}} 
-                        </p>
+                        <p class="elementProfilPoste">{{element.profil}}</p>
+                        <p>{{element.nom}}</p>
                     </div>
                 </div>
             </div> 
@@ -42,12 +38,12 @@
     <!-- Etablissement Column -->
     <ng-container matColumnDef="etablissement">
         <th mat-header-cell *matHeaderCellDef> 
-            Etablissement 
+           <p> Etablissement </p>
             <div class="enteteTableauEtablissement__bordure"></div>
         </th>
         <td mat-cell *matCellDef="let element" > 
             <div> 
-                {{element.etablissement}}
+               <p>{{element.etablissement}} </p> 
             </div> 
         </td>
     </ng-container>
@@ -55,13 +51,11 @@
     <!-- Date Column -->
     <ng-container matColumnDef="date">
         <th mat-header-cell *matHeaderCellDef> 
-            Date 
+          <p> Date </p>
             <div class="enteteTableauDate__bordure"></div>
         </th>
         <td mat-cell *matCellDef="let element">
-            <div> 
-                {{element.date}}
-            </div> 
+            <p>  {{element.date}} </p>
         </td>
     </ng-container>
 
@@ -73,11 +67,11 @@
         </th>
         <td mat-cell *matCellDef="let forfaits">
             <div class="tableauBtnAction__flex">
-                <div>
+                <div class="tableauBtnAction__responsive">
                     <button class="tableBtnRefuser" mat-icon-button aria-label="Modifier">Refuser</button>
                     <button class="tableBtnAccepter" mat-icon-button aria-label="Supprimer">Accepter</button>
                 </div>
-                <div>
+                <div class="tableauIconAction__responsive">
                     <button class="iconVisibilite" mat-icon-button aria-label="Visibilite"><mat-icon>visibility</mat-icon></button>
                     <button class="iconModifier" mat-icon-button aria-label="Modifier"><mat-icon>edit</mat-icon></button>
                     <button class="iconSupprimer" mat-icon-button aria-label="Supprimer"><mat-icon>delete</mat-icon></button>
