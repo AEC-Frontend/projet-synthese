@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -19,12 +18,15 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import {MatCardModule} from '@angular/material/card';
     OffresDeStagePageComponent,
     EntreprisesPageComponent,
     CandidatsPageComponent,
-
+    SidenavComponent,
+    CandidatAjoutPageComponent,
+    DialogConfirmationComponent,
   ],
 
   imports: [
@@ -51,14 +55,16 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatButtonModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     DemandeDeStageService,
     OffreDeStageService,
     EntrepriseService,
     CandidatService,
-    MatButtonModule
+    MatButtonModule,
   ],
   bootstrap: [AppComponent],
 })
