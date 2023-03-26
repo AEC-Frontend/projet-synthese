@@ -1,0 +1,97 @@
+.container {
+    max-width: 1140px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: 50px;
+  }
+  .title {
+    border-left: 8px solid #986d22;
+    padding-left: 10px;
+  
+    p {
+      font-size: 14px;
+      font-weight: bold;
+      color: #838281;
+    }
+  
+    h1 {
+      font-size: 30px;
+      font-weight: bolder;
+      color: #838281;
+    }
+  }
+  .icons {
+    float: right;
+    margin-top: 20px;
+  
+    img {
+      margin-left: 16px;
+      cursor: pointer;
+    }
+  }
+  .card-container {
+    margin: 80px 0px 80px 0px;
+  
+    .mat-card {
+      padding: 40px;
+    }
+    h4 {
+      font-size: 30px;
+      font-weight: bolder;
+      color: #47afb5;
+    }
+    .lorem-1 {
+      margin: 20px 0px 0px 0px;
+      color: #828282;
+    }
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+    .inner-div {
+      border-left: 8px solid rgb(77, 73, 71);
+      padding-left: 10px;
+      p {
+        font-size: 18px;
+        font-weight: bold;
+        color: #4d4d4d;
+      }
+      h1 {
+        font-size: 14px;
+        font-weight: bolder;
+        color: #867a7a;
+      }
+    }
+    .paragraph-2 {
+      color: #47afb5;
+      font-weight: bolder;
+      padding: 20px 0px 0px 5px;
+    }
+    .last-paragraph {
+      margin: 20px 0px 0px 0px;
+      color: #828282;
+    }
+    .button-outer {
+      margin-top: 30px;
+    }
+  }
+  
+  button {
+    background-color: #21a6ac;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  
+  button svg {
+    margin-right: 10px;
+  }

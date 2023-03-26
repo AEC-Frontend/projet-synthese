@@ -7,7 +7,7 @@ import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
+import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { TableauDeBordPageComponent } from './pages/tableau-de-bord-page/tableau-de-bord-page.component';
 import { DemandesDeStagePageComponent } from './pages/demandes-de-stage-page/demandes-de-stage-page.component';
@@ -24,6 +24,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+
+
+
 
 
 @NgModule({
@@ -36,6 +41,10 @@ import {MatButtonModule} from '@angular/material/button';
     EntreprisesPageComponent,
     CandidatsPageComponent,
     SidenavComponent,
+    
+    
+    
+    
     
   ],
 
@@ -52,6 +61,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatTableModule,
+    MatCardModule
   ],
   providers: [
     DemandeDeStageService,
