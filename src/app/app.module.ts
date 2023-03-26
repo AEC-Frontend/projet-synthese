@@ -27,6 +27,7 @@ import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-link.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     SidenavComponent,
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
+    UpperNavLinkComponent,
   ],
 
   imports: [
