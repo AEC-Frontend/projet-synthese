@@ -98,8 +98,12 @@ meter {
   all: revert;
 }
 
+<<<<<<< HEAD
 html,
 body {
+=======
+html, body {
+>>>>>>> main
   height: 100%;
 }
 
