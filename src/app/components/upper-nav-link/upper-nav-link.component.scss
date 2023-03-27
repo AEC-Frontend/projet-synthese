@@ -1,0 +1,47 @@
+@import "../../../SCSS/vars";
+
+button {
+  font-size: 0.7rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.5rem;
+  padding: 0 0.4rem;
+  height: fit-content;
+  margin: 0 0.7rem;
+  cursor: pointer;
+}
+
+.rouge {
+  color: $rouge;
+  border-color: $rouge;
+  &:hover {
+    background-color: rgba($rouge, 0.2);
+  }
+}
+
+.jaune {
+  color: $jaune;
+  border-color: $jaune;
+  &:hover {
+    background-color: rgba($jaune, 0.2);
+  }
+}
+
+.bleu {
+  color: $bleu-fonce;
+  border-color: $bleu-fonce;
+  &:hover {
+    background-color: rgba($bleu-fonce, 0.2);
+  }
+}
+
+.violet {
+  color: $mauve;
+  border-color: $mauve;
+  &:hover {
+    background-color: rgba($mauve, 0.2);
+  }
+}

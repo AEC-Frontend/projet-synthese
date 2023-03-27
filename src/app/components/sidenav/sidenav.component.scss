@@ -5,6 +5,59 @@
   height: 100vh;
 }
 
+mat-toolbar {
+  .navLinkButtonGroup {
+    display: flex;
+    margin-left: 3rem;
+  }
+
+  background-color: white;
+  img {
+    border-right: 3px solid $gris-clair;
+    height: 100%;
+    padding-right: 4.125rem;
+  }
+}
+
+.adminBtn {
+  display: flex;
+  margin-left: auto;
+  cursor: pointer;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    span {
+      display: inline-block;
+      height: fit-content;
+      line-height: 1rem;
+      text-align: end;
+    }
+
+    .user {
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .role {
+      font-size: 0.7rem;
+      color: $gris-fonce;
+      font-weight: 700;
+    }
+  }
+
+  .avatar {
+    display: inline-block;
+    height: 2rem;
+    background-color: $gris-fonce;
+    width: 2rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+  }
+}
+
 .hidden {
   display: none;
 }
@@ -20,6 +73,20 @@ mat-sidenav-content {
 
 mat-sidenav {
   width: 250px;
+
+  .adminBtn {
+    display: none;
+  }
+
+  .navLinkButtonGroup {
+    margin-top: 3rem;
+    margin-left: 1.1rem;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 1rem;
+  }
 }
 
 .space {
@@ -88,4 +155,28 @@ ul li a {
 
 .texte-entreprises {
   color: $bleu;
+}
+
+@media screen and (max-width: $w-xlarge) {
+  mat-toolbar {
+    .adminBtn {
+      display: none;
+    }
+
+    .navLinkButtonGroup {
+      display: none;
+    }
+  }
+
+  mat-sidenav {
+    .navLinkButtonGroup {
+      display: flex;
+    }
+
+    .adminBtn {
+      display: flex;
+      margin-top: 3rem;
+      margin-left: 1.5rem;
+    }
+  }
 }
