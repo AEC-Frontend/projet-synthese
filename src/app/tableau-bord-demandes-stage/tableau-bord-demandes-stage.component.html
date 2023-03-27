@@ -6,7 +6,7 @@
             En attente de validation
         </p>
     </div>
-    <button type="button" class="boutonValidationDemande">
+    <button type="button" class="boutonValidationDemande" >
         Valider toutes les demandes
     </button>
 </div>
@@ -20,7 +20,7 @@
           <p> Profil </p> 
             <div class="enteteTableauProfil__bordure"></div>
         </th>
-        <td  mat-cell *matCellDef="let element"  >
+        <td mat-cell *matCellDef="let element"  >
             <div class="coteTableau__bordure">
                 <div class="profilColonneElement">
                     <div  class="iconBordure">
@@ -62,7 +62,7 @@
     <!-- Actions -->
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-            Actions
+           <p> Actions </p>
             <div class="enteteTableauActions__bordure"></div>
         </th>
         <td mat-cell *matCellDef="let forfaits">
@@ -72,7 +72,7 @@
                     <button class="tableBtnAccepter" mat-icon-button aria-label="Supprimer">Accepter</button>
                 </div>
                 <div class="tableauIconAction__responsive">
-                    <button class="iconVisibilite" mat-icon-button aria-label="Visibilite"><mat-icon>visibility</mat-icon></button>
+                    <button class="iconVisibilite" mat-icon-button aria-label="Visibilite" ><mat-icon>visibility</mat-icon></button>
                     <button class="iconModifier" mat-icon-button aria-label="Modifier"><mat-icon>edit</mat-icon></button>
                     <button class="iconSupprimer" mat-icon-button aria-label="Supprimer"><mat-icon>delete</mat-icon></button>
                 </div>

@@ -192,18 +192,6 @@ th {
         font-size: 13px;
     }
 
-    .entetePlacement {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 50px;
-    }
-
-    .entetePlacement button {
-        width: 60%;
-        text-align: center;
-    }
-
     .iconBordure {
         margin-left: 10px;
         margin-right: 5px;
@@ -215,19 +203,22 @@ th {
         width: 20px;
     }
 
-    button {
+    .tableauBtnAction__flex button {
        margin: 2px;
-       width: 80%;
+       width: 100%;
+       text-align: center;
     }
 
     .tableauBtnAction__responsive {
         display: flex;
         flex-direction: column;
+        margin-right: 5px;
     }
 
     .tableauIconAction__responsive {
         display: flex;
         flex-direction: row;
+
     }
 
     .tableauBtnAction__flex {
@@ -249,10 +240,48 @@ th {
     }
 }
 
+
+/* MEDIA QUERIES  medium: 768px; */
+@media screen and (max-width: $w-medium) {
+
+    .entetePlacement button {
+        width: 50%;
+        text-align: center;
+    }
+
+    .iconBordure{
+        display: none;
+        mat-icon {
+            display: none;
+        }
+    }
+
+    .elementProfil {
+        padding-left: 10px;
+    }
+
+
+}
+
 /* MEDIA QUERIES small: 576px; */
 @media screen and (max-width: $w-small) {
     p{
       font-size: 11px;
+    }
+
+    .coteTableau__bordure{
+        border: none;
+    }
+
+     .iconBordure{
+        display: none;
+        mat-icon {
+            display: none;
+        }
+    }
+
+    .elementProfil {
+        padding-left: 0px;
     }
 
     .entetePlacement {
@@ -263,5 +292,10 @@ th {
 
     .entetePlacement button {
         width: 70%;
+        font-size: 13px;
+    }
+
+    .tableauBtnAction__responsive{
+        font-size: 13px;
     }
 }
