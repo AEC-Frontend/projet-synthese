@@ -29,6 +29,7 @@ import { DialogConfirmationComponent } from './components/dialog-confirmation/di
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-link.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entr
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+    MatCardModule,
   ],
   providers: [
     DemandeDeStageService,

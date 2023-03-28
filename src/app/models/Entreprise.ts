@@ -6,8 +6,8 @@ export type Entreprise = {
   description: string;
   imageUrl: string;
   contactName: string;
-  contactEmail: string;
-  contactPhone: string;
+  contactEmail?: string;
+  contactPhone?: string;
   address: string;
   city: string;
   province: string;

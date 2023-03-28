@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogConfirmationComponent } from 'src/app/components/dialog-confirmation/dialog-confirmation.component';
 import { CandidatService } from 'src/app/services/candidat/candidat.service';
