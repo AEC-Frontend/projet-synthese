@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogConfirmationComponent } from 'src/app/components/dialog-confirmation/dialog-confirmation.component';
-import { CandidatService } from 'src/app/services/candidat/candidat.service';
+import { EntrepriseService } from 'src/app/services/entreprise/entreprise.service';
 
 @Component({
-  selector: 'app-candidat-ajout-page',
-  templateUrl: './candidat-ajout-page.component.html',
-  styleUrls: ['./candidat-ajout-page.component.scss'],
+  selector: 'app-entreprise-ajout-page',
+  templateUrl: './entreprise-ajout-page.component.html',
+  styleUrls: ['./entreprise-ajout-page.component.scss'],
 })
-export class CandidatAjoutPageComponent {
+export class EntrepriseAjoutPageComponent {
   isLoading = false;
 
   textFields: Array<{ name: string; label: string }> = [
@@ -23,14 +23,15 @@ export class CandidatAjoutPageComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private candidatService: CandidatService,
+    private entrepriseService: EntrepriseService,
     public dialog: MatDialog
   ) {}
 
-  candidatForm = this.formBuilder.nonNullable.group({
+  entrepriseForm = this.formBuilder.nonNullable.group({
     name: ['', Validators.required],
-    jobTitle: ['', Validators.required],
+    imageUrl: ['', Validators.required],
     description: ['', Validators.required],
+    contactName: ['', Validators.required],
     address: ['', Validators.required],
     phone: ['', Validators.required],
     city: ['', Validators.required],
@@ -40,7 +41,7 @@ export class CandidatAjoutPageComponent {
   });
 
   getFormControl(formName: string) {
-    const controls = this.candidatForm.controls;
+    const controls = this.entrepriseForm.controls;
     const formControl = Object.keys(controls).find((key) => key === formName);
 
     if (formControl) {
@@ -51,11 +52,11 @@ export class CandidatAjoutPageComponent {
 
   onSubmit() {
     this.isLoading = true;
-    if (this.candidatForm.status === 'INVALID') {
-      Object.keys(this.candidatForm.controls).forEach((key) => {
+    if (this.entrepriseForm.status === 'INVALID') {
+      Object.keys(this.entrepriseForm.controls).forEach((key) => {
         const control =
-          this.candidatForm.controls[
-            key as keyof typeof this.candidatForm.controls
+          this.entrepriseForm.controls[
+            key as keyof typeof this.entrepriseForm.controls
           ];
 
         if (control.status === 'INVALID') {
@@ -64,14 +65,16 @@ export class CandidatAjoutPageComponent {
       });
     }
 
-    if (this.candidatForm.status === 'VALID') {
-      this.candidatService
-        .createCandidat({
-          ...this.candidatForm.getRawValue(),
+    if (this.entrepriseForm.status === 'VALID') {
+      this.entrepriseService
+        .createEntreprise({
+          ...this.entrepriseForm.getRawValue(),
+          contactEmail: '',
+          contactPhone: '',
         })
         .subscribe(() => {
           this.openCandidatAdditionConfirmation();
-          this.candidatForm.reset();
+          this.entrepriseForm.reset();
         });
     }
     this.isLoading = false;
@@ -79,7 +82,7 @@ export class CandidatAjoutPageComponent {
 
   openCandidatAdditionConfirmation(): void {
     const dialogRef = this.dialog.open(DialogConfirmationComponent, {
-      data: { textMessage: 'Le candidat a été ajouté avec succès!' },
+      data: { textMessage: "L'entreprise a été ajouté avec succès!" },
     });
   }
 }

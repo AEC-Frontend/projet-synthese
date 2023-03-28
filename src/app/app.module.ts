@@ -28,6 +28,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-link.component';
+import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-lin
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
     UpperNavLinkComponent,
+    EntrepriseAjoutPageComponent,
   ],
 
   imports: [
@@ -60,6 +63,7 @@ import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-lin
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+    MatCardModule,
   ],
   providers: [
     DemandeDeStageService,
