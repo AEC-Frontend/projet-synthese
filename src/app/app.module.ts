@@ -18,6 +18,7 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
+import { TableauBordDemandesStageComponent } from './components/tableau-bord-demandes-stage/tableau-bord-demandes-stage.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -31,6 +32,11 @@ import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-lin
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
 import { MatCardModule } from '@angular/material/card';
 
+import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +46,7 @@ import { MatCardModule } from '@angular/material/card';
     OffresDeStagePageComponent,
     EntreprisesPageComponent,
     CandidatsPageComponent,
+    TableauBordDemandesStageComponent,
     SidenavComponent,
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
@@ -57,6 +64,9 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatSnackBarModule,
+    MatDialogModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
