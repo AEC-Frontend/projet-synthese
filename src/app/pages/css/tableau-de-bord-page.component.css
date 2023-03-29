@@ -4,6 +4,7 @@
   margin: auto;
   border-radius: 10px;
   padding: 60px;
+  margin-bottom: 100px;
 }
 
 .containerTable {
@@ -168,5 +169,8 @@ span {
 @media screen and (max-width: 768px) {
   .containerDonneesCards {
     padding: 10px;
+  }
+  .tableSection {
+    padding: 30px;
   }
 }/*# sourceMappingURL=tableau-de-bord-page.component.css.map */

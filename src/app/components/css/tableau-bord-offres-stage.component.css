@@ -5,7 +5,7 @@ h2 {
 }
 
 span {
-  color: #cd9635;
+  color: #bb2026;
 }
 
 .sousTitre__couleur {
@@ -70,9 +70,9 @@ th {
 
 .iconBordure {
   border-radius: 5px;
-  border: 1px solid #cd9635;
-  background-color: #d6b477;
-  color: #70582e;
+  border: 1px solid #bb2026;
+  background-color: #bb2026;
+  color: #ff9fa3;
   padding: 5px;
   margin-left: 30px;
   margin-right: 10px;
@@ -103,7 +103,7 @@ th {
 }
 
 .coteTableau__bordure {
-  border-left: 5px solid #cd9635;
+  border-left: 5px solid #bb2026;
 }
 
 .profilColonneElement {
@@ -273,7 +273,7 @@ th {
   p {
     font-size: 11px;
   }
-  .elementProfilProfil {
+  .elementProfilPoste {
     font-size: 13px;
   }
   .coteTableau__bordure {
@@ -311,4 +311,4 @@ th {
   .iconSupprimer {
     margin-right: 2px;
   }
-}/*# sourceMappingURL=tableau-bord-demandes-stage.component.css.map */
+}/*# sourceMappingURL=tableau-bord-offres-stage.component.css.map */
