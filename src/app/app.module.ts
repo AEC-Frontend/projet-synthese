@@ -18,9 +18,7 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
-<<<<<<< HEAD
-import { TableauBordDemandesStageComponent } from './tableau-bord-demandes-stage/tableau-bord-demandes-stage.component';
-=======
+import { TableauBordDemandesStageComponent } from './components/tableau-bord-demandes-stage/tableau-bord-demandes-stage.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -30,11 +28,12 @@ import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
->>>>>>> main
 
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialogModule } from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,14 +43,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     OffresDeStagePageComponent,
     EntreprisesPageComponent,
     CandidatsPageComponent,
-<<<<<<< HEAD
     TableauBordDemandesStageComponent,
-
-=======
     SidenavComponent,
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
->>>>>>> main
   ],
 
   imports: [
@@ -64,18 +59,16 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-<<<<<<< HEAD
     MatTableModule,
     MatSnackBarModule,
-    MatDialogModule
-=======
+    MatDialogModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
->>>>>>> main
+    MatCardModule,
   ],
   providers: [
     DemandeDeStageService,

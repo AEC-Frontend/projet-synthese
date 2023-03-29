@@ -1,33 +1,47 @@
-<<<<<<< HEAD
-.table{
-    margin: 50px;
-  .mat-table {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 1rem;
-      display: table;
-      border-collapse: collapse;
-      margin: 0px;
-  }
-  .mat-row,
-  .mat-header-row {
-      display: table-row;
-  }
-  .mat-cell,
-  .mat-header-cell {
-      word-wrap: initial;
-      display: table-cell;
-      padding: 0px 5px;
-      line-break: unset;
-      width: auto;
-      white-space: nowrap;
-      overflow: hidden;
-      vertical-align: middle;
-  }
-}
-=======
 @import "../../../SCSS/vars";
 
+
+// ------------------- Tableau ------------------//
+.tableSection{
+    background-color: $blanc;
+    width: 93%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 60px;
+}
+
+.containerTable{
+    margin: auto;
+   
+    .mat-table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        display: table;
+        border-collapse: collapse;
+        margin: 0px;
+    }
+
+    .mat-row,
+    .mat-header-row {
+        display: table-row;
+    }
+
+    .mat-cell,
+    .mat-header-cell {
+        word-wrap: initial;
+        display: table-cell;
+        padding: 0px 5px;
+        line-break: unset;
+        width: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+}
+
+
+//---------------Cards de données------------------//
 p{
     font-size: 18px;
 }
@@ -37,19 +51,12 @@ span {
     font-weight: 500;
 }
 
-//Icon
-.mat-icon {
-    height: 60px;
-    width: 60px;
-    font-size: 60px;
-    margin-right: 5px;
-}
-
-//Cards
-.tableauBordDonnees__flex {
+.containerDonneesCards {
     display: flex;
     justify-content: center;
-    padding: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 100%;
 }
 
 //Card
@@ -136,7 +143,7 @@ span {
 
 /* MEDIA QUERIES xlarge: 1200px;*/
 @media screen and (max-width: $w-xlarge) {
-    p{
+    p {
         font-size: 12px;
     }
  
@@ -154,7 +161,7 @@ span {
         font-size: 25px;
     }
 
-    .tableauBordDonnees__flex {
+    .containerDonneesCards {
         padding: 50px;
     }
 }
@@ -170,14 +177,14 @@ span {
     }
 
     %cardSize{
-            width: 100%;
-        }
+        width: 100%;
+    }
 
     .mat-mdc-card-content {
         padding: 16px;
     }
 
-    .tableauBordDonnees__flex {
+    .containerDonneesCards {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -200,9 +207,8 @@ span {
 
 /* MEDIA QUERIES $w-medium: 768px;; */
 @media screen and (max-width: $w-medium) {
-    .tableauBordDonnees__flex {
+    .containerDonneesCards {
         padding:10px;
     }
 }
 
->>>>>>> main

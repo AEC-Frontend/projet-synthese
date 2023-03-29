@@ -129,16 +129,16 @@ th {
 .tableauBtnAction__responsive {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .tableBtnRefuser {
   background-color: #eccdcd;
   color: #bb2026;
   padding: 3px 10px 3px 10px;
-  margin-right: 20px;
+  margin-right: 10px;
   border-radius: 5px;
-  font-size: 14px;
-  width: 50%;
+  width: 100%;
 }
 
 .tableBtnRefuser:hover {
@@ -150,9 +150,9 @@ th {
   background-color: #cdecda;
   color: #64ae5e;
   padding: 3px 10px 3px 10px;
+  margin-right: 10px;
   border-radius: 5px;
-  font-size: 14px;
-  width: 50%;
+  width: 100%;
 }
 
 .tableBtnAccepter:hover {
@@ -160,8 +160,13 @@ th {
   cursor: pointer;
 }
 
+.tableauIconAction__responsive {
+  display: flex;
+}
+
 .iconVisibilite {
   color: #0c9da4;
+  margin: 10px;
 }
 
 .iconVisibilite:hover {
@@ -171,6 +176,7 @@ th {
 
 .iconModifier {
   color: #f89747;
+  margin: 10px;
 }
 
 .iconModifier:hover {
@@ -180,6 +186,7 @@ th {
 
 .iconSupprimer {
   color: #bb2026;
+  margin: 10px;
 }
 
 .iconSupprimer:hover {
@@ -202,7 +209,7 @@ th {
     height: 20px;
     width: 20px;
   }
-  .tableauBtnAction__flex button {
+  .tableauBtnAction__flex {
     margin: 2px;
     width: 100%;
     text-align: center;
@@ -210,7 +217,14 @@ th {
   .tableauBtnAction__responsive {
     display: flex;
     flex-direction: column;
-    margin-right: 5px;
+  }
+  .tableBtnRefuser {
+    margin: 10px 10px 0px 0px;
+    width: 80%;
+  }
+  .tableBtnAccepter {
+    margin: 10px 10px 10px 0px;
+    width: 80%;
   }
   .tableauIconAction__responsive {
     display: flex;
@@ -236,6 +250,7 @@ th {
   .entetePlacement button {
     width: 50%;
     text-align: center;
+    width: 100%;
   }
   .iconBordure {
     display: none;
@@ -251,6 +266,9 @@ th {
 @media screen and (max-width: 576px) {
   p {
     font-size: 11px;
+  }
+  .elementProfilPoste {
+    font-size: 13px;
   }
   .coteTableau__bordure {
     border: none;
@@ -268,8 +286,9 @@ th {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 50px;
   }
-  .entetePlacement button {
+  .entetePlacement {
     width: 70%;
     font-size: 13px;
   }

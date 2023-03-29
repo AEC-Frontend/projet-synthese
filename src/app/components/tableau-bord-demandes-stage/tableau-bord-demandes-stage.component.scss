@@ -1,4 +1,4 @@
-@import "../../SCSS/vars";
+@import "../../../SCSS/vars";
 
 //Header
 h2 {
@@ -131,12 +131,19 @@ th {
     justify-content: space-between;
 }
  
+.tableauBtnAction__responsive{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .tableBtnRefuser {
     background-color:$btn-refuser-bg;
     color: $btn-refuser;
     padding: 3px 10px 3px 10px;
-    margin-right:20px;
+    margin-right: 10px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .tableBtnRefuser:hover {
@@ -148,7 +155,9 @@ th {
     background-color:$btn-accepter-bg;
     color: $btn-accepter;
     padding: 3px 10px 3px 10px;
+    margin-right: 10px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .tableBtnAccepter:hover {
@@ -156,9 +165,13 @@ th {
     cursor: pointer;
 }
 
+.tableauIconAction__responsive{
+    display: flex;
+}
+
 .iconVisibilite {
     color: $vert-turquoise;
-    margin-right: 20px;
+    margin: 10px;
 }
 
 .iconVisibilite:hover {
@@ -168,7 +181,7 @@ th {
 
 .iconModifier {
     color: #f89747;
-    margin-right: 20px;
+    margin: 10px;
 }
 
 .iconModifier:hover {
@@ -178,12 +191,14 @@ th {
 
 .iconSupprimer {
     color: $rouge;
+    margin: 10px;
 }
 
 .iconSupprimer:hover {
     color: $rouge-fonce;
     cursor: pointer;
 }
+
 
 /*------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES large: 992px; */
@@ -203,7 +218,7 @@ th {
         width: 20px;
     }
 
-    .tableauBtnAction__flex button {
+    .tableauBtnAction__flex {
        margin: 2px;
        width: 100%;
        text-align: center;
@@ -212,13 +227,21 @@ th {
     .tableauBtnAction__responsive {
         display: flex;
         flex-direction: column;
-        margin-right: 5px;
+    }
+
+    .tableBtnRefuser {
+        margin:10px 10px 0px 0px;
+        width: 80%;
+    }
+
+    .tableBtnAccepter {
+        margin:10px 10px 10px 0px;
+        width: 80%;
     }
 
     .tableauIconAction__responsive {
         display: flex;
         flex-direction: row;
-
     }
 
     .tableauBtnAction__flex {
@@ -240,13 +263,12 @@ th {
     }
 }
 
-
 /* MEDIA QUERIES  medium: 768px; */
 @media screen and (max-width: $w-medium) {
-
     .entetePlacement button {
         width: 50%;
         text-align: center;
+        width: 100%;
     }
 
     .iconBordure{
@@ -259,14 +281,16 @@ th {
     .elementProfil {
         padding-left: 10px;
     }
-
-
 }
 
 /* MEDIA QUERIES small: 576px; */
 @media screen and (max-width: $w-small) {
     p{
       font-size: 11px;
+    }
+    
+    .elementProfilPoste {
+        font-size: 13px;
     }
 
     .coteTableau__bordure{
@@ -288,9 +312,10 @@ th {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        margin-bottom: 50px;
     }
 
-    .entetePlacement button {
+    .entetePlacement {
         width: 70%;
         font-size: 13px;
     }

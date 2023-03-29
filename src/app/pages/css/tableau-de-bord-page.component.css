@@ -1,8 +1,15 @@
-<<<<<<< HEAD
-.table {
-  margin: 50px;
+.tableSection {
+  background-color: #ffffff;
+  width: 93%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 60px;
 }
-.table .mat-table {
+
+.containerTable {
+  margin: auto;
+}
+.containerTable .mat-table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
@@ -10,12 +17,12 @@
   border-collapse: collapse;
   margin: 0px;
 }
-.table .mat-row,
-.table .mat-header-row {
+.containerTable .mat-row,
+.containerTable .mat-header-row {
   display: table-row;
 }
-.table .mat-cell,
-.table .mat-header-cell {
+.containerTable .mat-cell,
+.containerTable .mat-header-cell {
   word-wrap: initial;
   display: table-cell;
   padding: 0px 5px;
@@ -24,7 +31,8 @@
   white-space: nowrap;
   overflow: hidden;
   vertical-align: middle;
-=======
+}
+
 p {
   font-size: 18px;
 }
@@ -34,17 +42,12 @@ span {
   font-weight: 500;
 }
 
-.mat-icon {
-  height: 60px;
-  width: 60px;
-  font-size: 60px;
-  margin-right: 5px;
-}
-
-.tableauBordDonnees__flex {
+.containerDonneesCards {
   display: flex;
   justify-content: center;
-  padding: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 100%;
 }
 
 .mat-card {
@@ -136,7 +139,7 @@ span {
     width: 25px;
     font-size: 25px;
   }
-  .tableauBordDonnees__flex {
+  .containerDonneesCards {
     padding: 50px;
   }
 }
@@ -148,13 +151,13 @@ span {
   span {
     font-size: 28px;
   }
-  .tableauBordDonneesCandidatsEntreprises__card, .tableauBordDonneesOffresStage__card, .tableauBordDonneesDemandesStage__card, .tableauBordDonnees__flex {
+  .tableauBordDonneesCandidatsEntreprises__card, .tableauBordDonneesOffresStage__card, .tableauBordDonneesDemandesStage__card, .containerDonneesCards {
     width: 100%;
   }
   .mat-mdc-card-content {
     padding: 16px;
   }
-  .tableauBordDonnees__flex {
+  .containerDonneesCards {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,8 +166,7 @@ span {
 }
 /* MEDIA QUERIES $w-medium: 768px;; */
 @media screen and (max-width: 768px) {
-  .tableauBordDonnees__flex {
+  .containerDonneesCards {
     padding: 10px;
   }
->>>>>>> main
 }/*# sourceMappingURL=tableau-de-bord-page.component.css.map */
