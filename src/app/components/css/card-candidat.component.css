@@ -2,21 +2,6 @@ mat-card {
   padding: 20px;
 }
 
-.candidatCard {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.mat-icon {
-  color: #fcd8ff;
-  background-color: #7f2987;
-  width: 120px;
-  height: 120px;
-  font-size: 120px;
-}
-
 mat-card-header {
   margin-bottom: 10px;
 }
@@ -38,10 +23,17 @@ p {
   text-align: start;
 }
 
-/*------------------------------------------------------------------------------------------------*/
-/* MEDIA QUERIES xlarge: 1200px;*/
-@media screen and (max-width: 1200px) {
-  mat-grid-list {
-    columns: 2;
-  }
+.candidatCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.mat-icon {
+  color: #fcd8ff;
+  background-color: #7f2987;
+  width: 120px;
+  height: 120px;
+  font-size: 120px;
 }/*# sourceMappingURL=card-candidat.component.css.map */

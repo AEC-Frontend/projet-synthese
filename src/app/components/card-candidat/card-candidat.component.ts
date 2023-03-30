@@ -19,6 +19,9 @@ export class CardCandidatComponent implements OnInit {
 
   getCandidats(): void {
     this.candidatService.getCandidats()
-    .subscribe(resultat => this.candidats = (resultat.success && resultat.data !== undefined) ? resultat.data : []);
+    .subscribe(
+      resultat => this.candidats = (resultat.success && resultat.data !== undefined) ? resultat.data : []);
   }
 }
+
+

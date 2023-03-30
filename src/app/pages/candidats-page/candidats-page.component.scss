@@ -1,5 +1,7 @@
 @import "../../../SCSS/vars";
 
+
+// ------------------- Général ------------------//
 section {
     background-color: $gris-clair;
     text-align: center;
@@ -12,10 +14,8 @@ section {
     margin: auto;
 }
 
-.candidatsList{
-    width: 100%;
-}
 
+// ------------------- Entête ------------------//
 .candidatsHeaderPage{
     display: flex;
     flex-direction: column;
@@ -43,5 +43,34 @@ h2 {
     &:focus {
         background-color: $mauve-fonce;
         cursor: pointer;
+    }
+}
+
+
+// ------------------- Liste ------------------//
+.candidatsList{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+
+/*------------------------------------------------------------------------------------------------*/
+/* MEDIA QUERIES xlarge: 1200px;*/
+@media screen and (max-width: $w-xlarge) {
+    .candidatsList{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        gap: 2rem;
+    }
+}
+
+/* MEDIA QUERIES $w-medium: 768px;; */
+@media screen and (max-width: $w-medium) {
+    .candidatsList{
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 2rem;
     }
 }

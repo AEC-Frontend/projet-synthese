@@ -75,7 +75,7 @@ import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
     MatDialogModule,
     MatProgressSpinnerModule,
     MatCardModule,
-    MatGridListModule,
+    MatGridListModule
   ],
   providers: [
     DemandeDeStageService,
@@ -83,7 +83,6 @@ import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
     EntrepriseService,
     CandidatService,
     MatButtonModule,
-    MatGridTile
   ],
   bootstrap: [AppComponent],
 })
