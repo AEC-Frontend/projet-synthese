@@ -43,7 +43,7 @@
         </th>
         <td mat-cell *matCellDef="let element" > 
             <div> 
-               <p>{{element.etablissement}} </p> 
+               <p> {{element.etablissement}} </p> 
             </div> 
         </td>
     </ng-container>
@@ -55,7 +55,7 @@
             <div class="enteteTableauDate__bordure"></div>
         </th>
         <td mat-cell *matCellDef="let element">
-            <p>  {{element.date}} </p>
+            <p> {{element.date}} </p>
         </td>
     </ng-container>
 
@@ -73,8 +73,8 @@
                 </div>
                 <div class="tableauIconAction__responsive">
                     <button class="iconVisibilite" aria-label="Visibilite" ><mat-icon>visibility</mat-icon></button>
-                    <button class="iconModifier" aria-label="Modifier"><mat-icon>edit</mat-icon></button>
-                    <button class="iconSupprimer" aria-label="Supprimer"><mat-icon>delete</mat-icon></button>
+                    <button class="iconModifier" aria-label="Modifier" ><mat-icon>edit</mat-icon></button>
+                    <button class="iconSupprimer" aria-label="Supprimer" onclick="openDeleteDialog()"><mat-icon>delete</mat-icon></button>
                 </div>
             </div>
         </td>

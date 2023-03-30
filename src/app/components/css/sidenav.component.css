@@ -3,6 +3,53 @@
   height: 100vh;
 }
 
+mat-toolbar {
+  background-color: white;
+}
+mat-toolbar .navLinkButtonGroup {
+  display: flex;
+  margin-left: 3rem;
+}
+mat-toolbar img {
+  border-right: 3px solid #eeeeee;
+  height: 100%;
+  padding-right: 4.125rem;
+}
+
+.adminBtn {
+  display: flex;
+  margin-left: auto;
+  cursor: pointer;
+}
+.adminBtn div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.adminBtn div span {
+  display: inline-block;
+  height: fit-content;
+  line-height: 1rem;
+  text-align: end;
+}
+.adminBtn div .user {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.adminBtn div .role {
+  font-size: 0.7rem;
+  color: #5e5e5e;
+  font-weight: 700;
+}
+.adminBtn .avatar {
+  display: inline-block;
+  height: 2rem;
+  background-color: #5e5e5e;
+  width: 2rem;
+  margin-left: 1rem;
+  border-radius: 50%;
+}
+
 .hidden {
   display: none;
 }
@@ -18,6 +65,18 @@ mat-sidenav-content {
 
 mat-sidenav {
   width: 250px;
+}
+mat-sidenav .adminBtn {
+  display: none;
+}
+mat-sidenav .navLinkButtonGroup {
+  margin-top: 3rem;
+  margin-left: 1.1rem;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 1rem;
 }
 
 .space {
@@ -85,4 +144,21 @@ ul li a {
 
 .texte-entreprises {
   color: #86a9e6;
+}
+
+@media screen and (max-width: 1200px) {
+  mat-toolbar .adminBtn {
+    display: none;
+  }
+  mat-toolbar .navLinkButtonGroup {
+    display: none;
+  }
+  mat-sidenav .navLinkButtonGroup {
+    display: flex;
+  }
+  mat-sidenav .adminBtn {
+    display: flex;
+    margin-top: 3rem;
+    margin-left: 1.5rem;
+  }
 }/*# sourceMappingURL=sidenav.component.css.map */

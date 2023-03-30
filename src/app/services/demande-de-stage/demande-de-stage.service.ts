@@ -59,12 +59,8 @@ export class DemandeDeStageService {
     );
   }
 
-  deleteDemandeDeStage(
-    _id: string
-  ): Observable<{ success: boolean; data?: DemandeDeStage }> {
-    return this.http.delete<{ success: boolean; data?: DemandeDeStage }>(
-      `${this.url}/${_id}`,
-      this.httpOptions
-    );
+  deleteDemandeDeStage(_id: string): Observable<{ success: boolean; data?: DemandeDeStage }> {
+    return this.http.delete<{ success: boolean; data?: DemandeDeStage }>
+    (`${this.url}/${_id}`, this.httpOptions);
   }
 }

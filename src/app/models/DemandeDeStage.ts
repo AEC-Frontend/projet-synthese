@@ -1,3 +1,4 @@
+import { Candidat } from './Candidat';
 import { Entreprise } from './Entreprise';
 
 export type DemandeDeStage = {
@@ -34,4 +35,8 @@ export type DemandeDeStage = {
   activitySector: string;
   city: string;
   resume: string;
+
+
+  // To validate
+  candidat?: Candidat;
 };

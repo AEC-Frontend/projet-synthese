@@ -12,4 +12,7 @@ export type Candidat = {
   province: string;
   updatedAt?: string;
   createdAt?: string;
+
+  // To validate
+  establishment?: string;
 };
