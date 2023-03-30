@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"candidats-page.component.css"}
+{"version":3,"sourceRoot":"","sources":["../candidats-page/candidats-page.component.scss","../../../SCSS/_vars.scss"],"names":[],"mappings":"AAEA;EACI,kBCEQ;EDDR;EACA;EACA;;;AAGJ;EACI;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI,OCpBQ;EDqBR;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA,kBCnBG;EDoBH;EACA;EACA;EACA;;AACA;EAEI,kBCzBK;ED0BL","file":"candidats-page.component.css"}

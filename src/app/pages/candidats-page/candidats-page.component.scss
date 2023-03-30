@@ -1,0 +1,47 @@
+@import "../../../SCSS/vars";
+
+section {
+    background-color: $gris-clair;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.containerCandidats {
+    width: 90%;
+    margin: auto;
+}
+
+.candidatsList{
+    width: 100%;
+}
+
+.candidatsHeaderPage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: $gris-fonce;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.candidatAdd__btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: $mauve;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    &:hover, 
+    &:focus {
+        background-color: $mauve-fonce;
+        cursor: pointer;
+    }
+}

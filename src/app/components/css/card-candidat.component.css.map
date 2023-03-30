@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../card-candidat/card-candidat.component.scss","../../../SCSS/_vars.scss"],"names":[],"mappings":"AAEA;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI,OCKS;EDJT,kBCEG;EDDH;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;;AAEJ;EACI;EACA;EACA;;;AAGJ;EACI,OC9BQ;ED+BR;EACA;;;AAKJ;AACA;AACA;EACI;IACI","file":"card-candidat.component.css"}
