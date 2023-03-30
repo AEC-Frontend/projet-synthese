@@ -19,6 +19,17 @@ mat-card-content {
     align-items: baseline;
 }
 
+a{
+    cursor: pointer;
+    &:hover, 
+    &:focus {
+        
+        .candidatCard {
+            background-color: #f9f0fa;
+        }
+    }
+}
+
 p {
     color: $gris-fonce;
     margin: 0px;
