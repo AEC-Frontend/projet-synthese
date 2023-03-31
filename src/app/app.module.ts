@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { TableauDeBordPageComponent } from './pages/tableau-de-bord-page/tableau-de-bord-page.component';
 import { DemandesDeStagePageComponent } from './pages/demandes-de-stage-page/demandes-de-stage-page.component';
@@ -19,15 +19,7 @@ import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.se
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
 
-
-
-
-
-
-
-import { DemandeDeStageComponent } from './demande-de-stage/demande-de-stage.component';
-
-
+import { DemandeDeStageComponent } from './pages/demande-de-stage/demande-de-stage.component';
 
 import { TableauBordDemandesStageComponent } from './components/tableau-bord-demandes-stage/tableau-bord-demandes-stage.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -46,8 +38,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,11 +50,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     TableauBordDemandesStageComponent,
     SidenavComponent,
     DemandeDeStageComponent,
-    
-    
-    
-    
-    
+
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
     UpperNavLinkComponent,
