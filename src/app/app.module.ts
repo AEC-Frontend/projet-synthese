@@ -36,6 +36,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TableauBordOffresStageComponent } from './components/tableau-bord-offres-stage/tableau-bord-offres-stage.component';
 
+import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
+import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { TableauBordOffresStageComponent } from './components/tableau-bord-offre
     UpperNavLinkComponent,
     EntrepriseAjoutPageComponent,
     TableauBordOffresStageComponent,
+    CardCandidatComponent,
   ],
 
   imports: [
@@ -75,6 +78,7 @@ import { TableauBordOffresStageComponent } from './components/tableau-bord-offre
     MatDialogModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatGridListModule
   ],
   providers: [
     DemandeDeStageService,

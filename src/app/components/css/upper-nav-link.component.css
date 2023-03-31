@@ -1,0 +1,45 @@
+button {
+  font-size: 0.7rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.5rem;
+  padding: 0 0.4rem;
+  height: fit-content;
+  margin: 0 0.7rem;
+  cursor: pointer;
+}
+
+.rouge {
+  color: #bb2026;
+  border-color: #bb2026;
+}
+.rouge:hover {
+  background-color: rgba(187, 32, 38, 0.2);
+}
+
+.jaune {
+  color: #cd9635;
+  border-color: #cd9635;
+}
+.jaune:hover {
+  background-color: rgba(205, 150, 53, 0.2);
+}
+
+.bleu {
+  color: #5e7eb5;
+  border-color: #5e7eb5;
+}
+.bleu:hover {
+  background-color: rgba(94, 126, 181, 0.2);
+}
+
+.violet {
+  color: #7f2987;
+  border-color: #7f2987;
+}
+.violet:hover {
+  background-color: rgba(127, 41, 135, 0.2);
+}/*# sourceMappingURL=upper-nav-link.component.css.map */
