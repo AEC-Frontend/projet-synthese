@@ -1,1 +1,58 @@
-/*# sourceMappingURL=entreprises-page.component.css.map */
+section {
+  background-color: #eeeeee;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.containerEntreprises {
+  width: 90%;
+  margin: auto;
+}
+
+.entreprisesHeaderPage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+h2 {
+  color: #5e5e5e;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.entrepriseAdd__btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #86a9e6;
+  color: #3a537e;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+}
+.entrepriseAdd__btn:hover, .entrepriseAdd__btn:focus {
+  background-color: #5e7eb5;
+  cursor: pointer;
+}
+
+.entreprisesList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 100px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* MEDIA QUERIES xlarge: 1200px;*/
+@media screen and (max-width: 1200px) {
+  .entreprisesList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}/*# sourceMappingURL=entreprises-page.component.css.map */
