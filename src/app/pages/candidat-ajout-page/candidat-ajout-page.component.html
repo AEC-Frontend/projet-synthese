@@ -1,0 +1,144 @@
+<div class="candidatAjout">
+  <h2 class="candidatAjout__title">Ajouter un candidat</h2>
+  <form [formGroup]="candidatForm" (ngSubmit)="onSubmit()">
+    <!-- Nom et poste -->
+    <div class="candidatAjout__buttonGroup">
+      <button
+        class="candidatAjout__buttonGroup--cancel"
+        routerLink="/tableau-de-bord"
+        mat-stroked-button
+      >
+        Annuler
+      </button>
+      <button
+        class="candidatAjout__buttonGroup--submit"
+        type="submit"
+        mat-flat-button
+      >
+        <mat-icon>save</mat-icon>
+        <span *ngIf="!isLoading">Sauvegarder</span>
+      </button>
+    </div>
+    <div class="candidatAjout__nameAndJobContainer">
+      <div class="candidatAjout__nameAndJobContainer--textField">
+        <label for="name">Nom et Prénom:</label>
+        <mat-form-field
+          appearance="outline"
+          formControlName="name"
+          ngDefaultControl
+        >
+          <input type="text" matInput />
+        </mat-form-field>
+        <div
+          *ngIf="
+            getFormControl('name')!.invalid &&
+            (getFormControl('name')!.dirty || getFormControl('name')!.touched)
+          "
+          class="candidatAjout__error"
+        >
+          <div *ngIf="getFormControl('name')!.errors?.['required']">
+            Ce champs est requis
+          </div>
+        </div>
+      </div>
+      <div class="candidatAjout__nameAndJobContainer--textField">
+        <label for="jobTitle">Poste:</label>
+        <mat-form-field
+          appearance="outline"
+          formControlName="jobTitle"
+          ngDefaultControl
+        >
+          <input type="text" matInput />
+        </mat-form-field>
+        <div
+          *ngIf="
+            getFormControl('jobTitle')!.invalid &&
+            (getFormControl('jobTitle')!.dirty ||
+              getFormControl('jobTitle')!.touched)
+          "
+          class="candidatAjout__error"
+        >
+          <div *ngIf="getFormControl('jobTitle')!.errors?.['required']">
+            Ce champs est requis
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Informations détaillées -->
+    <div class="candidatAjout__detailed">
+      <div class="candidatAjout__description">
+        <label for="description">Courte présentation</label>
+        <mat-form-field
+          appearance="outline"
+          formControlName="description"
+          ngDefaultControl
+        >
+          <textarea matInput width="100%"></textarea>
+        </mat-form-field>
+        <div
+          *ngIf="
+            getFormControl('description')!.invalid &&
+            (getFormControl('description')!.dirty ||
+              getFormControl('description')!.touched)
+          "
+          class="candidatAjout__error"
+        >
+          <div *ngIf="getFormControl('description')!.errors?.['required']">
+            Ce champs est requis
+          </div>
+        </div>
+      </div>
+
+      <div class="candidatAjout__personalInfo">
+        <p>Informations personnelles</p>
+
+        <div
+          class="candidatAjout__textField"
+          *ngFor="let textField of textFields"
+        >
+          <label [for]="textField.name">{{ textField.label }}</label>
+          <mat-form-field
+            appearance="outline"
+            [formControlName]="textField.name"
+            ngDefaultControl
+          >
+            <input type="text" matInput />
+          </mat-form-field>
+          <div
+            *ngIf="
+              getFormControl(textField.name)!.invalid &&
+              (getFormControl(textField.name)!.dirty ||
+                getFormControl(textField.name)!.touched)
+            "
+            class="candidatAjout__error"
+          >
+            <div *ngIf="getFormControl(textField.name)!.errors?.['required']">
+              Ce champs est requis
+            </div>
+            <div *ngIf="getFormControl(textField.name)!.errors?.['email']">
+              Vous devez entrer un courriel valide
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="candidatAjout__buttonGroup">
+      <button
+        class="candidatAjout__buttonGroup--cancel"
+        routerLink="/tableau-de-bord"
+        mat-stroked-button
+      >
+        Annuler
+      </button>
+      <button
+        class="candidatAjout__buttonGroup--submit"
+        type="submit"
+        mat-flat-button
+      >
+        <mat-icon>save</mat-icon>
+        <span *ngIf="!isLoading">Sauvegarder</span>
+      </button>
+    </div>
+  </form>
+</div>

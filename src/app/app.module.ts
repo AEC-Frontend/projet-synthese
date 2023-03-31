@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -19,16 +18,33 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
-import { MatCardModule } from '@angular/material/card';
+
+
+
+
+
+
+
 import { DemandeDeStageComponent } from './demande-de-stage/demande-de-stage.component';
 
 
+
+import { TableauBordDemandesStageComponent } from './components/tableau-bord-demandes-stage/tableau-bord-demandes-stage.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-link.component';
+import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
+import { MatCardModule } from '@angular/material/card';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -41,6 +57,7 @@ import { DemandeDeStageComponent } from './demande-de-stage/demande-de-stage.com
     OffresDeStagePageComponent,
     EntreprisesPageComponent,
     CandidatsPageComponent,
+    TableauBordDemandesStageComponent,
     SidenavComponent,
     DemandeDeStageComponent,
     
@@ -48,6 +65,10 @@ import { DemandeDeStageComponent } from './demande-de-stage/demande-de-stage.com
     
     
     
+    CandidatAjoutPageComponent,
+    DialogConfirmationComponent,
+    UpperNavLinkComponent,
+    EntrepriseAjoutPageComponent,
   ],
 
   imports: [
@@ -60,18 +81,25 @@ import { DemandeDeStageComponent } from './demande-de-stage/demande-de-stage.com
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatSnackBarModule,
+    MatDialogModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatCardModule,
   ],
   providers: [
     DemandeDeStageService,
     OffreDeStageService,
     EntrepriseService,
     CandidatService,
-    MatButtonModule
+    MatButtonModule,
   ],
   bootstrap: [AppComponent],
 })
