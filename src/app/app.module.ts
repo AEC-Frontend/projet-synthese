@@ -34,8 +34,8 @@ import { MatCardModule } from '@angular/material/card';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatCardModule} from '@angular/material/card';
-
+import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
+import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -52,6 +52,7 @@ import {MatCardModule} from '@angular/material/card';
     DialogConfirmationComponent,
     UpperNavLinkComponent,
     EntrepriseAjoutPageComponent,
+    CardCandidatComponent,
   ],
 
   imports: [
@@ -74,6 +75,7 @@ import {MatCardModule} from '@angular/material/card';
     MatDialogModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatGridListModule
   ],
   providers: [
     DemandeDeStageService,
