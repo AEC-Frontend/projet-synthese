@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-demandes-de-stage-page',
-  templateUrl: './demandes-de-stage-page.component.html',
-  styleUrls: ['./demandes-de-stage-page.component.scss']
+  selector: 'app-demande-de-stage',
+  templateUrl: './demande-de-stage.component.html',
+  styleUrls: ['./demande-de-stage.component.scss']
 })
-export class DemandesDeStagePageComponent {
+export class DemandeDeStageComponent {
   data = [
     {
       title: "Demmande de stage",
