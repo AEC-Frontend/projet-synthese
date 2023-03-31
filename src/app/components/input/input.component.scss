@@ -1,0 +1,20 @@
+@import "../../../SCSS/vars";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  border-left: 0.5rem solid $gris-fonce;
+  justify-content: space-between;
+  margin: 3rem 0;
+  padding-left: 0.5rem;
+}
+
+mat-form-field {
+  transform: translateY(1.375rem);
+}
+
+label {
+  color: $gris-fonce;
+  font-weight: 600;
+  font-size: 1.5rem;
+}

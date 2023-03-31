@@ -1,0 +1,86 @@
+<form [formGroup]="stageForm">
+  <app-section-title title="Offre de stage" color="rouge"></app-section-title>
+
+  <div class="btnGroup">
+    <app-cancel-button></app-cancel-button>
+    <app-save-button label="Sauvegarder" color="rouge"></app-save-button>
+  </div>
+
+  <div class="firstLevelInput">
+    <app-title-input label="Titre" formControlName="title"></app-title-input>
+    <app-select
+      [formGroup]="stageForm"
+      controlName="enterprise"
+      label="Entreprise"
+      [options]="entreprises"
+    ></app-select>
+  </div>
+  <div class="details">
+    <div class="description">
+      <app-text-area
+        label="Description de la tâche"
+        color="rouge"
+        [biggerLabel]="true"
+        formControlName="description"
+      ></app-text-area>
+
+      <div class="programWrapper">
+        <app-input
+          label="Programme de formation"
+          formControlName="program"
+        ></app-input>
+      </div>
+      <app-text-area
+        label="Exigences"
+        formControlName="requirements"
+        [hasLeftBorder]="true"
+      ></app-text-area>
+    </div>
+
+    <p>Information sur le stage recherché</p>
+
+    <div class="information">
+      <app-select
+        label="Type de stage"
+        [options]="typeDeStage"
+        [formGroup]="stageForm"
+        controlName="stageType"
+        [hasLeftBorder]="true"
+      ></app-select>
+      <app-date-picker
+        label="Date de début"
+        [formGroup]="stageForm"
+        controlName="startDate"
+      ></app-date-picker>
+      <app-select
+        label="Nombre d'heures par semaine"
+        [formGroup]="stageForm"
+        controlName="hoursPerWeek"
+        [options]="nombreHeuresSemaine"
+        [hasLeftBorder]="true"
+      ></app-select>
+      <app-date-picker
+        label="Date de fin"
+        [formGroup]="stageForm"
+        controlName="endDate"
+      ></app-date-picker>
+      <app-radio
+        label="Rémunération"
+        [formGroup]="stageForm"
+        [options]="renumeration"
+        controlName="paid"
+      ></app-radio>
+    </div>
+
+    <app-text-area
+      label="Informations supplémentaires"
+      color="rouge"
+      formControlName="additionalInfo"
+    ></app-text-area>
+  </div>
+
+  <div class="btnGroup">
+    <app-cancel-button></app-cancel-button>
+    <app-save-button label="Sauvegarder" color="rouge"></app-save-button>
+  </div>
+</form>

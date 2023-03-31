@@ -1,0 +1,10 @@
+<div [ngClass]="hasLeftBorder ? 'select leftBorder' : 'select'">
+  <label>{{ label }}</label>
+  <mat-form-field appearance="outline" *ngIf="formControl">
+    <mat-select [formControl]="formControl">
+      <mat-option *ngFor="let option of options" [value]="option.value">{{
+        option.label
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
