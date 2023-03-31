@@ -16,6 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class TitleInputComponent implements ControlValueAccessor {
   @Input() label!: string;
   @Input() color!: 'turquoise' | 'rouge' | 'mauve' | 'bleu';
+  @Input() formErrorValidation: string = '';
 
   value!: string;
   onChange!: (value: string) => void;

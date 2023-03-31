@@ -44,6 +44,7 @@ import { SelectComponent } from './components/select/select.component';
 import { RadioComponent } from './components/radio/radio.component';
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
+import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { SectionTitleComponent } from './components/section-title/section-title.
     RadioComponent,
     DatePickerComponent,
     SectionTitleComponent,
+    ValidationErrorComponent,
   ],
 
   imports: [

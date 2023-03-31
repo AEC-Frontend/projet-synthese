@@ -3,16 +3,36 @@
 
   <div class="btnGroup">
     <app-cancel-button></app-cancel-button>
-    <app-save-button label="Sauvegarder" color="rouge"></app-save-button>
+    <app-save-button
+      label="Sauvegarder"
+      color="rouge"
+      [onSubmit]="onSubmit"
+    ></app-save-button>
   </div>
 
   <div class="firstLevelInput">
-    <app-title-input label="Titre" formControlName="title"></app-title-input>
+    <app-title-input
+      label="Titre"
+      formControlName="title"
+      [formErrorValidation]="
+        getFormControl('title')!.invalid &&
+        (getFormControl('title')!.dirty || getFormControl('title')!.touched)
+          ? 'Veuillez entrer des données valides'
+          : ''
+      "
+    ></app-title-input>
     <app-select
       [formGroup]="stageForm"
       controlName="enterprise"
       label="Entreprise"
       [options]="entreprises"
+      [formErrorValidation]="
+        getFormControl('enterprise')!.invalid &&
+        (getFormControl('enterprise')!.dirty ||
+          getFormControl('enterprise')!.touched)
+          ? 'Veuillez entrer des données valides'
+          : ''
+      "
     ></app-select>
   </div>
   <div class="details">
@@ -22,6 +42,13 @@
         color="rouge"
         [biggerLabel]="true"
         formControlName="description"
+        [formErrorValidation]="
+          getFormControl('description')!.invalid &&
+          (getFormControl('description')!.dirty ||
+            getFormControl('description')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
       ></app-text-area>
 
       <div class="programWrapper">
@@ -34,6 +61,13 @@
         label="Exigences"
         formControlName="requirements"
         [hasLeftBorder]="true"
+        [formErrorValidation]="
+          getFormControl('program')!.invalid &&
+          (getFormControl('program')!.dirty ||
+            getFormControl('program')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
       ></app-text-area>
     </div>
 
@@ -46,11 +80,25 @@
         [formGroup]="stageForm"
         controlName="stageType"
         [hasLeftBorder]="true"
+        [formErrorValidation]="
+          getFormControl('stageType')!.invalid &&
+          (getFormControl('stageType')!.dirty ||
+            getFormControl('stageType')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
       ></app-select>
       <app-date-picker
         label="Date de début"
         [formGroup]="stageForm"
         controlName="startDate"
+        [formErrorValidation]="
+          getFormControl('stageType')!.invalid &&
+          (getFormControl('stageType')!.dirty ||
+            getFormControl('stageType')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
       ></app-date-picker>
       <app-select
         label="Nombre d'heures par semaine"
@@ -58,17 +106,37 @@
         controlName="hoursPerWeek"
         [options]="nombreHeuresSemaine"
         [hasLeftBorder]="true"
+        [formErrorValidation]="
+          getFormControl('hoursPerWeek')!.invalid &&
+          (getFormControl('hoursPerWeek')!.dirty ||
+            getFormControl('hoursPerWeek')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
       ></app-select>
       <app-date-picker
         label="Date de fin"
         [formGroup]="stageForm"
         controlName="endDate"
+        [formErrorValidation]="
+          getFormControl('endDate')!.invalid &&
+          (getFormControl('endDate')!.dirty ||
+            getFormControl('endDate')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
       ></app-date-picker>
       <app-radio
         label="Rémunération"
         [formGroup]="stageForm"
         [options]="renumeration"
         controlName="paid"
+        [formErrorValidation]="
+          getFormControl('paid')!.invalid &&
+          (getFormControl('paid')!.dirty || getFormControl('paid')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
       ></app-radio>
     </div>
 
@@ -76,11 +144,22 @@
       label="Informations supplémentaires"
       color="rouge"
       formControlName="additionalInfo"
+      [formErrorValidation]="
+        getFormControl('additionalInfo')!.invalid &&
+        (getFormControl('additionalInfo')!.dirty ||
+          getFormControl('additionalInfo')!.touched)
+          ? 'Veuillez entrer des données valides'
+          : ''
+      "
     ></app-text-area>
   </div>
 
   <div class="btnGroup">
     <app-cancel-button></app-cancel-button>
-    <app-save-button label="Sauvegarder" color="rouge"></app-save-button>
+    <app-save-button
+      label="Sauvegarder"
+      color="rouge"
+      [onSubmit]="onSubmit"
+    ></app-save-button>
   </div>
 </form>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { OffreDeStage } from 'src/app/models';
+import { OffreDeStage, OffreDeStagePost } from 'src/app/models';
 import { API_SECRET_KEY, API_URL } from 'src/constants';
 
 @Injectable({
@@ -36,7 +36,7 @@ export class OffreDeStageService {
   }
 
   createOffreDeStage(
-    entreprise: OffreDeStage
+    entreprise: OffreDeStagePost
   ): Observable<{ success: boolean; data?: OffreDeStage }> {
     return this.http.post<{ success: boolean; data?: OffreDeStage }>(
       this.url,

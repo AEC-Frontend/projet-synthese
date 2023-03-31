@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { OffreDeStage } from 'src/app/models';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogConfirmationComponent } from 'src/app/components/dialog-confirmation/dialog-confirmation.component';
+import { Entreprise, OffreDeStage } from 'src/app/models';
+import { EntrepriseService } from 'src/app/services/entreprise/entreprise.service';
+import { OffreDeStageService } from 'src/app/services/offre-de-stage/offre-de-stage.service';
 import { TSelectOption } from 'src/app/types/TSelectOption';
 
 @Component({
@@ -9,10 +13,7 @@ import { TSelectOption } from 'src/app/types/TSelectOption';
   styleUrls: ['./offre-de-stage-ajout-page.component.scss'],
 })
 export class OffreDeStageAjoutPageComponent {
-  entreprises: TSelectOption[] = [
-    { value: 'ENTREPRISE_1', label: 'Entreprise 1' },
-    { value: 'EnTREPRISE_2', label: 'Entreprise 2' },
-  ];
+  entreprises: Array<{ value: string; label: string }> = [];
   typeDeStage: TSelectOption[] = [
     { value: 'TEMPS_PARTIEL', label: 'Temps partiel' },
     { value: 'TEMPS_PLEIN', label: 'Temps plein' },
@@ -32,14 +33,19 @@ export class OffreDeStageAjoutPageComponent {
     { value: 'false', label: 'Stage non rémunéré' },
   ];
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private offreDeStageService: OffreDeStageService,
+    private entrepriseService: EntrepriseService,
+    public dialog: MatDialog
+  ) {}
 
   stageForm = this.formBuilder.nonNullable.group({
-    enterprise: [this.entreprises[0].value, Validators.required],
-    active: true,
-    published: true,
-    paid: false,
-    additionalInfo: '',
+    enterprise: ['', Validators.required],
+    active: [true],
+    published: [true],
+    paid: [false],
+    additionalInfo: [''],
     hoursPerWeek: [
       parseInt(this.nombreHeuresSemaine[0].value),
       Validators.required,
@@ -53,7 +59,59 @@ export class OffreDeStageAjoutPageComponent {
     title: ['', Validators.required],
   });
 
+  onSubmit = () => {
+    console.log(this.stageForm);
+    if (this.stageForm.status === 'INVALID') {
+      Object.keys(this.stageForm.controls).forEach((key) => {
+        const control =
+          this.stageForm.controls[key as keyof typeof this.stageForm.controls];
+
+        if (control.status === 'INVALID') {
+          control.markAsDirty();
+        }
+      });
+    }
+
+    if (this.stageForm.status === 'VALID') {
+      this.offreDeStageService
+        .createOffreDeStage({
+          ...this.stageForm.getRawValue(),
+        })
+        .subscribe(() => {
+          this.openOffreDeStageAdditionConfirmation();
+          this.stageForm.reset();
+        });
+    }
+  };
+
   ngOnInit() {
-    this.stageForm.valueChanges.subscribe((newValue) => console.log(newValue));
+    this.entrepriseService
+      .getEntreprises()
+      .subscribe(({ data: entreprises }) => {
+        if (entreprises) {
+          this.entreprises = entreprises.map((entreprise) => ({
+            value: entreprise.name,
+            label: entreprise.name,
+          }));
+        }
+
+        console.log(this.entreprises);
+      });
+  }
+
+  openOffreDeStageAdditionConfirmation(): void {
+    const dialogRef = this.dialog.open(DialogConfirmationComponent, {
+      data: { textMessage: "L'entreprise a été ajouté avec succès!" },
+    });
+  }
+
+  getFormControl(formName: string) {
+    const controls = this.stageForm.controls;
+    const formControl = Object.keys(controls).find((key) => key === formName);
+
+    if (formControl) {
+      return controls[formControl as keyof typeof controls];
+    }
+    return null;
   }
 }

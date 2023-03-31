@@ -1,5 +1,11 @@
 @import "../../../SCSS/vars";
 
+:host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .select {
   width: 100%;
   display: flex;
@@ -8,6 +14,7 @@
 
   mat-form-field {
     width: 75%;
+    transform: translateY(1.375rem);
   }
 
   label {
@@ -26,13 +33,11 @@ label {
   border-left: 0.5rem solid $gris-fonce;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 3rem 0;
+  margin-top: 3rem;
   padding-left: 0.5rem;
 
   mat-form-field {
     width: 100%;
-
-    transform: translateY(1.375rem);
   }
 
   label {

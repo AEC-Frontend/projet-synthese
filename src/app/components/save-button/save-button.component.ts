@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class SaveButtonComponent {
   @Input() label!: 'Sauvegarder' | 'Mettre à jour';
   @Input() color!: 'turquoise' | 'rouge' | 'mauve' | 'bleu';
+  @Input() onSubmit!: () => void;
 }

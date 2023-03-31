@@ -11,6 +11,7 @@ export class RadioComponent {
   @Input() label!: string;
   @Input() formGroup!: FormGroup;
   @Input() controlName!: string;
+  @Input() formErrorValidation: string = '';
   @Output() controlChange = new EventEmitter<FormControl>();
 
   formControl: FormControl | undefined;

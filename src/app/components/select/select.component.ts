@@ -19,6 +19,7 @@ export class SelectComponent {
   @Input() formGroup!: FormGroup;
   @Input() controlName!: string;
   @Input() hasLeftBorder: boolean = false;
+  @Input() formErrorValidation: string = '';
   @Output() controlChange = new EventEmitter<FormControl>();
 
   formControl: FormControl | undefined;
@@ -26,6 +27,6 @@ export class SelectComponent {
   ngOnInit() {
     this.formControl = this.formGroup.get(this.controlName) as FormControl;
     this.controlChange.emit(this.formControl);
-    this.formControl.setValue(this.options[0].value);
+    this.formControl.setValue('');
   }
 }

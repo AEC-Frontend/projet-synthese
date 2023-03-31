@@ -18,6 +18,7 @@ export class TextAreaComponent implements ControlValueAccessor {
   @Input() biggerLabel?: boolean = false;
   @Input() color: 'turquoise' | 'rouge' | 'mauve' | 'bleu' | '' = '';
   @Input() hasLeftBorder: boolean = false;
+  @Input() formErrorValidation: string = '';
 
   value!: string;
   onChange!: (value: string) => void;
