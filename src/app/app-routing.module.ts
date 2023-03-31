@@ -8,6 +8,7 @@ import { CandidatsPageComponent } from './pages/candidats-page/candidats-page.co
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
+import { DemandeDeStageComponent } from './demande-de-stage/demande-de-stage.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'page-login', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'candidats', component: CandidatsPageComponent },
   { path: 'candidats/ajout', component: CandidatAjoutPageComponent },
   { path: 'entreprises/ajout', component: EntrepriseAjoutPageComponent },
+  { path: 'demandes-de-stage/:id', component: DemandeDeStageComponent },
 ];
 
 @NgModule({
