@@ -36,6 +36,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
 import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
+import { CardEntrepriseComponent } from './components/card-entreprise/card-entreprise.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
     UpperNavLinkComponent,
     EntrepriseAjoutPageComponent,
     CardCandidatComponent,
+    CardEntrepriseComponent,
   ],
 
   imports: [
