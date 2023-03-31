@@ -1,0 +1,212 @@
+@import "../../SCSS/vars";
+
+:host {
+    display: flex;
+    background-color: $gris-clair;
+    padding-bottom: 50px;
+}
+.container {
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 50px;
+  
+}
+
+
+.title {
+  border-left: 8px solid $jaune-fonce;
+  padding-left: 10px;
+}
+
+.title p {
+  font-size: 14px;
+  font-weight: bold;
+  color:$gris-fonce;
+}
+
+.title h1 {
+  font-size: 30px;
+  font-weight: bolder;
+  color: $gris-fonce;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  
+  
+}
+
+.check-icon{
+  color: $btn-accepter;
+  transform: scale(1.5);
+  margin-right: 20px;
+}
+
+.edit-icon{
+  color: $bleu-fonce;
+  transform: scale(1.5);
+  margin-right: 20px;
+}
+
+.close-icon{
+  color: $rouge;
+  transform: scale(1.5);
+  
+}
+
+.card-container {
+  margin: 20px 0px 20px 0px;
+}
+
+.mat-card {
+  padding: 40px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bolder;
+  color: $vert-turquoise;
+}
+
+.description-text {
+  margin: 20px 0px 0px 0px;
+  color: $gris-fonce;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.inner-div {
+  border-left: 8px solid $gris-fonce;
+  padding-left: 10px;
+  width: 300px;
+  
+
+}
+
+.inner-div p {
+  font-size: 18px;
+  font-weight: bold;
+  color: $gris-fonce;
+}
+
+.inner-div h1 {
+  font-size: 14px;
+  font-weight: bolder;
+  color: $gris-fonce;
+}
+
+.inner-div-right{
+
+  margin-right: 20%
+}
+
+.section-title {
+  color: $vert-turquoise;
+  font-weight: bolder;
+  padding: 20px 0px 0px 5px;
+}
+
+.download-button {
+  background-color: $vert-turquoise;
+  color: $blanc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: bolder;
+  display: inline-block;
+  width: auto;
+  margin-top: 30px;
+}
+
+.download-icon{
+
+  margin-right: 10px;
+}
+
+
+/* Media queries */
+@media only screen and (max-width: $w-medium) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .title h1 {
+    font-size: 24px;
+  }
+
+  .icons {
+    float: none;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .icons img {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+
+  .mat-card {
+    padding: 20px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .inner-div {
+    margin-bottom: 20px;
+  }
+
+  .paragraph-2 {
+    padding: 10px 0px 0px 0px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+@media only screen and (max-width: $w-small) {
+  h4 {
+    font-size: 20px;
+  }
+
+  .lorem-1,
+  .last-paragraph {
+    font-size: 14px;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .inner-div h1 {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}

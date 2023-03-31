@@ -26,6 +26,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { DemandeDeStageComponent } from './demande-de-stage/demande-de-stage.component';
 
 
 
@@ -41,6 +42,7 @@ import { MatCardModule } from '@angular/material/card';
     EntreprisesPageComponent,
     CandidatsPageComponent,
     SidenavComponent,
+    DemandeDeStageComponent,
     
     
     
