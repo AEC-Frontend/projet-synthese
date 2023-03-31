@@ -8,7 +8,7 @@ h2 {
 }
 
 span {
-    color: $jaune;
+    color: $rouge;
 }
 
 .sousTitre__couleur{
@@ -75,9 +75,9 @@ th {
 
 .iconBordure {
     border-radius: 5px;
-    border: 1px solid $jaune;
-    background-color: $icon-demande-stage-bg;
-    color: $icon-demande-stage;
+    border: 1px solid $rouge;
+    background-color: $icon-offre-stage-bg;
+    color: $icon-offre-stage;
     padding: 5px;
     margin-left: 30px;
     margin-right: 10px;
@@ -87,12 +87,12 @@ th {
     border: none;
 }
 
-.enteteTableauProfil__bordure {
+.enteteTableauPoste__bordure {
     border: 3px solid $gris-fonce;
     width: 90%;
 }
 
-.enteteTableauEtablissement__bordure {
+.enteteTableauVille__bordure {
     border: 3px solid $gris-fonce;
     width: 80%;
 }
@@ -108,20 +108,20 @@ th {
 }
 
 .coteTableau__bordure {
-    border-left: 5px solid $jaune;
+    border-left: 5px solid $rouge;
 }
 
-.profilColonneElement {
+.posteColonneElement {
     display: flex;
     align-items: center;
 }
 
-.elementProfil {
+.elementPoste {
     display: flex;
     flex-direction: column;
 }
 
-.elementProfilPoste {
+.elementPostePoste {
     font-size: 14px;
     font-weight: 600;
 }
@@ -265,7 +265,7 @@ th {
 
 /* MEDIA QUERIES  medium: 768px; */
 @media screen and (max-width: $w-medium) {
-    .entetePlacement  {
+     .entetePlacement  {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -285,7 +285,7 @@ th {
         }
     }
 
-    .elementProfil {
+    .elementPoste {
         padding-left: 10px;
     }
 }
@@ -296,7 +296,7 @@ th {
       font-size: 11px;
     }
     
-    .elementProfilProfil {
+    .elementPostePoste {
         font-size: 13px;
     }
 
@@ -311,7 +311,7 @@ th {
         }
     }
 
-    .elementProfil {
+    .elementPoste {
         padding-left: 0px;
     }
 
@@ -330,7 +330,7 @@ th {
     .tableauBtnAction__responsive{
         font-size: 13px;
     }
-
+    
     .iconVisibilite {
         margin-right: 2px;
         margin-left: 2px;
