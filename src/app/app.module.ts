@@ -18,6 +18,9 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
+
+import { DemandeDeStageComponent } from './pages/demande-de-stage/demande-de-stage.component';
+
 import { TableauBordDemandesStageComponent } from './components/tableau-bord-demandes-stage/tableau-bord-demandes-stage.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -35,7 +38,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
-import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
+import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,8 @@ import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
     CandidatsPageComponent,
     TableauBordDemandesStageComponent,
     SidenavComponent,
+    DemandeDeStageComponent,
+
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
     UpperNavLinkComponent,
@@ -71,11 +76,13 @@ import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatTableModule,
+    MatCardModule,
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
   ],
   providers: [
     DemandeDeStageService,
