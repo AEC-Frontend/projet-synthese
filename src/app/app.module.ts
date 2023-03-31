@@ -18,6 +18,7 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
+import { TableauBordDemandesStageComponent } from './components/tableau-bord-demandes-stage/tableau-bord-demandes-stage.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -46,6 +47,11 @@ import { DatePickerComponent } from './components/date-picker/date-picker.compon
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
 
+import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
+import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +61,7 @@ import { ValidationErrorComponent } from './components/validation-error/validati
     OffresDeStagePageComponent,
     EntreprisesPageComponent,
     CandidatsPageComponent,
+    TableauBordDemandesStageComponent,
     SidenavComponent,
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
@@ -71,6 +78,7 @@ import { ValidationErrorComponent } from './components/validation-error/validati
     DatePickerComponent,
     SectionTitleComponent,
     ValidationErrorComponent,
+    CardCandidatComponent,
   ],
 
   imports: [
@@ -83,6 +91,9 @@ import { ValidationErrorComponent } from './components/validation-error/validati
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatSnackBarModule,
+    MatDialogModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
@@ -94,6 +105,7 @@ import { ValidationErrorComponent } from './components/validation-error/validati
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
+    MatGridListModule,
   ],
   providers: [
     DemandeDeStageService,

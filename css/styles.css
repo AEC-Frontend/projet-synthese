@@ -98,7 +98,8 @@ meter {
   all: revert;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
