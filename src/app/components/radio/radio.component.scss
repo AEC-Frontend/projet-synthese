@@ -1,0 +1,30 @@
+@import "../../../SCSS/vars";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  border-left: 0.5rem solid $gris-fonce;
+  justify-content: space-between;
+  margin: 3rem 0;
+  padding-left: 0.5rem;
+  position: relative;
+  width: fit-content;
+}
+
+label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: $gris-fonce;
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-radio-button {
+  span {
+    font-weight: 600;
+    color: $gris-fonce;
+  }
+}

@@ -17,7 +17,6 @@
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  margin-bottom: 5rem;
 }
 
 .details {
@@ -26,24 +25,34 @@
   margin-bottom: 2rem;
 }
 
-p {
-  margin-top: 5rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: $vert-turquoise;
+.programWrapper {
+  width: calc(50% - 2rem);
 }
 
-.informations {
+p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: $rouge;
+}
+
+.information {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: $w-large) {
+  .programWrapper {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: $w-medium) {
   .details {
     padding: 3rem 2rem;
   }
-  .informations {
+  .information {
     grid-template-columns: 1fr;
   }
 }

@@ -1,0 +1,7 @@
+<div [ngClass]="color + ' sectionTitle'">
+  <h3 *ngIf="subtitle">{{ subtitle }}</h3>
+  <h2 [ngClass]="onlyTitle ? 'margin' : !hasEnterprise ? 'margin-none' : ''">
+    {{ title }}
+  </h2>
+  <p *ngIf="entreprise">{{ entreprise }}</p>
+</div>

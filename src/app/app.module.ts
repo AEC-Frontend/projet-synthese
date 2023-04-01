@@ -34,6 +34,21 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-link.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
 import { MatCardModule } from '@angular/material/card';
+import { OffreDeStageAjoutPageComponent } from './pages/offre-de-stage-ajout-page/offre-de-stage-ajout-page.component';
+import { CancelButtonComponent } from './components/cancel-button/cancel-button.component';
+import { SaveButtonComponent } from './components/save-button/save-button.component';
+import { TitleInputComponent } from './components/title-input/title-input.component';
+import { MatSelectModule } from '@angular/material/select';
+import { TextAreaComponent } from './components/text-area/text-area.component';
+import { InputComponent } from './components/input/input.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { SelectComponent } from './components/select/select.component';
+import { RadioComponent } from './components/radio/radio.component';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
+import { SectionTitleComponent } from './components/section-title/section-title.component';
+import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -54,11 +69,21 @@ import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
     TableauBordDemandesStageComponent,
     SidenavComponent,
     DemandeDeStageComponent,
-
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
     UpperNavLinkComponent,
     EntrepriseAjoutPageComponent,
+    OffreDeStageAjoutPageComponent,
+    CancelButtonComponent,
+    SaveButtonComponent,
+    TitleInputComponent,
+    TextAreaComponent,
+    InputComponent,
+    SelectComponent,
+    RadioComponent,
+    DatePickerComponent,
+    SectionTitleComponent,
+    ValidationErrorComponent,
     TableauBordOffresStageComponent,
     CardCandidatComponent,
   ],
@@ -85,6 +110,10 @@ import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
     MatDialogModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
     MatGridListModule,
   ],
   providers: [

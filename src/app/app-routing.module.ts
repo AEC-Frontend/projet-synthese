@@ -9,6 +9,7 @@ import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
 import { DemandeDeStageComponent } from './pages/demande-de-stage/demande-de-stage.component';
+import { OffreDeStageAjoutPageComponent } from './pages/offre-de-stage-ajout-page/offre-de-stage-ajout-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'page-login', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'candidats', component: CandidatsPageComponent },
   { path: 'candidats/ajout', component: CandidatAjoutPageComponent },
   { path: 'entreprises/ajout', component: EntrepriseAjoutPageComponent },
+  { path: 'offres-de-stage/ajout', component: OffreDeStageAjoutPageComponent },
   { path: 'demandes-de-stage/:id', component: DemandeDeStageComponent },
 ];
 
