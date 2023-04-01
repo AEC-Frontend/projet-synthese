@@ -1,12 +1,10 @@
 <!--- Cartes de entreprises --->
-
 <a *ngFor="let entreprise of entreprises" routerLink="">
     <mat-card class="entrepriseCard">
-        <img src="../../../assets/img/logoEntreprise.jpg" alt="Logo entreprise">
+        <img [src]="entreprise.imageUrl || '../../../assets/img/logoEntreprise.jpg'" alt="Logo entreprise">
         <div>
             <mat-card-header>
                 <mat-card-title>
-                    {{ entreprise._id }}
                     {{ entreprise.name }}
                 </mat-card-title>
                 <mat-card-subtitle>
