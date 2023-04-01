@@ -1,0 +1,193 @@
+@import "../../SCSS/vars";
+
+:host {
+    display: flex;
+    background-color: $gris-clair;
+    padding-bottom: 50px;
+}
+.container {
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 50px;
+}
+
+
+.title {
+  border-left: 8px solid $rouge;
+  padding-left: 10px;
+}
+
+.title p {
+  font-size: 14px;
+  font-weight: bold;
+  color:$gris-fonce;
+}
+
+.title h1 {
+  font-size: 30px;
+  font-weight: bolder;
+  color: $gris-fonce;
+}
+
+.square{
+    display: inline-block;
+    background-color: $blanc;
+    padding: 6px 6px;
+    font-size: 20px;
+    color: $gris-fonce;
+}
+
+.sub-title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-left: 8px solid $gris-fonce;
+    padding-left: 10px;
+}
+
+.sub-title p {
+    font-size: 14px;
+    color:$gris-fonce;
+  }
+
+  .sub-title h1 {
+    font-size: 20px;
+    font-weight: bolder;
+    color: $gris-fonce;
+  }
+
+
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.check-icon{
+  color: $btn-accepter;
+  transform: scale(1.5);
+  margin-right: 20px;
+}
+
+.edit-icon{
+  color: $bleu-fonce;
+  transform: scale(1.5);
+  margin-right: 20px;
+}
+
+.close-icon{
+  color: $rouge;
+  transform: scale(1.5);
+}
+
+.card-container {
+  margin: 20px 0px 20px 0px;
+}
+
+.mat-card {
+  padding: 40px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bolder;
+  color: $rouge;
+}
+
+.description-text {
+  margin: 20px 0px 0px 0px;
+  color: $gris-fonce;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.inner-div {
+  border-left: 8px solid $gris-fonce;
+  padding-left: 10px;
+  width: 300px;
+}
+
+.inner-div p {
+  font-size: 18px;
+  font-weight: bold;
+  color: $gris-fonce;
+}
+
+.inner-div h1 {
+  font-size: 14px;
+  color: $gris-fonce;
+}
+
+.inner-div-right{
+  margin-right: 20%
+}
+
+.section-title {
+  color: $rouge;
+  font-size: large;
+  font-weight: bolder;
+  padding: 20px 0px 0px 5px;
+}
+
+
+
+/* Media queries */
+@media only screen and (max-width: $w-medium) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .title h1 {
+    font-size: 24px;
+  }
+
+  .icons {
+    float: none;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .icons img {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+
+  .mat-card {
+    padding: 20px;
+  }
+
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .inner-div {
+    margin-bottom: 20px;
+  }
+
+}
+
+@media only screen and (max-width: $w-small) {
+  h3 {
+    font-size: 20px;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .inner-div h1 {
+    font-size: 12px;
+  }
+
+}

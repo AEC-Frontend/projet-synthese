@@ -45,6 +45,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { OffreDeStageDetailleeComponent } from './offre-de-stage-detaillee/offre-de-stage-detaillee.component';
 
 
 
@@ -69,6 +70,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DialogConfirmationComponent,
     UpperNavLinkComponent,
     EntrepriseAjoutPageComponent,
+    OffreDeStageDetailleeComponent,
   ],
 
   imports: [

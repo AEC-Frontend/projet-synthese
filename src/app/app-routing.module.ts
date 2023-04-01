@@ -9,6 +9,7 @@ import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
 import { DemandeDeStageComponent } from './demande-de-stage/demande-de-stage.component';
+import { OffreDeStageDetailleeComponent } from './offre-de-stage-detaillee/offre-de-stage-detaillee.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'page-login', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'candidats/ajout', component: CandidatAjoutPageComponent },
   { path: 'entreprises/ajout', component: EntrepriseAjoutPageComponent },
   { path: 'demandes-de-stage/:id', component: DemandeDeStageComponent },
+  { path: 'offres-de-stage/:id', component: OffreDeStageDetailleeComponent },
 ];
 
 @NgModule({
