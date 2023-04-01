@@ -265,10 +265,17 @@ th {
 
 /* MEDIA QUERIES  medium: 768px; */
 @media screen and (max-width: $w-medium) {
-    .entetePlacement button {
-        width: 50%;
-        text-align: center;
+    .entetePlacement  {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .boutonValidationDemande {
+        text-align: center;
+        width: 60%;
     }
 
     .iconBordure{
@@ -289,7 +296,7 @@ th {
       font-size: 11px;
     }
     
-    .elementProfilPoste {
+    .elementProfilProfil {
         font-size: 13px;
     }
 
@@ -315,12 +322,25 @@ th {
         margin-bottom: 50px;
     }
 
-    .entetePlacement {
-        width: 70%;
-        font-size: 13px;
+    .boutonValidationDemande {
+        text-align: center;
+        width: 100%;
     }
 
     .tableauBtnAction__responsive{
         font-size: 13px;
+    }
+
+    .iconVisibilite {
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+
+    .iconModifier {
+        margin-right: 2px;
+    }
+
+    .iconSupprimer{
+        margin-right: 2px;
     }
 }

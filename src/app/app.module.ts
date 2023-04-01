@@ -18,6 +18,9 @@ import { DemandeDeStageService } from './services/demande-de-stage/demande-de-st
 import { OffreDeStageService } from './services/offre-de-stage/offre-de-stage.service';
 import { EntrepriseService } from './services/entreprise/entreprise.service';
 import { CandidatService } from './services/candidat/candidat.service';
+
+import { DemandeDeStageComponent } from './pages/demande-de-stage/demande-de-stage.component';
+
 import { TableauBordDemandesStageComponent } from './components/tableau-bord-demandes-stage/tableau-bord-demandes-stage.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -31,9 +34,26 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-link.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
 import { MatCardModule } from '@angular/material/card';
+import { OffreDeStageAjoutPageComponent } from './pages/offre-de-stage-ajout-page/offre-de-stage-ajout-page.component';
+import { CancelButtonComponent } from './components/cancel-button/cancel-button.component';
+import { SaveButtonComponent } from './components/save-button/save-button.component';
+import { TitleInputComponent } from './components/title-input/title-input.component';
+import { MatSelectModule } from '@angular/material/select';
+import { TextAreaComponent } from './components/text-area/text-area.component';
+import { InputComponent } from './components/input/input.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import { SelectComponent } from './components/select/select.component';
+import { RadioComponent } from './components/radio/radio.component';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
+import { SectionTitleComponent } from './components/section-title/section-title.component';
+import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TableauBordOffresStageComponent } from './components/tableau-bord-offres-stage/tableau-bord-offres-stage.component';
+
 import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
 import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
 import { CardEntrepriseComponent } from './components/card-entreprise/card-entreprise.component';
@@ -49,10 +69,23 @@ import { CardEntrepriseComponent } from './components/card-entreprise/card-entre
     CandidatsPageComponent,
     TableauBordDemandesStageComponent,
     SidenavComponent,
+    DemandeDeStageComponent,
     CandidatAjoutPageComponent,
     DialogConfirmationComponent,
     UpperNavLinkComponent,
     EntrepriseAjoutPageComponent,
+    OffreDeStageAjoutPageComponent,
+    CancelButtonComponent,
+    SaveButtonComponent,
+    TitleInputComponent,
+    TextAreaComponent,
+    InputComponent,
+    SelectComponent,
+    RadioComponent,
+    DatePickerComponent,
+    SectionTitleComponent,
+    ValidationErrorComponent,
+    TableauBordOffresStageComponent,
     CardCandidatComponent,
     CardEntrepriseComponent,
   ],
@@ -73,11 +106,17 @@ import { CardEntrepriseComponent } from './components/card-entreprise/card-entre
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatTableModule,
+    MatCardModule,
     MatButtonModule,
     MatDialogModule,
     MatProgressSpinnerModule,
     MatCardModule,
-    MatGridListModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatGridListModule,
   ],
   providers: [
     DemandeDeStageService,

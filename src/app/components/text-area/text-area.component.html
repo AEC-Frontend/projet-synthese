@@ -1,0 +1,15 @@
+<div [ngClass]="hasLeftBorder ? 'text-area leftBorder' : 'text-area'">
+  <label [ngClass]="biggerLabel ? color + ' bigger' : color">{{ label }}</label>
+  <mat-form-field appearance="outline">
+    <textarea
+      rows="10"
+      matInput
+      [value]="value"
+      (input)="onChange($any($event.target).value)"
+      (blur)="onTouched()"
+      [disabled]="isDisabled"
+      type="text"
+    ></textarea>
+  </mat-form-field>
+  <app-validation-error [message]="formErrorValidation"></app-validation-error>
+</div>
