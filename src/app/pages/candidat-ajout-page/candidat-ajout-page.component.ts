@@ -49,7 +49,7 @@ export class CandidatAjoutPageComponent {
     return null;
   }
 
-  onSubmit() {
+  onSubmit = () => {
     this.isLoading = true;
     if (this.candidatForm.status === 'INVALID') {
       Object.keys(this.candidatForm.controls).forEach((key) => {
@@ -75,7 +75,7 @@ export class CandidatAjoutPageComponent {
         });
     }
     this.isLoading = false;
-  }
+  };
 
   openCandidatAdditionConfirmation(): void {
     const dialogRef = this.dialog.open(DialogConfirmationComponent, {
