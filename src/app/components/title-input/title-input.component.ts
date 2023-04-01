@@ -17,6 +17,7 @@ export class TitleInputComponent implements ControlValueAccessor {
   @Input() label!: string;
   @Input() color!: 'turquoise' | 'rouge' | 'mauve' | 'bleu';
   @Input() formErrorValidation: string = '';
+  @Input() placeholder: string = '';
 
   value!: string;
   onChange!: (value: string) => void;

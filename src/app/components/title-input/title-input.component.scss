@@ -24,3 +24,14 @@
     transform: translateY(-0.6878rem);
   }
 }
+
+@media screen and (max-width: $w-medium) {
+  .input {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  mat-form-field {
+    width: 100% !important;
+  }
+}
