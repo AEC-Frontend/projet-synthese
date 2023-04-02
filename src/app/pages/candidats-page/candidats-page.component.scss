@@ -1,0 +1,77 @@
+@import "../../../SCSS/vars";
+
+
+// ------------------- Général ------------------//
+section {
+    background-color: $gris-clair;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 100%;
+}
+
+.containerCandidats {
+    width: 90%;
+    margin: auto;
+}
+
+
+// ------------------- Entête ------------------//
+.candidatsHeaderPage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: $gris-fonce;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.candidatAdd__btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: $mauve;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    &:hover, 
+    &:focus {
+        background-color: $mauve-fonce;
+        cursor: pointer;
+    }
+}
+
+
+// ------------------- Liste ------------------//
+.candidatsList{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+
+/*------------------------------------------------------------------------------------------------*/
+/* MEDIA QUERIES xlarge: 1200px;*/
+@media screen and (max-width: $w-xlarge) {
+    .candidatsList{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        gap: 2rem;
+    }
+}
+
+/* MEDIA QUERIES $w-medium: 768px;; */
+@media screen and (max-width: $w-medium) {
+    .candidatsList{
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 2rem;
+    }
+}
