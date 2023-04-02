@@ -1,9 +1,9 @@
 @import "../../SCSS/vars";
 
 :host {
-    display: flex;
-    background-color: $gris-clair;
-    padding-bottom: 50px;
+  display: flex;
+  background-color: $gris-clair;
+  padding-bottom: 50px;
 }
 .container {
   max-width: 1140px;
@@ -14,7 +14,6 @@
   padding-top: 50px;
 }
 
-
 .title {
   border-left: 8px solid $rouge;
   padding-left: 10px;
@@ -23,7 +22,7 @@
 .title p {
   font-size: 14px;
   font-weight: bold;
-  color:$gris-fonce;
+  color: $gris-fonce;
 }
 
 .title h1 {
@@ -32,52 +31,50 @@
   color: $gris-fonce;
 }
 
-.square{
-    display: inline-block;
-    background-color: $blanc;
-    padding: 6px 6px;
-    font-size: 20px;
-    color: $gris-fonce;
+.square {
+  display: inline-block;
+  background-color: $blanc;
+  padding: 6px 6px;
+  font-size: 20px;
+  color: $gris-fonce;
 }
 
-.sub-title{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-left: 8px solid $gris-fonce;
-    padding-left: 10px;
+.sub-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-left: 8px solid $gris-fonce;
+  padding-left: 10px;
 }
 
 .sub-title p {
-    font-size: 14px;
-    color:$gris-fonce;
-  }
+  font-size: 14px;
+  color: $gris-fonce;
+}
 
-  .sub-title h1 {
-    font-size: 20px;
-    font-weight: bolder;
-    color: $gris-fonce;
-  }
-
-
+.sub-title h1 {
+  font-size: 20px;
+  font-weight: bolder;
+  color: $gris-fonce;
+}
 
 .icons {
   display: flex;
   justify-content: flex-end;
 }
 
-.check-icon{
+.check-icon {
   color: $btn-accepter;
   transform: scale(1.5);
   margin-right: 20px;
 }
 
-.edit-icon{
+.edit-icon {
   color: $bleu-fonce;
   transform: scale(1.5);
   margin-right: 20px;
 }
 
-.close-icon{
+.close-icon {
   color: $rouge;
   transform: scale(1.5);
 }
@@ -124,8 +121,8 @@ h2 {
   color: $gris-fonce;
 }
 
-.inner-div-right{
-  margin-right: 20%
+.inner-div-right {
+  margin-right: 20%;
 }
 
 .section-title {
@@ -134,8 +131,6 @@ h2 {
   font-weight: bolder;
   padding: 20px 0px 0px 5px;
 }
-
-
 
 /* Media queries */
 @media only screen and (max-width: $w-medium) {
@@ -166,7 +161,6 @@ h2 {
     padding: 20px;
   }
 
-
   .main-container {
     flex-direction: column;
   }
@@ -174,7 +168,6 @@ h2 {
   .inner-div {
     margin-bottom: 20px;
   }
-
 }
 
 @media only screen and (max-width: $w-small) {
@@ -189,5 +182,4 @@ h2 {
   .inner-div h1 {
     font-size: 12px;
   }
-
 }
