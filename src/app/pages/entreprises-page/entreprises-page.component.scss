@@ -62,7 +62,7 @@ h2 {
 @media screen and (max-width: $w-xlarge) {
     .entreprisesList{
         display: grid;
-        grid-template-columns: 1fr ;
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 }
