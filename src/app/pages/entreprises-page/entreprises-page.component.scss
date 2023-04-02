@@ -12,10 +12,6 @@ section {
 .containerEntreprises {
     width: 90%;
     margin: auto;
-<<<<<<< HEAD
-    
-=======
->>>>>>> main
 }
 
 
@@ -57,10 +53,6 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-<<<<<<< HEAD
-    
-=======
->>>>>>> main
     padding-bottom: 100px;
 }
 
@@ -70,7 +62,7 @@ h2 {
 @media screen and (max-width: $w-xlarge) {
     .entreprisesList{
         display: grid;
-        grid-template-columns: 1fr ;
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 }
