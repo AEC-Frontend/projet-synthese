@@ -56,6 +56,7 @@ import { TableauBordOffresStageComponent } from './components/tableau-bord-offre
 
 import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
 import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
+import { DemandeDeStageAjoutPageComponent } from './pages/demande-de-stage-ajout-page/demande-de-stage-ajout-page.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
     ValidationErrorComponent,
     TableauBordOffresStageComponent,
     CardCandidatComponent,
+    DemandeDeStageAjoutPageComponent,
   ],
 
   imports: [
