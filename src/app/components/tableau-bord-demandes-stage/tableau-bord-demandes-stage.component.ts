@@ -49,10 +49,12 @@ const ELEMENT_DATA: DemandeDeStage[] = [
 templateUrl: './tableau-bord-demandes-stage.component.html',
 styleUrls: ['./tableau-bord-demandes-stage.component.scss']
 })
+
 export class TableauBordDemandesStageComponent {
   
   displayedColumns: string[] = ['profil', 'etablissement', 'date','actions'];
   dataSource = ELEMENT_DATA;
+<<<<<<< HEAD
   sort: any;
   paginator: any;
   dataSourceDemandeDeStages: any;
@@ -81,4 +83,6 @@ export class TableauBordDemandesStageComponent {
       }
     );
   }
+=======
+>>>>>>> main
 }

@@ -1,0 +1,58 @@
+@import "../../../SCSS/vars";
+
+:host {
+  background-color: $gris-clair;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+}
+
+.btnGroup {
+  width: fit-content;
+  margin-left: auto;
+}
+
+.firstLevelInput {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.details {
+  background-color: $blanc;
+  padding: 5rem;
+  margin-bottom: 2rem;
+}
+
+.programWrapper {
+  width: calc(50% - 2rem);
+}
+
+p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: $rouge;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: $w-large) {
+  .programWrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $w-medium) {
+  .details {
+    padding: 3rem 2rem;
+  }
+  .information {
+    grid-template-columns: 1fr;
+  }
+}

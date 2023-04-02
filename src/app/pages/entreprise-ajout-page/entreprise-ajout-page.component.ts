@@ -50,8 +50,7 @@ export class EntrepriseAjoutPageComponent {
     return null;
   }
 
-  onSubmit() {
-    this.isLoading = true;
+  onSubmit = () => {
     if (this.entrepriseForm.status === 'INVALID') {
       Object.keys(this.entrepriseForm.controls).forEach((key) => {
         const control =
@@ -78,7 +77,7 @@ export class EntrepriseAjoutPageComponent {
         });
     }
     this.isLoading = false;
-  }
+  };
 
   openCandidatAdditionConfirmation(): void {
     const dialogRef = this.dialog.open(DialogConfirmationComponent, {

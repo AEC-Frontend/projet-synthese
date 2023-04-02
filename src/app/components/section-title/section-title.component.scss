@@ -1,0 +1,54 @@
+@import "../../../SCSS/vars";
+
+.sectionTitle {
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  display: flex;
+  flex-direction: column;
+  color: $gris-fonce;
+  padding: 0 1rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2.7rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.8rem;
+  background-color: white;
+  width: fit-content;
+  padding: 1rem;
+  margin: 0;
+}
+
+.rouge {
+  border-left-color: $rouge;
+}
+
+.turquoise {
+  border-left-color: $vert-turquoise;
+}
+
+.bleu {
+  border-left-color: $bleu;
+}
+
+.mauve {
+  border-left-color: $mauve;
+}
+
+.margin-none {
+  margin: 0;
+}
+
+.margin {
+  margin: 1rem 0;
+}

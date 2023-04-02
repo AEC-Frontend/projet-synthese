@@ -1,0 +1,46 @@
+@import "../../../SCSS/vars";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  mat-form-field {
+    width: 75%;
+    transform: translateY(1.375rem);
+  }
+
+  label {
+    transform: translateY(-0.6878rem);
+  }
+}
+
+label {
+  color: $gris-fonce;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.leftBorder {
+  flex-direction: column;
+  border-left: 0.5rem solid $gris-fonce;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 3rem;
+  padding-left: 0.5rem;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  label {
+    transform: none;
+  }
+}
