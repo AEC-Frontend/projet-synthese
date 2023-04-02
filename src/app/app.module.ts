@@ -55,7 +55,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TableauBordOffresStageComponent } from './components/tableau-bord-offres-stage/tableau-bord-offres-stage.component';
 
 import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
-import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
+import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
+import { CardEntrepriseComponent } from './components/card-entreprise/card-entreprise.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
     ValidationErrorComponent,
     TableauBordOffresStageComponent,
     CardCandidatComponent,
+    CardEntrepriseComponent,
   ],
 
   imports: [
