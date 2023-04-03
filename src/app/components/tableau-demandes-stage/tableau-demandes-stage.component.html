@@ -12,7 +12,7 @@
 </div>
 
 <!-- Tableau-->
-<table mat-table #tableOffreStage [dataSource]="dataSourceOffreStage" class="table__border" matSort>
+<table mat-table #tableDemandeStage [dataSource]="dataSourceDemandeStage" class="table__border" matSort>
     
     <!-- Profil Column -->
     <ng-container matColumnDef="poste">
@@ -20,15 +20,15 @@
           <p> Poste </p> 
             <div class="enteteTableauProfil__bordure"></div>
         </th>
-        <td mat-cell *matCellDef="let dataSourceOffreStage">
-            <div [ngClass]="dataSourceOffreStage.published === true ? 'coteTableau__bordure' : 'borderTableInactive'">
+        <td mat-cell *matCellDef="let demandeDeStage">
+            <div [ngClass]="demandeDeStage.paid === true ? 'coteTableau__bordure' : 'borderTableInactive'">
                 <div class="profilColonneElement">
-                    <div [ngClass]="dataSourceOffreStage.published === true ? 'iconBordure' : 'iconBordureInactif'">
-                        <mat-icon>work</mat-icon>
+                    <div  class="iconBordure">
+                        <mat-icon>school</mat-icon>
                     </div>
                     <div class="elementProfil" >
-                        <p  [ngClass]="dataSourceOffreStage.published === true ? 'elementProfilPoste' : 'elementProfilPosteInactif'">{{dataSourceOffreStage.createdAt}}</p>
-                        <p>{{dataSourceOffreStage.createdAt}}</p>
+                        <p class="elementProfilPoste">{{demandeDeStage.titre}}</p>
+                        <p>{{demandeDeStage.additionalInfo}}</p>
                     </div>
                 </div>
             </div> 
@@ -41,9 +41,9 @@
            <p> Secteur d'activité </p>
             <div class="enteteTableauEtablissement__bordure"></div>
         </th>
-        <td mat-cell *matCellDef="let dataSourceOffreStage" > 
+        <td mat-cell *matCellDef="let demandeDeStage" > 
             <div> 
-               <p>{{dataSourceOffreStage.createdAt}} </p> 
+               <p>{{demandeDeStage.requirements}} </p> 
             </div> 
         </td>
     </ng-container>
@@ -54,8 +54,8 @@
           <p> Région </p>
             <div class="enteteTableauDate__bordure"></div>
         </th>
-        <td mat-cell *matCellDef="let dataSourceOffreStage">
-            <p>  {{dataSourceOffreStage.createdAt}} </p>
+        <td mat-cell *matCellDef="let demandeDeStage">
+            <p>  {{demandeDeStage.stageType.label}} </p>
         </td>
     </ng-container>
 
@@ -66,15 +66,15 @@
           <p> Date d'inscripotion </p>
             <div class="enteteTableauDate__bordure"></div>
         </th>
-        <td mat-cell *matCellDef="let dataSourceOffreStage">
-            <p>  {{dataSourceOffreStage.createdAt}} </p>
+        <td mat-cell *matCellDef="let demandeDeStage">
+            <p>  {{demandeDeStage.createdAt}} </p>
         </td>
     </ng-container>
 
     <!-- Actions -->
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-        <td mat-cell *matCellDef="let dataSourceOffreStage">
+        <td mat-cell *matCellDef="let demandeDeStage">
             
                 <div class="tableauIconAction__responsive">
                     <button class="iconVisibilite" aria-label="Visibilite" ><mat-icon>visibility</mat-icon></button>
