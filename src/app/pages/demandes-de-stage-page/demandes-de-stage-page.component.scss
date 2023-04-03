@@ -1,0 +1,200 @@
+@import "../../../SCSS/vars";
+
+
+// ------------------- Tableau ------------------//
+.tableSection{
+    background-color: $blanc;
+    width: 93%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 60px;
+    margin-bottom: 100px;
+}
+
+.containerTable{
+    margin: auto;
+   
+    .mat-table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        display: table;
+        border-collapse: collapse;
+        margin: 0px;
+    }
+
+    .mat-row,
+    .mat-header-row {
+        display: table-row;
+    }
+
+    .mat-cell,
+    .mat-header-cell {
+        word-wrap: initial;
+        display: table-cell;
+        padding: 0px 5px;
+        line-break: unset;
+        width: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+}
+
+p{
+    font-size: 18px;
+}
+
+span {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+
+//Card
+.mat-card{
+    width: 300px;
+}
+
+.tableauBordDonneesDemandesStage__card {
+    background-color: $jaune;
+    color: $gris-clair;
+    border-right: 40px solid $jaune-fonce;
+    width: 30%;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tableauBordDonneesOffresStage__card {
+    background-color: $rouge;
+    color: $gris-clair;
+    border-right: 40px solid $rouge-fonce;
+    width: 30%;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tableauBordDonneesCard__flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tableauBordDonneesCandidatsEntreprises__card {
+    width: 30%;
+    margin: 10px;
+    @extend .tableauBordDonneesCard__flex; 
+}
+
+.tableauBordDonneesCandidats__card {
+    background-color: $mauve;
+    color: $gris-clair;
+    border-radius: 5px 0px 0px 5px;
+    border-right: 20px solid $mauve-fonce;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @extend .tableauBordDonneesCard__flex;
+    width: 50%;
+}
+
+.tableauBordDonneesEntreprises__card {
+    background-color: $bleu;
+    color: #2f466e;
+    border-radius: 0px 5px 5px 0px;
+    border-left: 20px solid $bleu-fonce;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @extend .tableauBordDonneesCard__flex;
+    width: 50%;
+}
+ 
+
+/*------------------------------------------------------------------------------------------------*/
+/* MEDIA QUERIES xxlarge: 1500pxpx */
+@media screen and (max-width: $w-xxlarge) {
+    p{
+        font-size: 16px;
+    }
+ 
+    span {
+        font-size: 20px;
+    }
+
+    .mat-mdc-card-content {
+        padding: 3px;
+    }
+
+    .mat-icon {
+        height: 40px;
+        width: 40px;
+        font-size: 40px;
+    }
+}
+
+/* MEDIA QUERIES xlarge: 1200px;*/
+@media screen and (max-width: $w-xlarge) {
+    p {
+        font-size: 12px;
+    }
+ 
+    span {
+        font-size: 18px;
+    }
+
+    .mat-mdc-card-content {
+        padding: 2px;
+    }
+
+    .mat-icon {
+        height: 25px;
+        width: 25px;
+        font-size: 25px;
+    }
+
+}
+
+/* MEDIA QUERIES large: 992px;*/
+@media screen and (max-width: $w-large) {
+    p{
+        font-size: 18px;
+    }
+ 
+    span {
+        font-size: 28px;
+    }
+
+    %cardSize{
+        width: 100%;
+    }
+
+    .mat-mdc-card-content {
+        padding: 16px;
+    }
+
+    .tableauBordDonneesDemandesStage__card {
+        @extend %cardSize;
+    }
+
+    .tableauBordDonneesOffresStage__card {
+        @extend %cardSize;
+    }
+
+    .tableauBordDonneesCandidatsEntreprises__card {
+        @extend %cardSize;
+    }
+}
+
+/* MEDIA QUERIES $w-medium: 768px;; */
+@media screen and (max-width: $w-medium) {
+    .containerDonneesCards {
+        padding:10px;
+    }
+
+    .tableSection{
+        padding: 30px;
+        margin-bottom: 20px;
+    }
+}
+
