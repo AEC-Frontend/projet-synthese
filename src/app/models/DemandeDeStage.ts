@@ -35,3 +35,23 @@ export type DemandeDeStage = {
   city: string;
   resume: string;
 };
+
+export type DemandeDeStagePost = {
+  title: string;
+  description: string;
+  startDate: string;
+  endDate: string;
+  program: string;
+  requirements: string;
+  stageType: string;
+  hoursPerWeek: number;
+  additionalInfo: string;
+  paid: boolean;
+  published: boolean;
+  active: boolean;
+  region: string;
+  activitySector: string;
+  city: string;
+  resume: string;
+  enterprise: string;
+};
