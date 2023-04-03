@@ -6,18 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./demandes-de-stage-page.component.scss']
 })
 export class DemandesDeStagePageComponent {
-  data = [
-    {
-      title: "Demmande de stage",
-      role: "Développeur Front-End",
-    },
-    {
-      title: "Demmande de stage",
-      role: "Développeur Front-End",
-    },
-    {
-      title: "Demmande de stage",
-      role: "Développeur Front-End",
-    },
-  ];
+  
 }
