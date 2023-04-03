@@ -49,13 +49,12 @@ import { RadioComponent } from './components/radio/radio.component';
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
-
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TableauBordOffresStageComponent } from './components/tableau-bord-offres-stage/tableau-bord-offres-stage.component';
-
 import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
-import {MatGridListModule, MatGridTile} from '@angular/material/grid-list';
+import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
+import { DemandeDeStageAjoutPageComponent } from './pages/demande-de-stage-ajout-page/demande-de-stage-ajout-page.component';
 import { CardEntrepriseComponent } from './components/card-entreprise/card-entreprise.component';
 
 @NgModule({
@@ -87,6 +86,7 @@ import { CardEntrepriseComponent } from './components/card-entreprise/card-entre
     ValidationErrorComponent,
     TableauBordOffresStageComponent,
     CardCandidatComponent,
+    DemandeDeStageAjoutPageComponent,
     CardEntrepriseComponent,
   ],
 
