@@ -1,43 +1,5 @@
 @import "../../../SCSS/vars";
 
-//Header
-h2 {
-    margin-bottom: 0;
-    font-weight: 600;
-    color: $gris-fonce;
-}
-
-span {
-    color: $jaune;
-}
-
-.sousTitre__couleur{
-    color: $titre-inactif;
-}
-
-.entetePlacement {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 100px;
-}
-
-.boutonValidationDemande {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 16px;
-    background-color: #0c9da4;
-    color: white;
-    border-radius: 5px;
-    border: none;
-}
-
-.boutonValidationDemande:hover {
-    background-color: #098389;
-    cursor: pointer;
-}
-
 
 //Tableau
 p {
@@ -73,7 +35,7 @@ th {
     font-size: 25px;
 }
 
-.iconBordure {
+.iconBorder {
     border-radius: 5px;
     border: 1px solid $jaune;
     background-color: $icon-demande-stage-bg;
@@ -81,6 +43,14 @@ th {
     padding: 5px;
     margin-left: 30px;
     margin-right: 10px;
+    &__inactif{
+        border-radius: 5px;
+        padding: 5px;
+        margin-left: 30px;
+        margin-right: 10px;
+        color:$icon-inactif;
+        background-color: $icon-bg-inactif; 
+    }
 }
 
 .table__border{
@@ -107,8 +77,11 @@ th {
     width: 100%;
 }
 
-.coteTableau__bordure {
+.coteTableBorder {
     border-left: 5px solid $jaune;
+    &__inactif{
+        border-left: 5px solid $icon-bg-inactif;
+    }
 }
 
 .profilColonneElement {
@@ -121,9 +94,14 @@ th {
     flex-direction: column;
 }
 
-.elementProfilPoste {
+.elementTitle {
     font-size: 14px;
     font-weight: 600;
+    &__inactif{
+        color: $titre-inactif;
+        font-size: 14px;
+    font-weight: 600;
+    }
 }
 
 .tableauBtnAction__flex {
@@ -137,36 +115,8 @@ th {
     align-items: center;
 }
 
-.tableBtnRefuser {
-    background-color:$btn-refuser-bg;
-    color: $btn-refuser;
-    padding: 3px 10px 3px 10px;
-    margin-right: 10px;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.tableBtnRefuser:hover {
-    background-color:#d7adad;
-    cursor: pointer;
-}
-
-.tableBtnAccepter {
-    background-color:$btn-accepter-bg;
-    color: $btn-accepter;
-    padding: 3px 10px 3px 10px;
-    margin-right: 10px;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.tableBtnAccepter:hover {
-    background-color:#b7d8c5;
-    cursor: pointer;
-}
-
 .tableauIconAction__responsive{
-    display: flex;
+    display: inline-block;
 }
 
 .iconVisibilite {
@@ -199,10 +149,6 @@ th {
     cursor: pointer;
 }
 
-.borderTableInactive {
-    border-left: 5px solid red;
-}
-
 /*------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES large: 992px; */
 @media screen and (max-width: $w-large) {
@@ -210,9 +156,13 @@ th {
         font-size: 13px;
     }
 
-    .iconBordure {
+    .iconBorder {
         margin-left: 10px;
         margin-right: 5px;
+        &__inactif{
+            margin-left: 10px;
+            margin-right: 5px;
+        }
     }
 
     .mat-icon {
@@ -281,10 +231,16 @@ th {
         width: 60%;
     }
 
-    .iconBordure{
+    .iconBorder{
         display: none;
-        mat-icon {
+            mat-icon {
+                display: none;
+            }
+        &__inactif{
             display: none;
+            mat-icon {
+                display: none;
+            }
         }
     }
 
@@ -307,7 +263,7 @@ th {
         border: none;
     }
 
-     .iconBordure{
+     .iconBorder{
         display: none;
         mat-icon {
             display: none;
