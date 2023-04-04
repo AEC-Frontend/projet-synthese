@@ -49,7 +49,7 @@ export class CandidatService {
   ): Observable<{ success: boolean; data?: Candidat }> {
     return this.http.patch<{ success: boolean; data?: Candidat }>(
       `${this.url}/${_id}`,
-      candidat,
+      { input: candidat },
       this.httpOptions
     );
   }

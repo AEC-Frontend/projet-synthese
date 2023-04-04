@@ -39,22 +39,22 @@ export class DemandeDeStageService {
   }
 
   createDemandeDeStage(
-    entreprise: DemandeDeStagePost
+    demandeDeStage: DemandeDeStagePost
   ): Observable<{ success: boolean; data?: DemandeDeStagePost }> {
     return this.http.post<{ success: boolean; data?: DemandeDeStagePost }>(
       this.url,
-      entreprise,
+      { input: demandeDeStage },
       this.httpOptions
     );
   }
 
   updateDemandeDeStage(
-    entreprise: Partial<DemandeDeStage>,
+    demandeDeStage: Partial<DemandeDeStage>,
     _id: string
   ): Observable<{ success: boolean; data?: DemandeDeStage }> {
     return this.http.patch<{ success: boolean; data?: DemandeDeStage }>(
       `${this.url}/${_id}`,
-      entreprise,
+      { input: demandeDeStage },
       this.httpOptions
     );
   }
