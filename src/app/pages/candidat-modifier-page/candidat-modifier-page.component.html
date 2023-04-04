@@ -1,0 +1,61 @@
+<ng-container *ngIf="candidat$ | async as candidat">
+  <app-section-title
+    color="mauve"
+    [title]="candidat.data!.name"
+    subtitle="Candidat"
+    [entreprise]="candidat.data!.jobTitle"
+  ></app-section-title>
+
+  <form [formGroup]="candidatForm">
+    <div class="btnGroup">
+      <app-cancel-button></app-cancel-button>
+      <app-save-button
+        [onSubmit]="onSubmit"
+        color="mauve"
+        label="Mettre à jour"
+      ></app-save-button>
+    </div>
+
+    <div class="details">
+      <app-text-area
+        label="Courte présentation"
+        [biggerLabel]="true"
+        color="mauve"
+        formControlName="description"
+        [formErrorValidation]="
+          getFormControl('description')!.invalid &&
+          (getFormControl('description')!.dirty ||
+            getFormControl('description')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-text-area>
+
+      <p>Informations personnelles</p>
+
+      <div class="informations">
+        <app-input
+          *ngFor="let textField of textFields"
+          [label]="textField.label"
+          [formControlName]="textField.name"
+          [formErrorValidation]="
+            getFormControl(textField.name)!.invalid &&
+            (getFormControl(textField.name)!.dirty ||
+              getFormControl(textField.name)!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-input>
+      </div>
+    </div>
+
+    <div class="btnGroup">
+      <app-cancel-button></app-cancel-button>
+      <app-save-button
+        [onSubmit]="onSubmit"
+        color="mauve"
+        label="Sauvegarder"
+      ></app-save-button>
+    </div>
+  </form>
+</ng-container>
