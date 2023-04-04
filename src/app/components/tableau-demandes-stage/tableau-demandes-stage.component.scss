@@ -1,14 +1,17 @@
 @import "../../../SCSS/vars";
 
 
-//Tableau
+//Table//
 p {
     margin: 0;
+    display: inline-block;
+    padding-right: 5px;
 }
 
 td {
     border-bottom: 1px solid $gris-fonce;
     vertical-align: middle;
+    padding-right: 5px;
 }
 
 th {
@@ -116,7 +119,8 @@ th {
 }
 
 .tableauIconAction__responsive{
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
 }
 
 .iconVisibilite {
@@ -154,6 +158,10 @@ th {
 @media screen and (max-width: $w-large) {
     p{
         font-size: 13px;
+    }
+
+    .dateResponsive{
+        display: none;
     }
 
     .iconBorder {
@@ -226,6 +234,13 @@ th {
         margin-bottom: 50px;
     }
 
+    .coteTableBorder{
+        border: none;
+        &__inactif{
+            border: none;
+        }
+    }
+
     .boutonValidationDemande {
         text-align: center;
         width: 60%;
@@ -259,11 +274,7 @@ th {
         font-size: 13px;
     }
 
-    .coteTableau__bordure{
-        border: none;
-    }
-
-     .iconBorder{
+    .iconBorder{
         display: none;
         mat-icon {
             display: none;

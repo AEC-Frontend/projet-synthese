@@ -6,7 +6,7 @@
     padding: 100px;
 }
 
-//Header
+//Header //
 h2 {
     font-size: 3rem;
     margin-bottom: 0;
@@ -36,7 +36,7 @@ h2 {
     cursor: pointer;
 }
 
-// ------------------- Tableau ------------------//
+// Table //
 .containerTable{
     margin: auto;
     background-color: $blanc;
@@ -47,27 +47,44 @@ h2 {
 
 
 /*------------------------------------------------------------------------------------------------*/
-/* MEDIA QUERIES xxlarge: 1500pxpx */
-@media screen and (max-width: $w-xxlarge) {
-   
-}
-
 /* MEDIA QUERIES xlarge: 1200px;*/
 @media screen and (max-width: $w-xlarge) {
+    .containerTable{
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+    }
    
-
+    .tableSection{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
 
 /* MEDIA QUERIES large: 992px;*/
 @media screen and (max-width: $w-large) {
+    .containerTable{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
   
+    .tableSection{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 /* MEDIA QUERIES $w-medium: 768px;; */
 @media screen and (max-width: $w-medium) {
+    h2{
+        font-size: 2rem;
+    }
+
     .tableSection{
-        padding: 30px;
-        margin-bottom: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
 
