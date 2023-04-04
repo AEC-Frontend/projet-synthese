@@ -57,6 +57,7 @@ import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
 import { DemandeDeStageAjoutPageComponent } from './pages/demande-de-stage-ajout-page/demande-de-stage-ajout-page.component';
 import { CardEntrepriseComponent } from './components/card-entreprise/card-entreprise.component';
 import { TableauDemandesStageComponent } from './components/tableau-demandes-stage/tableau-demandes-stage.component';
+import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/candidat-modifier-page.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { TableauDemandesStageComponent } from './components/tableau-demandes-sta
     DemandeDeStageAjoutPageComponent,
     CardEntrepriseComponent,
     TableauDemandesStageComponent,
+    CandidatModifierPageComponent,
   ],
 
   imports: [

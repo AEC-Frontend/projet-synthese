@@ -75,23 +75,22 @@ export class DemandeDeStageAjoutPageComponent {
     published: [true],
     paid: [false],
     additionalInfo: [''],
-    hoursPerWeek: [
-      parseInt(this.nombreHeuresSemaine[0].value),
-      Validators.required,
-    ],
+    hoursPerWeek: [this.nombreHeuresSemaine[0].value, Validators.required],
     requirements: ['', Validators.required],
     program: ['', Validators.required],
     stageType: [this.typeDeStage[0].value, Validators.required],
     endDate: ['', Validators.required],
     startDate: ['', Validators.required],
     description: ['', Validators.required],
-    title: ['', Validators.required],
+    titre: ['', Validators.required],
     region: ['', Validators.required],
+    // name: ['', Validators.required],
   });
 
   onSubmit = () => {
-    console.log(this.stageForm);
     if (this.stageForm.status === 'INVALID') {
+      this.stageForm;
+
       Object.keys(this.stageForm.controls).forEach((key) => {
         const control =
           this.stageForm.controls[key as keyof typeof this.stageForm.controls];
@@ -106,6 +105,21 @@ export class DemandeDeStageAjoutPageComponent {
       this.offreDeStageService
         .createDemandeDeStage({
           ...this.stageForm.getRawValue(),
+          hoursPerWeek: parseInt(this.stageForm.controls['hoursPerWeek'].value),
+          paid: 'false' ? false : true,
+          region: {
+            value: this.stageForm.controls['region'].value,
+            label: this.regions.find(
+              (region) =>
+                region.value === this.stageForm.controls['region'].value
+            )!.label,
+          },
+          stageType: {
+            value: this.stageForm.controls['stageType'].value,
+            label: this.typeDeStage.find(
+              (tds) => tds.value === this.stageForm.controls['stageType'].value
+            )!.label,
+          },
         })
         .subscribe(() => {
           this.openDemandeDeStageAdditionConfirmation();
@@ -120,18 +134,16 @@ export class DemandeDeStageAjoutPageComponent {
       .subscribe(({ data: entreprises }) => {
         if (entreprises) {
           this.entreprises = entreprises.map((entreprise) => ({
-            value: entreprise.name,
+            value: entreprise._id!,
             label: entreprise.name,
           }));
         }
-
-        console.log(this.entreprises);
       });
   }
 
   openDemandeDeStageAdditionConfirmation(): void {
     const dialogRef = this.dialog.open(DialogConfirmationComponent, {
-      data: { textMessage: "L'entreprise a été ajouté avec succès!" },
+      data: { textMessage: 'La demande de stage a été ajouté avec succès!' },
     });
   }
 

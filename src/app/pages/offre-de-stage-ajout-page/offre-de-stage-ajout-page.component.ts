@@ -46,10 +46,7 @@ export class OffreDeStageAjoutPageComponent {
     published: [true],
     paid: [false],
     additionalInfo: [''],
-    hoursPerWeek: [
-      parseInt(this.nombreHeuresSemaine[0].value),
-      Validators.required,
-    ],
+    hoursPerWeek: [this.nombreHeuresSemaine[0].value, Validators.required],
     stageType: [this.typeDeStage[0].value, Validators.required],
     requirements: ['', Validators.required],
     program: ['', Validators.required],
@@ -76,6 +73,8 @@ export class OffreDeStageAjoutPageComponent {
       this.offreDeStageService
         .createOffreDeStage({
           ...this.stageForm.getRawValue(),
+          hoursPerWeek: parseInt(this.stageForm.controls['hoursPerWeek'].value),
+          paid: 'false' ? false : true,
         })
         .subscribe(() => {
           this.openOffreDeStageAdditionConfirmation();
@@ -90,12 +89,10 @@ export class OffreDeStageAjoutPageComponent {
       .subscribe(({ data: entreprises }) => {
         if (entreprises) {
           this.entreprises = entreprises.map((entreprise) => ({
-            value: entreprise.name,
+            value: entreprise._id!,
             label: entreprise.name,
           }));
         }
-
-        console.log(this.entreprises);
       });
   }
 
