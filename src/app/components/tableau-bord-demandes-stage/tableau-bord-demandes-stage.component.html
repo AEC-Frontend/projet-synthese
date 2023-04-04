@@ -72,9 +72,15 @@
                     <button class="tableBtnAccepter"  aria-label="Supprimer">Accepter</button>
                 </div>
                 <div class="tableauIconAction__responsive">
-                    <button class="iconVisibilite" aria-label="Visibilite" ><mat-icon>visibility</mat-icon></button>
-                    <button class="iconModifier" aria-label="Modifier" ><mat-icon>edit</mat-icon></button>
-                    <button class="iconSupprimer" aria-label="Supprimer" onclick="openDeleteDialog()"><mat-icon>delete</mat-icon></button>
+                    <button class="iconVisibilite" aria-label="Visibilite" routerLink="/demandes-de-stage/:id" >
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                    <button class="iconModifier" aria-label="Modifier" >
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="iconSupprimer" aria-label="Supprimer" onclick="openDeleteDialog()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
                 </div>
             </div>
         </td>
