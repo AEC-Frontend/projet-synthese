@@ -40,7 +40,7 @@ export class EntrepriseService {
   ): Observable<{ success: boolean; data?: Entreprise }> {
     return this.http.post<{ success: boolean; data?: Entreprise }>(
       this.url,
-      entreprise,
+      { input: entreprise },
       this.httpOptions
     );
   }
@@ -51,7 +51,7 @@ export class EntrepriseService {
   ): Observable<{ success: boolean; data?: Entreprise }> {
     return this.http.patch<{ success: boolean; data?: Entreprise }>(
       `${this.url}/${_id}`,
-      entreprise,
+      { input: entreprise },
       this.httpOptions
     );
   }
