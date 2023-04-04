@@ -15,7 +15,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 
 export class TableauDemandesStageComponent  implements OnInit {
-  newforfait: DemandeDeStage[] = [];
+  newdemandedestage: DemandeDeStage[] = [];
   dataSourceDemandeStage: MatTableDataSource<DemandeDeStage> = new MatTableDataSource();
 
   displayedColumns: string[] = [
