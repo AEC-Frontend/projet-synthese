@@ -14,9 +14,9 @@ export class EntrepriseAjoutPageComponent {
 
   textFields: Array<{ name: string; label: string }> = [
     { name: 'address', label: 'Adresse' },
-    { name: 'phone', label: 'Téléphone' },
+    { name: 'contactPhone', label: 'Téléphone' },
     { name: 'city', label: 'Ville' },
-    { name: 'email', label: 'Courriel' },
+    { name: 'contactEmail', label: 'Courriel' },
     { name: 'province', label: 'Province' },
     { name: 'postalCode', label: 'Code Postal' },
   ];
@@ -33,9 +33,9 @@ export class EntrepriseAjoutPageComponent {
     description: ['', Validators.required],
     contactName: ['', Validators.required],
     address: ['', Validators.required],
-    phone: ['', Validators.required],
+    contactPhone: ['', Validators.required],
     city: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
+    contactEmail: ['', [Validators.required, Validators.email]],
     province: ['', Validators.required],
     postalCode: ['', Validators.required],
   });
@@ -68,8 +68,6 @@ export class EntrepriseAjoutPageComponent {
       this.entrepriseService
         .createEntreprise({
           ...this.entrepriseForm.getRawValue(),
-          contactEmail: '',
-          contactPhone: '',
         })
         .subscribe(() => {
           this.openCandidatAdditionConfirmation();

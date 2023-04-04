@@ -66,6 +66,10 @@ p {
   }
 }
 
+.nameWrapper {
+  margin-bottom: 2rem;
+}
+
 @media screen and (max-width: $w-xlarge) {
   .fileInput {
     width: 100%;

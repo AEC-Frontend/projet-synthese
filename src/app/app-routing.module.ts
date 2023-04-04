@@ -45,7 +45,7 @@ const routes: Routes = [
     path: 'candidats',
     children: [
       { path: '', component: CandidatsPageComponent },
-      { path: 'candidats/ajout', component: CandidatAjoutPageComponent },
+      { path: 'ajout', component: CandidatAjoutPageComponent },
     ],
   },
 ];

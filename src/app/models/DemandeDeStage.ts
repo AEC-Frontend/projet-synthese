@@ -37,19 +37,25 @@ export type DemandeDeStage = {
 };
 
 export type DemandeDeStagePost = {
-  title: string;
+  titre: string;
   description: string;
   startDate: string;
   endDate: string;
   program: string;
   requirements: string;
-  stageType: string;
+  stageType: {
+    value: string;
+    label: string;
+  };
   hoursPerWeek: number;
   additionalInfo: string;
   paid: boolean;
   published: boolean;
   active: boolean;
-  region: string;
+  region: {
+    label: string;
+    value: string;
+  };
   activitySector: string;
   city: string;
   resume: string;

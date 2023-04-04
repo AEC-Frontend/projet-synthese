@@ -16,10 +16,10 @@
   <div class="firstLevelInput">
     <app-title-input
       label="Titre"
-      formControlName="title"
+      formControlName="titre"
       [formErrorValidation]="
-        getFormControl('title')!.invalid &&
-        (getFormControl('title')!.dirty || getFormControl('title')!.touched)
+        getFormControl('titre')!.invalid &&
+        (getFormControl('titre')!.dirty || getFormControl('titre')!.touched)
           ? 'Veuillez entrer des données valides'
           : ''
       "
@@ -27,16 +27,18 @@
   </div>
   <div class="details">
     <div class="description">
-      <!-- <app-title-input
-        label="Nom et prénom"
-        formControlName="name"
-        [formErrorValidation]="
-          getFormControl('name')!.invalid &&
-          (getFormControl('name')!.dirty || getFormControl('name')!.touched)
-            ? 'Veuillez entrer des données valides'
-            : ''
-        "
-      ></app-title-input> -->
+      <!-- <div class="nameWrapper">
+        <app-title-input
+          label="Nom et prénom"
+          formControlName="name"
+          [formErrorValidation]="
+            getFormControl('name')!.invalid &&
+            (getFormControl('name')!.dirty || getFormControl('name')!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-title-input>
+      </div> -->
       <app-text-area
         label="Présentation"
         formControlName="description"
