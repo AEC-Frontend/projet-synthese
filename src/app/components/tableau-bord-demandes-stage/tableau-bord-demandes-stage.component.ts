@@ -54,35 +54,4 @@ export class TableauBordDemandesStageComponent {
   
   displayedColumns: string[] = ['profil', 'etablissement', 'date','actions'];
   dataSource = ELEMENT_DATA;
-<<<<<<< HEAD
-  sort: any;
-  paginator: any;
-  dataSourceDemandeDeStages: any;
-
-  constructor(private demandeDeStageService: DemandeDeStageService, private _snackBar: MatSnackBar,  public dialog: MatDialog) { }
-  
-  ngOnInit(): void {
-    this.getDemandeDeStages();
-  }
-
-  getDemandeDeStages(){
-    this.demandeDeStageService.getDemandeDeStages().subscribe(
-      resultat => {
-        console.log(resultat);
-        this.dataSourceDemandeDeStages = new MatTableDataSource();
-        this.dataSourceDemandeDeStages.paginator = this.paginator;
-        this.dataSourceDemandeDeStages.sort = this.sort;
-      }
-    );
-  }
-
-  deleteDemandeDeStage(_id: string) { 
-    this.demandeDeStageService.deleteDemandeDeStage(_id).subscribe(
-      _ => {
-        this.getDemandeDeStages();
-      }
-    );
-  }
-=======
->>>>>>> main
 }
