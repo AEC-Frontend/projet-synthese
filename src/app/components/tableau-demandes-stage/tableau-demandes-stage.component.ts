@@ -7,6 +7,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confirmation.component';
+import { DialogConfirmationDeleteComponent } from '../dialog-confirmation-delete/dialog-confirmation-delete.component';
 
 @Component({
   selector: 'app-tableau-demandes-stage',
@@ -81,12 +83,15 @@ export class TableauDemandesStageComponent  implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) tableDemandeDeStages!: MatTable<DemandeDeStage>;
 
-  constructor(private demandeDeStageService: DemandeDeStageService, private _snackBar: MatSnackBar,  public dialog: MatDialog) { }
+  constructor(
+    private demandeDeStageService: DemandeDeStageService, 
+    private _snackBar: MatSnackBar,  
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.getDemandeDeStages();
   }
-
   
   getDemandeDeStages() { 
     this.demandeDeStageService.getDemandeDeStages().subscribe(
@@ -99,6 +104,26 @@ export class TableauDemandesStageComponent  implements OnInit {
       }
     );
   }
+
+  
+  openDialog(demandeDeStage?: DemandeDeStage) { 
+    //console.log(demandeDeStage);
+    const dialogRef = this.dialog.open(DialogConfirmationDeleteComponent, {
+      data: {
+        id: demandeDeStage?._id
+      },
+      });
+    
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Les données ont été supprimée');
+      this._snackBar.open(result, undefined, {
+        duration: 2000
+      });
+      this.getDemandeDeStages();
+    });
+  }
+
+  
 }
 
 

@@ -1,0 +1,15 @@
+@import "../../../SCSS/vars";
+
+mat-dialog-content{
+    padding: 100px;
+}
+
+.btnContainer {
+  width: 100%;
+  justify-content: center;
+
+  button {
+    background-color: $mauve-fonce;
+    color: #fff;
+  }
+}

@@ -88,7 +88,7 @@
                 <button class="iconModifier" aria-label="Modifier" routerLink="/demandes-de-stage/:id/edition" >
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button class="iconSupprimer" aria-label="Supprimer">
+                <button class="iconSupprimer" aria-label="Supprimer" (click)="openDialog(demandeDeStage)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>
