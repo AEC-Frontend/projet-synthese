@@ -6,7 +6,7 @@
             En attente de validation
         </p>
     </div>
-    <button type="button" class="boutonValidationDemande" >
+    <button type="button" class="boutonValidationDemande" (click)="activesClick()" >
         Valider toutes les demandes
     </button>
 </div>
@@ -69,7 +69,7 @@
             <div class="tableauBtnAction__flex">
                 <div class="tableauBtnAction__responsive">
                     <button class="tableBtnRefuser" aria-label="Modifier">Refuser</button>
-                    <button class="tableBtnAccepter"  aria-label="Supprimer">Accepter</button>
+                    <button class="tableBtnAccepter"  aria-label="Supprimer" >Accepter</button>
                 </div>
                 <div class="tableauIconAction__responsive">
                     <button class="iconVisibilite" aria-label="Visibilite" ><mat-icon>visibility</mat-icon></button>

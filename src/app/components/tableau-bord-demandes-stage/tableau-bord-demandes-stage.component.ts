@@ -100,7 +100,7 @@ export class TableauBordDemandesStageComponent {
         var result: DemandeDeStage[] = [];
         var demandeDeStages = ((resultat.success && resultat.data !== undefined) ? resultat.data : []);
         demandeDeStages.forEach(function(demandeDeStage: DemandeDeStage){
-          if(!demandeDeStage.published){
+          if(!demandeDeStage.active){
             result.push(demandeDeStage);
           }
         });
@@ -113,5 +113,21 @@ export class TableauBordDemandesStageComponent {
     );
   }
 
-  
+  activesClick() {
+    var demandeDeStages: DemandeDeStage[] = this.dataSourceDemandeStage.data;
+    this.demandeDeStageService;
+    demandeDeStages.forEach((demandeDeStage: DemandeDeStage) => {
+      demandeDeStage.active = true;
+      let demandeDeStagePartial: Partial<DemandeDeStage> = {
+        active: true
+      }
+      console.log(demandeDeStage._id);
+
+      this.demandeDeStageService.updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id).subscribe(
+        _ => {
+         this.getDemandeDeStages();
+        }
+      );
+    });
+  }
 }
