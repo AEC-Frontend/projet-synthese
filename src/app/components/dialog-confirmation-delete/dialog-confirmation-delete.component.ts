@@ -28,7 +28,7 @@ export class DialogConfirmationDeleteComponent  implements OnInit {
 
     this.demandeDeStageService.deleteDemandeDeStage(this.data.id).subscribe(
       _ => {
-        this.dialogRef.close("La suppession est réussie ");
+        this.dialogRef.close("La suppession est réussie");
       }
     );
   }

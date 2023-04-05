@@ -6,10 +6,31 @@ mat-dialog-content{
 
 .btnContainer {
   width: 100%;
+  display: flex;
   justify-content: center;
-
-  button {
-    background-color: $mauve-fonce;
-    color: #fff;
-  }
 }
+
+.deleteButton{
+  background-color: $btn-refuser;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+      background-color: $rouge-fonce;
+    }
+}
+
+.returnButton{
+  background-color: $mauve;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+      background-color: $mauve-fonce;
+    }
+}
+
