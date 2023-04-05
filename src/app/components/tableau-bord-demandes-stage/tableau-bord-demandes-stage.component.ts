@@ -8,8 +8,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confirmation.component';
-
 
 @Component({
   selector: 'app-tableau-bord-demandes-stage',
@@ -18,7 +16,7 @@ styleUrls: ['./tableau-bord-demandes-stage.component.scss']
 })
 
 export class TableauBordDemandesStageComponent {
-  newdemandedestage: DemandeDeStage[] = [];
+  newDemandedestage: DemandeDeStage[] = [];
   dataSourceDemandeStage: MatTableDataSource<DemandeDeStage> = new MatTableDataSource();
 
   displayedColumns: string[] = [
@@ -28,7 +26,7 @@ export class TableauBordDemandesStageComponent {
     'actions'
   ];
 
-    newDemandeDeStage : DemandeDeStage = {
+    newdemandeDeStage : DemandeDeStage = {
       _id:'',
       createdAt: '',
       updatedAt: '',

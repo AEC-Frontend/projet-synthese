@@ -1,21 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 
-export interface PeriodicElement {
-  poste: string;
-  nom: string;
-  ville: string;
-  date: string;
-}
+import { OffreDeStage } from 'src/app/models';
+import { OffreDeStageService } from 'src/app/services/offre-de-stage/offre-de-stage.service';
 
+import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { poste: 'Intégrateur Web',nom: 'Acolyte communication' , ville: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  { poste: 'Intégrateur Web',nom: 'Acolyte communication' , ville: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  { poste: 'Intégrateur Web',nom: 'Acolyte communication' , ville: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  { poste: 'Intégrateur Web',nom: 'Acolyte communication' , ville: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  { poste: 'Intégrateur Web',nom: 'Acolyte communication' , ville: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  
-];
 
 @Component({
   selector: 'app-tableau-bord-offres-stage',
@@ -24,6 +17,87 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class TableauBordOffresStageComponent {
-  displayedColumns: string[] = ['poste', 'ville', 'date','actions'];
-  dataSource = ELEMENT_DATA;
+  newOffreDeStage: OffreDeStage[] = [];
+  dataSourceOffreDeStage: MatTableDataSource<OffreDeStage> = new MatTableDataSource();
+
+  displayedColumns: string[] = [
+    'poste', 
+    'ville', 
+    'date',
+    'actions'
+  ];
+
+  newoffreDeStage : OffreDeStage = {
+      _id:'',
+      createdAt: '',
+      updatedAt: '',
+      title: '',
+      description: '',
+      enterprise: {
+        _id: '',
+        createdAt: '',
+        updatedAt: '',
+        name: '',
+        description: '',
+        imageUrl: '',
+        contactName: '',
+        contactEmail: '',
+        contactPhone: '',
+        address: '',
+        city: '',
+        province: '',
+        postalCode: '',
+        published: true,
+      },
+      startDate: '',
+      endDate: '',
+      program: '',
+      requirements: '',
+      stageType: '',
+      hoursPerWeek: 0,
+      additionalInfo: '',
+      paid: true,
+      published: true,
+      active: true
+    };
+
+    
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatTable) tableOffreDeStage!: MatTable<OffreDeStage>;
+
+  constructor(
+    private offreDeStageService: OffreDeStageService, 
+    private _snackBar: MatSnackBar,  
+    public dialog: MatDialog
+  ) {}
+
+  ngOnInit(): void {
+    this.getOffreDeStages();
+  }
+  
+  getOffreDeStages() { 
+    this.offreDeStageService.getOffreDeStages().subscribe(
+      resultat => {
+        console.log(resultat);
+
+        var result: OffreDeStage[] = [];
+        var offreDeStages = ((resultat.success && resultat.data !== undefined) ? resultat.data : []);
+        offreDeStages.forEach(function(offreDeStage: OffreDeStage){
+          if(!offreDeStage.published){
+            result.push(offreDeStage);
+          }
+        });
+
+        this.dataSourceOffreDeStage = new MatTableDataSource(result);
+        this.dataSourceOffreDeStage.paginator = this.paginator;
+        this.dataSourceOffreDeStage.sort = this.sort;
+        this.tableOffreDeStage.renderRows();
+      }
+    );
+  }
+
+
+  
+
 }
