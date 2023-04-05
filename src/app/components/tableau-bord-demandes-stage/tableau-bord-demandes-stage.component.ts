@@ -1,20 +1,15 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit  } from '@angular/core';
 
-export interface PeriodicElement {
-  profil: string;
-  nom: string;
-  etablissement: string;
-  date: string;
-}
+import { DemandeDeStage } from 'src/app/models';
+import { DemandeDeStageService } from 'src/app/services/demande-de-stage/demande-de-stage.service';
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  { profil: 'Intégrateur Web',nom: 'Jean-Sébastien Tremblay' , etablissement: 'Cégep de Trois-Rivières', date: '2022-03-03'},
-  
-];
+import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogConfirmationComponent } from '../dialog-confirmation/dialog-confirmation.component';
+
 
 @Component({
   selector: 'app-tableau-bord-demandes-stage',
@@ -23,6 +18,102 @@ styleUrls: ['./tableau-bord-demandes-stage.component.scss']
 })
 
 export class TableauBordDemandesStageComponent {
-  displayedColumns: string[] = ['profil', 'etablissement', 'date','actions'];
-  dataSource = ELEMENT_DATA;
+  newdemandedestage: DemandeDeStage[] = [];
+  dataSourceDemandeStage: MatTableDataSource<DemandeDeStage> = new MatTableDataSource();
+
+  displayedColumns: string[] = [
+    'profil', 
+    'etablissement', 
+    'date',
+    'actions'
+  ];
+
+    newDemandeDeStage : DemandeDeStage = {
+      _id:'',
+      createdAt: '',
+      updatedAt: '',
+      titre: '',
+      description: '',
+      startDate: '',
+      enterprise: {
+        _id: '',
+        createdAt: '',
+        updatedAt: '',
+        name: '',
+        description: '',
+        imageUrl: '',
+        contactName: '',
+        contactEmail: '',
+        contactPhone: '',
+        address: '',
+        city: '',
+        province: '',
+        postalCode: '',
+        published: true,
+      },
+      endDate: '',
+      program: '',
+      requirements: '',
+      stageType: {
+        __typename: '',
+        label: '',
+        value: '',
+      },
+      hoursPerWeek: 0,
+      additionalInfo: '',
+      paid: true,
+      published: true,
+      skills: {
+        __typename: '',
+        label: '',
+        value: '',
+      },
+      active: true,
+      region: {
+        __typename: '',
+        label: '',
+        value: '',
+      },
+      activitySector: '',
+      city: '',
+      resume: ''
+    };
+
+    
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatTable) tableDemandeDeStages!: MatTable<DemandeDeStage>;
+
+  constructor(
+    private demandeDeStageService: DemandeDeStageService, 
+    private _snackBar: MatSnackBar,  
+    public dialog: MatDialog
+  ) {}
+
+  ngOnInit(): void {
+    this.getDemandeDeStages();
+  }
+  
+  getDemandeDeStages() { 
+    this.demandeDeStageService.getDemandeDeStages().subscribe(
+      resultat => {
+        console.log(resultat);
+
+        var result: DemandeDeStage[] = [];
+        var demandeDeStages = ((resultat.success && resultat.data !== undefined) ? resultat.data : []);
+        demandeDeStages.forEach(function(demandeDeStage: DemandeDeStage){
+          if(!demandeDeStage.published){
+            result.push(demandeDeStage);
+          }
+        });
+
+        this.dataSourceDemandeStage = new MatTableDataSource(result);
+        this.dataSourceDemandeStage.paginator = this.paginator;
+        this.dataSourceDemandeStage.sort = this.sort;
+        this.tableDemandeDeStages.renderRows();
+      }
+    );
+  }
+
+  
 }
