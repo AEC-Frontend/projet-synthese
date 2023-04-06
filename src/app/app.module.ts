@@ -30,6 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component';
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-link.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
@@ -56,7 +57,9 @@ import { CardCandidatComponent } from './components/card-candidat/card-candidat.
 import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
 import { DemandeDeStageAjoutPageComponent } from './pages/demande-de-stage-ajout-page/demande-de-stage-ajout-page.component';
 import { CardEntrepriseComponent } from './components/card-entreprise/card-entreprise.component';
+import { TableauDemandesStageComponent } from './components/tableau-demandes-stage/tableau-demandes-stage.component';
 import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/candidat-modifier-page.component';
+import { DialogConfirmationDeleteComponent } from './components/dialog-confirmation-delete/dialog-confirmation-delete.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +92,9 @@ import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/ca
     CardCandidatComponent,
     DemandeDeStageAjoutPageComponent,
     CardEntrepriseComponent,
+    TableauDemandesStageComponent,
     CandidatModifierPageComponent,
+    DialogConfirmationDeleteComponent
   ],
 
   imports: [

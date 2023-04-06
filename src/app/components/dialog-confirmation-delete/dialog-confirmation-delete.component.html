@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+   <p>Souhaitez vous réelement supprimer cet élément ? </p>
+</div>
+
+<div mat-dialog-actions class="btnContainer">
+    <button class="deleteButton" aria-label="Supprimer" (click)="deleteConfirmation()">
+        Supprimer
+    </button>
+    <button class="returnButton" routerLink="/tableau-de-bord" mat-dialog-close>
+        Retourner au tableau de bord
+    </button>
+</div>

@@ -1,0 +1,36 @@
+@import "../../../SCSS/vars";
+
+mat-dialog-content{
+    padding: 100px;
+}
+
+.btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.deleteButton{
+  background-color: $btn-refuser;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+      background-color: $rouge-fonce;
+    }
+}
+
+.returnButton{
+  background-color: $mauve;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+      background-color: $mauve-fonce;
+    }
+}
+
