@@ -1,1 +1,104 @@
-<p>entreprise-modifier-page works!</p>
+<ng-container *ngIf="entreprise$ | async as entreprise">
+  <div class="titleWrapper">
+    <img
+      [src]="entreprise.data?.imageUrl || 'src/assets/img/logoEntreprise.jpg'"
+      alt="Logo de l'entreprise"
+    />
+    <app-section-title
+      color="bleu"
+      title="Ajouter une entreprise"
+    ></app-section-title>
+  </div>
+
+  <form [formGroup]="entrepriseForm">
+    <div class="btnGroup">
+      <app-cancel-button></app-cancel-button>
+      <app-save-button
+        [onSubmit]="onSubmit"
+        color="bleu"
+        label="Sauvegarder"
+      ></app-save-button>
+    </div>
+
+    <div class="firstLevelInput">
+      <app-title-input
+        label="Entreprise"
+        formControlName="name"
+        [formErrorValidation]="
+          getFormControl('name')!.invalid &&
+          (getFormControl('name')!.dirty || getFormControl('name')!.touched)
+            ? 'Veuillez entrer des données valide'
+            : ''
+        "
+      ></app-title-input>
+      <app-title-input
+        label="Logo"
+        formControlName="imageUrl"
+        [formErrorValidation]="
+          getFormControl('imageUrl')!.invalid &&
+          (getFormControl('imageUrl')!.dirty ||
+            getFormControl('imageUrl')!.touched)
+            ? 'Veuillez entrer des données valide'
+            : ''
+        "
+        placeholder="URL. EX: https://domain-name.com"
+      ></app-title-input>
+    </div>
+
+    <div class="details">
+      <app-text-area
+        label="Courte présentation"
+        [biggerLabel]="true"
+        color="bleu"
+        formControlName="description"
+        [formErrorValidation]="
+          getFormControl('description')!.invalid &&
+          (getFormControl('description')!.dirty ||
+            getFormControl('description')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-text-area>
+
+      <div class="contactName">
+        <app-input
+          label="Personne contact"
+          formControlName="contactName"
+          [formErrorValidation]="
+            getFormControl('contactName')!.invalid &&
+            (getFormControl('contactName')!.dirty ||
+              getFormControl('contactName')!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-input>
+      </div>
+
+      <p>Informations de contact</p>
+
+      <div class="informations">
+        <app-input
+          *ngFor="let textField of textFields"
+          [label]="textField.label"
+          [formControlName]="textField.name"
+          [formErrorValidation]="
+            getFormControl(textField.name)!.invalid &&
+            (getFormControl(textField.name)!.dirty ||
+              getFormControl(textField.name)!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-input>
+      </div>
+    </div>
+
+    <div class="btnGroup">
+      <app-cancel-button></app-cancel-button>
+      <app-save-button
+        [onSubmit]="onSubmit"
+        color="bleu"
+        label="Sauvegarder"
+      ></app-save-button>
+    </div>
+  </form>
+</ng-container>
