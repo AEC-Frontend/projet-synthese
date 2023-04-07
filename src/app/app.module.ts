@@ -64,6 +64,8 @@ import { DialogConfirmationDeleteComponent } from './components/dialog-confirmat
 import { EntrepriseDetailleeComponent } from './pages/entreprise-detaillee/entreprise-detaillee.component';
 import { InfoFieldComponent } from './components/info-field/info-field.component';
 import { TableauOffreStageComponent } from './components/tableau-offre-stage/tableau-offre-stage.component';
+import { EntrepriseModifierPageComponent } from './pages/entreprise-modifier-page/entreprise-modifier-page.component';
+import { OffreDeStageModifierPageComponent } from './pages/offre-de-stage-modifier-page/offre-de-stage-modifier-page.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +105,8 @@ import { TableauOffreStageComponent } from './components/tableau-offre-stage/tab
     EntrepriseDetailleeComponent,
     InfoFieldComponent,
     TableauOffreStageComponent,
+    EntrepriseModifierPageComponent,
+    OffreDeStageModifierPageComponent,
   ],
 
   imports: [

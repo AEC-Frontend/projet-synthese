@@ -5,6 +5,13 @@ import { DialogConfirmationComponent } from 'src/app/components/dialog-confirmat
 import { EntrepriseService } from 'src/app/services/entreprise/entreprise.service';
 import { DemandeDeStageService } from 'src/app/services/demande-de-stage/demande-de-stage.service';
 import { TSelectOption } from 'src/app/types/TSelectOption';
+import {
+  ACTIVITY_SECTOR,
+  NOMBRE_HEURES_SEMAINE,
+  REGIONS,
+  RENUMERATION,
+  TYPE_DE_STAGE,
+} from 'src/constants';
 
 @Component({
   selector: 'app-demande-de-stage-ajout-page',
@@ -13,51 +20,11 @@ import { TSelectOption } from 'src/app/types/TSelectOption';
 })
 export class DemandeDeStageAjoutPageComponent {
   entreprises: Array<{ value: string; label: string }> = [];
-  typeDeStage: TSelectOption[] = [
-    { value: 'TEMPS_PARTIEL', label: 'Temps partiel' },
-    { value: 'TEMPS_PLEIN', label: 'Temps plein' },
-  ];
-  nombreHeuresSemaine: TSelectOption[] = [
-    { value: '5', label: '5 heures' },
-    { value: '10', label: '10 heures' },
-    { value: '15', label: '15 heures' },
-    { value: '20', label: '20 heures' },
-    { value: '25', label: '25 heures' },
-    { value: '30', label: '30 heures' },
-    { value: '35', label: '35 heures' },
-  ];
-  renumeration: TSelectOption[] = [
-    { value: 'false', label: 'À discuter' },
-    { value: 'true', label: 'Stage rémunéré' },
-    { value: 'false', label: 'Stage non rémunéré' },
-  ];
-  activitySector: TSelectOption[] = [
-    { value: 'sante', label: 'Santé' },
-    { value: 'science', label: 'Science' },
-    { value: 'construction', label: 'Construction' },
-    { value: 'restauration', label: 'Restauration' },
-    { value: 'commerce_de_detail', label: 'Commerce de détail' },
-    { value: 'informatique', label: 'Informatique' },
-  ];
-  regions: TSelectOption[] = [
-    { value: 'BAS_ST_LAURENT', label: 'Bas-St-Laurent' },
-    { value: 'GASPESIE', label: 'Gaspésie-Iles-de-la-Madeleine' },
-    { value: 'SAGUENAY_LAC_ST_JEAN', label: 'Saguenay-Lac-St-Jean' },
-    { value: 'NORD-DU-QUEBEC', label: 'Nord-du-Québec' },
-    { value: 'BAS_ST_LAURENT', label: 'Bas-St-Laurent' },
-    { value: 'CHAUDIERE_APPALACHES', label: 'Chaudière-Appalaches' },
-    { value: 'MAURICIE', label: 'Mauricie' },
-    { value: 'CENTRE_DU_QUEBEC', label: 'Centre-du-Québec' },
-    { value: 'ESTRIE', label: 'Estrie' },
-    { value: 'MONTREAL', label: 'Montréal' },
-    { value: 'LAVAL', label: 'Laval' },
-    { value: 'LANAUDIERE', label: 'Lanaudière' },
-    { value: 'LAURENTIDES', label: 'Laurentides' },
-    { value: 'MONTEREGIE', label: 'Montérégie' },
-    { value: 'OUTAOUAIS', label: 'Outaouais' },
-    { value: 'ABITIBI_TEMISCAMINGQUE', label: 'Abitibi-Témiscamingue' },
-    { value: 'COTE_NORD', label: 'Côte-Nord' },
-  ];
+  typeDeStage = TYPE_DE_STAGE;
+  nombreHeuresSemaine = NOMBRE_HEURES_SEMAINE;
+  renumeration = RENUMERATION;
+  activitySector = ACTIVITY_SECTOR;
+  regions = REGIONS;
 
   constructor(
     private formBuilder: FormBuilder,

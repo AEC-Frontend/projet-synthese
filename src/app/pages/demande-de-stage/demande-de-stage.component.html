@@ -1,116 +1,41 @@
-<div class="container">
-  <div class="title">
-    <p>Demmande de stage</p>
-    <h1>Développeur Front-End</h1>
-  </div>
+<div class="container" *ngIf="demandeDeStage">
+  <app-section-title
+    [title]="demandeDeStage.titre"
+    subtitle="Demande de stage"
+    color="jaune"
+  ></app-section-title>
 
   <div class="icons">
-    <a href=""><mat-icon class="check-icon">check</mat-icon></a>
-    <a href=""><mat-icon class="edit-icon">edit</mat-icon></a>
-    <a href=""><mat-icon class="close-icon">close</mat-icon></a>
+    <button type="button"><mat-icon class="check-icon">check</mat-icon></button>
+    <a routerLink="edition"><mat-icon class="edit-icon">edit</mat-icon></a>
+    <button type="button"><mat-icon class="close-icon">close</mat-icon></button>
   </div>
   <div class="card-container">
     <mat-card class="mat-card">
-      <h2>Kevin Labonté</h2>
+      <h2>{{ demandeDeStage._id }}</h2>
       <p class="description-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-        amet quam justo. Aliquam interdum facilisis eros, ut dapibus quam
-        hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis
-        tortor quis pharetra. Nulla dictum erat id nisl pulvinar, ac aliquam
-        lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus
-        ut ante efficitur, venenatis purus sit amet, condimentum leo.
-        Pellentesque nulla sem, consectetur.
-        <br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-        amet quam justo. Aliquam interdum facilisis eros, ut dapibus quam
-        hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis
-        tortor quis pharetra. Nulla dictum erat id nisl pulvinar, ac aliquam
-        lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus
-        ut ante efficitur.
+        {{ demandeDeStage.description }}
       </p>
       <div class="main-container">
-        <div class="inner-div">
-          <p>Programme de formation</p>
-          <h1>Développement web</h1>
-        </div>
-
-        <div class="inner-div-right">
-          <div class="inner-div">
-            <p>Établisement d'enseignement</p>
-            <h1>Cégep de Trois-rivières</h1>
-          </div>
-        </div>
+        <app-info-field
+          *ngFor="let requirment of requirments"
+          [label]="requirment.label"
+          [info]="getDemandeDeStageLabel(requirment.field)"
+        ></app-info-field>
       </div>
-      <div class="main-container">
-        <div class="inner-div">
-          <p>secteur d'activité</p>
-          <h1>Nouvelles technologies de l'information</h1>
-        </div>
-        <div class="inner-div-right">
-          <div class="inner-div">
-            <p>Ville</p>
-            <h1>Trois-rivières</h1>
-          </div>
-        </div>
-      </div>
-      <div class="main-container">
-        <div class="inner-div">
-          <p>Competences</p>
-          <h1>HTML, CSS, JavaScript, React, Vue js, GIT, PHP, MySQL</h1>
-        </div>
-
-        <div class="inner-div-right">
-          <div class="inner-div">
-            <p>Région</p>
-            <h1>Mauricie</h1>
-          </div>
-        </div>
-      </div>
-
       <h3 class="section-title">Informations sur le stage recherché</h3>
 
       <div class="main-container">
-        <div>
-          <div class="inner-div">
-            <p>Type de stage</p>
-            <h1>Temps plein</h1>
-          </div>
-        </div>
-        <div class="inner-div-right">
-          <div class="inner-div">
-            <p>Date de début</p>
-            <h1>2022-05-29</h1>
-          </div>
-        </div>
-      </div>
-      <div class="main-container">
-        <div class="inner-div">
-          <p>Nombre d'heures par semaine</p>
-          <h1>25 heures par semaine</h1>
-        </div>
-
-        <div class="inner-div-right">
-          <div class="inner-div">
-            <p>Date de fin</p>
-            <h1>2022-09-01</h1>
-          </div>
-        </div>
-      </div>
-      <div class="main-container">
-        <div class="inner-div">
-          <p>Rémuneration</p>
-          <h1>À la discretion de l'entreprise</h1>
-        </div>
+        <app-info-field
+          *ngFor="let info of stageInfo"
+          [label]="info.label"
+          [info]="getDemandeDeStageLabel(info.field)"
+        ></app-info-field>
       </div>
 
       <h3 class="section-title">Informations suplémentaires</h3>
       <p class="description-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-        amet quam justo. Aliquam interdum facilisis eros, ut dapibus quam
-        hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis
-        tortor quis pharetra. Nulla dictum erat id nisl pulvinar, ac aliquam
-        lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus
-        ut ante efficitur.
+        {{ demandeDeStage.additionalInfo }}
       </p>
       <div class="button-outer">
         <a href="" class="download-button"
