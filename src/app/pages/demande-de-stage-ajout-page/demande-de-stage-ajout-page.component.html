@@ -63,9 +63,12 @@
               : ''
           "
         ></app-input>
-        <app-input
+        <app-select
           label="Établissement scolaire"
-          formControlName="enterprise"
+          [formGroup]="stageForm"
+          [options]="entreprises"
+          controlName="enterprise"
+          [hasLeftBorder]="true"
           [formErrorValidation]="
             getFormControl('enterprise')!.invalid &&
             (getFormControl('enterprise')!.dirty ||
@@ -73,7 +76,7 @@
               ? 'Veuillez entrer des données valides'
               : ''
           "
-        ></app-input>
+        ></app-select>
         <app-select
           label="Secteur d'activité"
           [options]="activitySector"
