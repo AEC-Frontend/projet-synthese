@@ -1,0 +1,77 @@
+@import "../../../SCSS/vars";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  background-color: $gris-clair;
+}
+
+.buttonGroup {
+  margin-left: auto;
+
+  button {
+    cursor: pointer;
+  }
+
+  .check-icon {
+    color: $btn-accepter;
+  }
+
+  .edit-icon {
+    color: $gris-fonce;
+  }
+
+  .close-icon {
+    color: $btn-refuser;
+  }
+}
+
+.details {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  row-gap: 2rem;
+  color: $gris-fonce;
+}
+
+.label {
+  color: $mauve;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.presentationLabel {
+  @extend .label;
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+@media screen and (max-width: $w-large) {
+  .details {
+    padding: 3rem;
+  }
+}
+
+@media screen and (max-width: $w-medium) {
+  .information {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: $w-small) {
+  :host {
+    padding: 2rem;
+  }
+  .label {
+    font-size: 1.2rem;
+  }
+}
