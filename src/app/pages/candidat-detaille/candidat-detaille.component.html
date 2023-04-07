@@ -1,0 +1,35 @@
+<ng-container *ngIf="candidat">
+  <app-section-title
+    subtitle="Entreprise"
+    [title]="candidat.name"
+    [entreprise]="candidat.jobTitle"
+  ></app-section-title>
+
+  <div class="buttonGroup">
+    <button type="button" (click)="handlePublish()">
+      <mat-icon class="check-icon">check</mat-icon>
+    </button>
+    <a routerLink="edition"><mat-icon class="edit-icon">edit</mat-icon></a>
+    <button type="button" (click)="handleDontPublish()">
+      <mat-icon class="close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="details">
+    <div>
+      <p class="presentationLabel">Courte présentation</p>
+      <p class="presentation">{{ candidat.description }}</p>
+    </div>
+
+    <div>
+      <p class="label">Informations personnelles</p>
+      <div class="information">
+        <app-info-field
+          *ngFor="let field of informations"
+          [label]="field.label"
+          [info]="valueToString(candidat[field.field])"
+        ></app-info-field>
+      </div>
+    </div>
+  </div>
+</ng-container>

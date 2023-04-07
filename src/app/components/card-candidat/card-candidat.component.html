@@ -1,7 +1,7 @@
 <!--- Cartes de candidats --->
 <a
   *ngFor="let candidat of candidats"
-  [routerLink]="['/candidats', candidat._id, 'edition']"
+  [routerLink]="['/candidats', candidat._id]"
 >
   <mat-card class="candidatCard">
     <mat-icon>person</mat-icon>

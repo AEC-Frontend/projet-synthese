@@ -17,6 +17,7 @@ import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/ca
 import { EntrepriseDetailleeComponent } from './pages/entreprise-detaillee/entreprise-detaillee.component';
 import { EntrepriseModifierPageComponent } from './pages/entreprise-modifier-page/entreprise-modifier-page.component';
 import { OffreDeStageModifierPageComponent } from './pages/offre-de-stage-modifier-page/offre-de-stage-modifier-page.component';
+import { CandidatDetailleComponent } from './pages/candidat-detaille/candidat-detaille.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'page-login', pathMatch: 'full' },
@@ -69,7 +70,13 @@ const routes: Routes = [
     children: [
       { path: '', component: CandidatsPageComponent },
       { path: 'ajout', component: CandidatAjoutPageComponent },
-      { path: ':id/edition', component: CandidatModifierPageComponent },
+      {
+        path: ':id',
+        children: [
+          { path: '', component: CandidatDetailleComponent },
+          { path: 'edition', component: CandidatModifierPageComponent },
+        ],
+      },
     ],
   },
 ];
