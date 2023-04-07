@@ -1,0 +1,316 @@
+@import "../../../SCSS/vars";
+
+
+//Table//
+p {
+    margin: 0;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+td {
+    border-bottom: 1px solid $gris-fonce;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+th {
+    border: none;
+}
+
+.mdc-data-table__header-cell {
+    padding: 0px;
+}
+
+.mat-mdc-table .mdc-data-table__header-row {
+    height: 0px;
+}
+  
+.mat-mdc-table .mdc-data-table__row {
+    height: 70px;
+}
+  
+.mdc-data-table__cell, .mdc-data-table__header-cell {
+    padding: 0px;
+}
+ 
+.mat-icon {
+    font-size: 25px;
+}
+
+.iconBorder {
+    border-radius: 5px;
+    border: 1px solid $rouge;
+    background-color: $icon-offre-stage-bg;
+    color: $icon-offre-stage;
+    padding: 5px;
+    margin-left: 30px;
+    margin-right: 10px;
+    &__inactif{
+        border-radius: 5px;
+        padding: 5px;
+        margin-left: 30px;
+        margin-right: 10px;
+        color:$icon-inactif;
+        background-color: $icon-bg-inactif; 
+    }
+}
+
+.table__border{
+    border: none;
+}
+
+.enteteTableauProfil__bordure {
+    border: 3px solid $gris-fonce;
+    width: 90%;
+}
+
+.enteteTableauEtablissement__bordure {
+    border: 3px solid $gris-fonce;
+    width: 80%;
+}
+
+.enteteTableauDate__bordure {
+    border: 3px solid $gris-fonce;
+    width: 70%;
+}
+
+.enteteTableauActions__bordure {
+    border: 3px solid $gris-fonce;
+    width: 100%;
+}
+
+.coteTableBorder {
+    border-left: 5px solid $rouge;
+    &__inactif{
+        border-left: 5px solid $icon-bg-inactif;
+    }
+}
+
+.profilColonneElement {
+    display: flex;
+    align-items: center;
+}
+
+.elementProfil {
+    display: flex;
+    flex-direction: column;
+}
+
+.elementTitle {
+    font-size: 14px;
+    font-weight: 600;
+    &__inactif{
+        color: $titre-inactif;
+        font-size: 14px;
+    font-weight: 600;
+    }
+}
+
+.tableauBtnAction__flex {
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.tableauBtnAction__responsive{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tableauIconAction__responsive{
+    display: flex;
+    flex-direction: row;
+}
+
+.iconVisibilite {
+    color: $vert-turquoise;
+    margin: 10px;
+}
+
+.iconVisibilite:hover {
+    color: #098389;
+    cursor: pointer;
+}
+
+.iconModifier {
+    color: #f89747;
+    margin: 10px;
+}
+
+.iconModifier:hover {
+    color: #d2813e;
+    cursor: pointer;
+}
+
+.iconSupprimer {
+    color: $rouge;
+    margin: 10px;
+}
+
+.iconSupprimer:hover {
+    color: $rouge-fonce;
+    cursor: pointer;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* MEDIA QUERIES large: 992px; */
+@media screen and (max-width: $w-large) {
+    p{
+        font-size: 13px;
+    }
+
+    .dateResponsive{
+        display: none;
+    }
+
+    .iconBorder {
+        margin-left: 10px;
+        margin-right: 5px;
+        &__inactif{
+            margin-left: 10px;
+            margin-right: 5px;
+        }
+    }
+
+    .mat-icon {
+        font-size: 20px;
+        height: 20px;
+        width: 20px;
+    }
+
+    .tableauBtnAction__flex {
+       margin: 2px;
+       width: 100%;
+       text-align: center;
+    }
+
+    .tableauBtnAction__responsive {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tableBtnRefuser {
+        margin:10px 10px 0px 0px;
+        width: 80%;
+    }
+
+    .tableBtnAccepter {
+        margin:10px 10px 10px 0px;
+        width: 80%;
+    }
+
+    .tableauIconAction__responsive {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .tableauBtnAction__flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .iconVisibilite {
+        margin-right: 5px;
+        margin-left: 2px;
+    }
+
+    .iconModifier {
+        margin-right: 5px;
+    }
+
+    .iconSupprimer{
+        margin-right: 5px;
+    }
+}
+
+/* MEDIA QUERIES  medium: 768px; */
+@media screen and (max-width: $w-medium) {
+    .entetePlacement  {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .coteTableBorder{
+        border: none;
+        &__inactif{
+            border: none;
+        }
+    }
+
+    .boutonValidationDemande {
+        text-align: center;
+        width: 60%;
+    }
+
+    .iconBorder{
+        display: none;
+            mat-icon {
+                display: none;
+            }
+        &__inactif{
+            display: none;
+            mat-icon {
+                display: none;
+            }
+        }
+    }
+
+    .elementProfil {
+        padding-left: 10px;
+    }
+}
+
+/* MEDIA QUERIES small: 576px; */
+@media screen and (max-width: $w-small) {
+    p{
+      font-size: 11px;
+    }
+    
+    .elementProfilProfil {
+        font-size: 13px;
+    }
+
+    .iconBorder{
+        display: none;
+        mat-icon {
+            display: none;
+        }
+    }
+
+    .elementProfil {
+        padding-left: 0px;
+    }
+
+    .entetePlacement {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 50px;
+    }
+
+    .boutonValidationDemande {
+        text-align: center;
+        width: 100%;
+    }
+
+    .tableauBtnAction__responsive{
+        font-size: 13px;
+    }
+
+    .iconVisibilite {
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+
+    .iconModifier {
+        margin-right: 2px;
+    }
+
+    .iconSupprimer{
+        margin-right: 2px;
+    }
+}

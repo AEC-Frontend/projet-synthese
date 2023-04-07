@@ -63,6 +63,7 @@ import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/ca
 import { DialogConfirmationDeleteComponent } from './components/dialog-confirmation-delete/dialog-confirmation-delete.component';
 import { EntrepriseDetailleeComponent } from './pages/entreprise-detaillee/entreprise-detaillee.component';
 import { InfoFieldComponent } from './components/info-field/info-field.component';
+import { TableauOffreStageComponent } from './components/tableau-offre-stage/tableau-offre-stage.component';
 import { EntrepriseModifierPageComponent } from './pages/entreprise-modifier-page/entreprise-modifier-page.component';
 import { OffreDeStageModifierPageComponent } from './pages/offre-de-stage-modifier-page/offre-de-stage-modifier-page.component';
 
@@ -103,6 +104,7 @@ import { OffreDeStageModifierPageComponent } from './pages/offre-de-stage-modifi
     DialogConfirmationDeleteComponent,
     EntrepriseDetailleeComponent,
     InfoFieldComponent,
+    TableauOffreStageComponent,
     EntrepriseModifierPageComponent,
     OffreDeStageModifierPageComponent,
   ],
