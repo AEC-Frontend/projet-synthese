@@ -51,10 +51,32 @@
 .presentationLabel {
   @extend .label;
   font-size: 2rem;
+  line-height: 2.3rem;
 }
 
 .information {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+}
+
+@media screen and (max-width: $w-large) {
+  .details {
+    padding: 3rem;
+  }
+}
+
+@media screen and (max-width: $w-medium) {
+  .information {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: $w-small) {
+  :host {
+    padding: 2rem;
+  }
+  .label {
+    font-size: 1.2rem;
+  }
 }
