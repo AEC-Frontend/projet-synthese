@@ -130,4 +130,22 @@ export class TableauBordDemandesStageComponent {
       );
     });
   }
+
+  activeClick() {
+    var demandeDeStages: DemandeDeStage[] = this.dataSourceDemandeStage.data;
+    this.demandeDeStageService;
+    demandeDeStages.forEach((demandeDeStage: DemandeDeStage) => {
+      demandeDeStage.active = true;
+      let demandeDeStagePartial: Partial<DemandeDeStage> = {
+        active: true
+      }
+      console.log(demandeDeStage._id);
+
+      this.demandeDeStageService.updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id).subscribe(
+        _ => {
+         this.getDemandeDeStages();
+        }
+      );
+    });
+  }
 }
