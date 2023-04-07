@@ -12,20 +12,55 @@ import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entr
 import { OffreDeStageDetailleeComponent } from './offre-de-stage-detaillee/offre-de-stage-detaillee.component';
 import { DemandeDeStageComponent } from './pages/demande-de-stage/demande-de-stage.component';
 import { OffreDeStageAjoutPageComponent } from './pages/offre-de-stage-ajout-page/offre-de-stage-ajout-page.component';
+import { DemandeDeStageAjoutPageComponent } from './pages/demande-de-stage-ajout-page/demande-de-stage-ajout-page.component';
+import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/candidat-modifier-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'page-login', pathMatch: 'full' },
   { path: 'page-login', component: PageLoginComponent },
   { path: 'tableau-de-bord', component: TableauDeBordPageComponent },
-  { path: 'demandes-de-stage', component: DemandesDeStagePageComponent },
-  { path: 'entreprises', component: EntreprisesPageComponent },
-  { path: 'offres-de-stage', component: OffresDeStagePageComponent },
-  { path: 'candidats', component: CandidatsPageComponent },
-  { path: 'candidats/ajout', component: CandidatAjoutPageComponent },
-  { path: 'entreprises/ajout', component: EntrepriseAjoutPageComponent },
-  { path: 'offres-de-stage/ajout', component: OffreDeStageAjoutPageComponent },
-  { path: 'demandes-de-stage/:id', component: DemandeDeStageComponent },
-  { path: 'offres-de-stage/:id', component: OffreDeStageDetailleeComponent },
+  {
+    path: 'demandes-de-stage',
+    children: [
+      { path: '', component: DemandesDeStagePageComponent },
+      {
+        path: 'ajout',
+        component: DemandeDeStageAjoutPageComponent,
+      },
+      { path: ':id', component: DemandeDeStageComponent },
+    ],
+  },
+  {
+    path: 'entreprises',
+    children: [
+      { path: '', component: EntreprisesPageComponent },
+      { path: 'ajout', component: EntrepriseAjoutPageComponent },
+    ],
+  },
+  {
+    path: 'offres-de-stage',
+    children: [
+      { path: '', component: OffresDeStagePageComponent },
+      { path: 'ajout', component: OffreDeStageAjoutPageComponent },
+      {
+        path: ':id',
+        children: [
+          {
+            path: '',
+            component: OffreDeStageDetailleeComponent,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: 'candidats',
+    children: [
+      { path: '', component: CandidatsPageComponent },
+      { path: 'ajout', component: CandidatAjoutPageComponent },
+      { path: ':id/edition', component: CandidatModifierPageComponent },
+    ],
+  },
 ];
 
 @NgModule({

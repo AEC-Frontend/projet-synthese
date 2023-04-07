@@ -9,7 +9,7 @@ export class SectionTitleComponent {
   @Input() title!: string;
   @Input() subtitle: string = '';
   @Input() entreprise: string = '';
-  @Input() color!: 'turquoise' | 'rouge' | 'mauve' | 'bleu';
+  @Input() color!: 'turquoise' | 'rouge' | 'mauve' | 'bleu' | 'jaune';
 
   hasEnterprise: boolean = !!this.entreprise;
   onlyTitle: boolean = !this.entreprise && !this.subtitle;
