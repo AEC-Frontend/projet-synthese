@@ -78,6 +78,8 @@ export class TableauBordDemandesStageComponent {
     };
 
     
+
+    
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) tableDemandeDeStages!: MatTable<DemandeDeStage>;
