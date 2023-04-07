@@ -8,6 +8,8 @@ import { CandidatsPageComponent } from './pages/candidats-page/candidats-page.co
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
+
+import { OffreDeStageDetailleeComponent } from './offre-de-stage-detaillee/offre-de-stage-detaillee.component';
 import { DemandeDeStageComponent } from './pages/demande-de-stage/demande-de-stage.component';
 import { OffreDeStageAjoutPageComponent } from './pages/offre-de-stage-ajout-page/offre-de-stage-ajout-page.component';
 import { DemandeDeStageAjoutPageComponent } from './pages/demande-de-stage-ajout-page/demande-de-stage-ajout-page.component';
@@ -40,6 +42,15 @@ const routes: Routes = [
     children: [
       { path: '', component: OffresDeStagePageComponent },
       { path: 'ajout', component: OffreDeStageAjoutPageComponent },
+      {
+        path: ':id',
+        children: [
+          {
+            path: '',
+            component: OffreDeStageDetailleeComponent,
+          },
+        ],
+      },
     ],
   },
   {

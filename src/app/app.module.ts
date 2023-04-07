@@ -52,6 +52,7 @@ import { SectionTitleComponent } from './components/section-title/section-title.
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { OffreDeStageDetailleeComponent } from './offre-de-stage-detaillee/offre-de-stage-detaillee.component';
 import { TableauBordOffresStageComponent } from './components/tableau-bord-offres-stage/tableau-bord-offres-stage.component';
 import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
 import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
@@ -77,6 +78,7 @@ import { DialogConfirmationDeleteComponent } from './components/dialog-confirmat
     DialogConfirmationComponent,
     UpperNavLinkComponent,
     EntrepriseAjoutPageComponent,
+    OffreDeStageDetailleeComponent,
     OffreDeStageAjoutPageComponent,
     CancelButtonComponent,
     SaveButtonComponent,
@@ -94,7 +96,7 @@ import { DialogConfirmationDeleteComponent } from './components/dialog-confirmat
     CardEntrepriseComponent,
     TableauDemandesStageComponent,
     CandidatModifierPageComponent,
-    DialogConfirmationDeleteComponent
+    DialogConfirmationDeleteComponent,
   ],
 
   imports: [
