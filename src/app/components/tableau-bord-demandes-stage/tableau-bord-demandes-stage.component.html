@@ -75,7 +75,7 @@
                     <button class="iconVisibilite" aria-label="Visibilite"  routerLink="/demandes-de-stage/:id">
                         <mat-icon>visibility</mat-icon>
                     </button>
-                    <button class="iconModifier" aria-label="Modifier" routerLink="/demandes-de-stage/:id/edition">
+                    <button class="iconModifier" aria-label="Modifier" [routerLink]="'/demandes-de-stage/' + demandeDeStage._id! + '/edition'">
                         <mat-icon>edit</mat-icon>
                     </button>
                     <button class="iconSupprimer" aria-label="Supprimer">
