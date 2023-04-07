@@ -84,7 +84,7 @@ export class TableauBordOffresStageComponent {
         var result: OffreDeStage[] = [];
         var offreDeStages = ((resultat.success && resultat.data !== undefined) ? resultat.data : []);
         offreDeStages.forEach(function(offreDeStage: OffreDeStage){
-          if(!offreDeStage.published){
+          if(!offreDeStage.active){
             result.push(offreDeStage);
           }
         });
