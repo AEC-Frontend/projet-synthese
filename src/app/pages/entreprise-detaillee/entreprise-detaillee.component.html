@@ -9,15 +9,17 @@
       [title]="entreprise.name"
     ></app-section-title>
   </div>
+
   <div class="buttonGroup">
-    <a routerLink="/entreprises"
-      ><mat-icon class="check-icon">check</mat-icon></a
-    >
+    <button type="button" (click)="handlePublish()">
+      <mat-icon class="check-icon">check</mat-icon>
+    </button>
     <a routerLink="edition"><mat-icon class="edit-icon">edit</mat-icon></a>
-    <button type="button" (click)="openDialog(entreprise._id!)">
+    <button type="button" (click)="handleDontPublish()">
       <mat-icon class="close-icon">close</mat-icon>
     </button>
   </div>
+
   <div class="details">
     <div>
       <p class="presentationLabel">Courte présentation</p>

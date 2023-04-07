@@ -7,7 +7,7 @@ export type DemandeDeStage = {
   titre: string;
   description: string;
   startDate: string;
-  enterprise: Entreprise;
+  enterprise: string;
   endDate: string;
   program: string;
   requirements: string;
