@@ -16,51 +16,26 @@
       <p class="description-text">
         {{ demandeDeStage.description }}
       </p>
-      <div class="main-container"></div>
+      <div class="main-container">
+        <app-info-field
+          *ngFor="let requirment of requirments"
+          [label]="requirment.label"
+          [info]="getDemandeDeStageLabel(requirment.field)"
+        ></app-info-field>
+      </div>
       <h3 class="section-title">Informations sur le stage recherché</h3>
 
       <div class="main-container">
-        <div>
-          <div class="inner-div">
-            <p>Type de stage</p>
-            <h1>Temps plein</h1>
-          </div>
-        </div>
-        <div class="inner-div-right">
-          <div class="inner-div">
-            <p>Date de début</p>
-            <h1>2022-05-29</h1>
-          </div>
-        </div>
-      </div>
-      <div class="main-container">
-        <div class="inner-div">
-          <p>Nombre d'heures par semaine</p>
-          <h1>25 heures par semaine</h1>
-        </div>
-
-        <div class="inner-div-right">
-          <div class="inner-div">
-            <p>Date de fin</p>
-            <h1>2022-09-01</h1>
-          </div>
-        </div>
-      </div>
-      <div class="main-container">
-        <div class="inner-div">
-          <p>Rémuneration</p>
-          <h1>À la discretion de l'entreprise</h1>
-        </div>
+        <app-info-field
+          *ngFor="let info of stageInfo"
+          [label]="info.label"
+          [info]="getDemandeDeStageLabel(info.field)"
+        ></app-info-field>
       </div>
 
       <h3 class="section-title">Informations suplémentaires</h3>
       <p class="description-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-        amet quam justo. Aliquam interdum facilisis eros, ut dapibus quam
-        hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis
-        tortor quis pharetra. Nulla dictum erat id nisl pulvinar, ac aliquam
-        lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus
-        ut ante efficitur.
+        {{ demandeDeStage.additionalInfo }}
       </p>
       <div class="button-outer">
         <a href="" class="download-button"

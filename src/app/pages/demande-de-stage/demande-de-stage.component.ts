@@ -53,6 +53,7 @@ export class DemandeDeStageComponent {
 
     this.demandeDeStage$.subscribe((demandeDeStage) => {
       if (demandeDeStage.data) {
+        console.log(demandeDeStage.data);
         this.demandeDeStage = demandeDeStage.data;
       }
     });
@@ -77,5 +78,32 @@ export class DemandeDeStageComponent {
         duration: 2000,
       });
     });
+  }
+
+  getDemandeDeStageLabel(key: keyof DemandeDeStage): string {
+    const value = () => this.demandeDeStage![key];
+    type TLabelValue = { label: string; value: string; __typename: string };
+
+    if (value() === null) return '';
+
+    if (key === 'stageType' || key === 'region' || key === 'skills') {
+      return (value() as TLabelValue).label;
+    }
+
+    if (key === 'hoursPerWeek') {
+      return `${value()} heures par semaine`;
+    }
+
+    if (key === 'paid') {
+      return (value() as boolean) ? 'Rémunéré' : 'Non rémunéré';
+    }
+
+    if (key === 'startDate' || key === 'endDate') {
+      return new Date(value() as string).toLocaleDateString('fr-CA', {
+        dateStyle: 'long',
+      });
+    }
+
+    return value() as string;
   }
 }
