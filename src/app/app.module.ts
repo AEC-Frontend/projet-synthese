@@ -63,6 +63,7 @@ import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/ca
 import { DialogConfirmationDeleteComponent } from './components/dialog-confirmation-delete/dialog-confirmation-delete.component';
 import { EntrepriseDetailleeComponent } from './pages/entreprise-detaillee/entreprise-detaillee.component';
 import { InfoFieldComponent } from './components/info-field/info-field.component';
+import { EntrepriseModifierPageComponent } from './pages/entreprise-modifier-page/entreprise-modifier-page.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { InfoFieldComponent } from './components/info-field/info-field.component
     DialogConfirmationDeleteComponent,
     EntrepriseDetailleeComponent,
     InfoFieldComponent,
+    EntrepriseModifierPageComponent,
   ],
 
   imports: [
