@@ -97,7 +97,36 @@ export class TableauBordOffresStageComponent {
     );
   }
 
-
   
+  activesClick() {
+    var offreDeStages: OffreDeStage[] = this.dataSourceOffreDeStage.data;
+    this.offreDeStageService;
+    offreDeStages.forEach((offreDeStage: OffreDeStage) => {
+      offreDeStage.active = true;
+      let offreDeStagePartial: Partial<OffreDeStage> = {
+        active: true
+      }
+      console.log(offreDeStage._id);
+      if(offreDeStage._id !== undefined)
+      this.offreDeStageService.updateOffreDeStage(offreDeStagePartial, offreDeStage._id).subscribe(
+        _ => {
+         this.getOffreDeStages();
+        }
+      );
+    });
+  }
 
+  activeClick(offreDeStage: OffreDeStage) {
+    offreDeStage.active = !offreDeStage.active;
+
+    let offreDeStagePartial: Partial<OffreDeStage> = {
+      active: offreDeStage.active
+    }
+    if(offreDeStage._id !== undefined)
+    this.offreDeStageService.updateOffreDeStage(offreDeStagePartial, offreDeStage._id).subscribe(
+      _ => {
+       this.getOffreDeStages();
+      }
+    );
+  }
 }

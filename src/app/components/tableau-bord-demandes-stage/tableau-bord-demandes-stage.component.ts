@@ -123,7 +123,7 @@ export class TableauBordDemandesStageComponent {
       }
       console.log(demandeDeStage._id);
 
-      this.demandeDeStageService.updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id).subscribe(
+      this.demandeDeStageService.updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id!).subscribe(
         _ => {
          this.getDemandeDeStages();
         }
@@ -131,21 +131,17 @@ export class TableauBordDemandesStageComponent {
     });
   }
 
-  activeClick() {
-    var demandeDeStages: DemandeDeStage[] = this.dataSourceDemandeStage.data;
-    this.demandeDeStageService;
-    demandeDeStages.forEach((demandeDeStage: DemandeDeStage) => {
-      demandeDeStage.active = true;
-      let demandeDeStagePartial: Partial<DemandeDeStage> = {
-        active: true
-      }
-      console.log(demandeDeStage._id);
+  activeClick(demandeDeStage: DemandeDeStage) {
+    demandeDeStage.active = !demandeDeStage.active;
 
-      this.demandeDeStageService.updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id).subscribe(
-        _ => {
-         this.getDemandeDeStages();
-        }
-      );
-    });
+    let demandeDeStagePartial: Partial<DemandeDeStage> = {
+      active: demandeDeStage.active
+    }
+
+    this.demandeDeStageService.updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id).subscribe(
+      _ => {
+       this.getDemandeDeStages();
+      }
+    );
   }
 }
