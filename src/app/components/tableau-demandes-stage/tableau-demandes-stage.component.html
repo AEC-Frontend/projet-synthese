@@ -1,15 +1,3 @@
-<!-- Entête du tableau  -->
-<div class="entetePlacement">
-    <div>
-        <h2>Dernières <span>demandes</span> de stage</h2>
-        <p class="sousTitre__couleur">
-            En attente de validation
-        </p>
-    </div>
-    <button type="button" class="boutonValidationDemande" >
-        Valider toutes les demandes
-    </button>
-</div>
 
 <!-- Tableau-->
 <table mat-table #tableDemandeStage [dataSource]="dataSourceDemandeStage" class="table__border" matSort>
@@ -17,18 +5,22 @@
     <!-- Profil Column -->
     <ng-container matColumnDef="poste">
         <th mat-header-cell *matHeaderCellDef > 
-          <p> Poste </p> 
+            <p>Poste</p> 
             <div class="enteteTableauProfil__bordure"></div>
         </th>
         <td mat-cell *matCellDef="let demandeDeStage">
-            <div [ngClass]="demandeDeStage.paid === true ? 'coteTableau__bordure' : 'borderTableInactive'">
+            <div [ngClass]="demandeDeStage.active === true ? 'coteTableBorder' : 'coteTableBorder__inactif'">
                 <div class="profilColonneElement">
-                    <div  class="iconBordure">
+                    <div [ngClass]="demandeDeStage.active === true ? 'iconBorder' : 'iconBorder__inactif'">
                         <mat-icon>school</mat-icon>
                     </div>
                     <div class="elementProfil" >
-                        <p class="elementProfilPoste">{{demandeDeStage.titre}}</p>
-                        <p>{{demandeDeStage.additionalInfo}}</p>
+                        <p [ngClass]="demandeDeStage.active === true ? 'elementTitle' : 'elementTitle__inactif'">
+                            {{demandeDeStage.titre}}
+                        </p>
+                        <p>
+                            {{demandeDeStage.program}}
+                        </p>
                     </div>
                 </div>
             </div> 
@@ -38,36 +30,39 @@
     <!-- Etablissement Column -->
     <ng-container matColumnDef="secteurActivite">
         <th mat-header-cell *matHeaderCellDef> 
-           <p> Secteur d'activité </p>
+            <p>Secteur d'activité</p>
             <div class="enteteTableauEtablissement__bordure"></div>
         </th>
         <td mat-cell *matCellDef="let demandeDeStage" > 
-            <div> 
-               <p>{{demandeDeStage.requirements}} </p> 
-            </div> 
+            <p>
+                {{demandeDeStage.activitySector}}
+            </p> 
         </td>
     </ng-container>
   
     <!-- Date Column -->
     <ng-container matColumnDef="region">
         <th mat-header-cell *matHeaderCellDef> 
-          <p> Région </p>
+            <p>Région</p>
             <div class="enteteTableauDate__bordure"></div>
         </th>
         <td mat-cell *matCellDef="let demandeDeStage">
-            <p>  {{demandeDeStage.stageType.label}} </p>
+            <p>
+                {{demandeDeStage.requirements}}
+            </p>
         </td>
     </ng-container>
 
-    
     <!-- Date Column -->
     <ng-container matColumnDef="dateInscription">
-        <th mat-header-cell *matHeaderCellDef> 
-          <p> Date d'inscripotion </p>
+        <th mat-header-cell *matHeaderCellDef class="dateResponsive"> 
+            <p>Date d'inscription</p>
             <div class="enteteTableauDate__bordure"></div>
         </th>
-        <td mat-cell *matCellDef="let demandeDeStage">
-            <p>  {{demandeDeStage.createdAt}} </p>
+        <td mat-cell *matCellDef="let demandeDeStage"  class="dateResponsive">
+            <p>  
+                {{demandeDeStage.createdAt}} 
+            </p>
         </td>
     </ng-container>
 
@@ -75,12 +70,17 @@
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
         <td mat-cell *matCellDef="let demandeDeStage">
-            
-                <div class="tableauIconAction__responsive">
-                    <button class="iconVisibilite" aria-label="Visibilite" ><mat-icon>visibility</mat-icon></button>
-                    <button class="iconModifier" aria-label="Modifier"><mat-icon>edit</mat-icon></button>
-                    <button class="iconSupprimer" aria-label="Supprimer"><mat-icon>delete</mat-icon></button>
-                </div>
+            <div class="tableauIconAction__responsive">
+                <button class="iconVisibilite" aria-label="Visibilite" routerLink="/demandes-de-stage/:id">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                <button class="iconModifier" aria-label="Modifier" routerLink="/demandes-de-stage/:id/edition" >
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button class="iconSupprimer" aria-label="Supprimer" (click)="openDialog(demandeDeStage)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
         </td>
     </ng-container>
   
