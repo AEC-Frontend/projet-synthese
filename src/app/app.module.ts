@@ -61,6 +61,8 @@ import { CardEntrepriseComponent } from './components/card-entreprise/card-entre
 import { TableauDemandesStageComponent } from './components/tableau-demandes-stage/tableau-demandes-stage.component';
 import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/candidat-modifier-page.component';
 import { DialogConfirmationDeleteComponent } from './components/dialog-confirmation-delete/dialog-confirmation-delete.component';
+import { EntrepriseDetailleeComponent } from './pages/entreprise-detaillee/entreprise-detaillee.component';
+import { InfoFieldComponent } from './components/info-field/info-field.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +99,8 @@ import { DialogConfirmationDeleteComponent } from './components/dialog-confirmat
     TableauDemandesStageComponent,
     CandidatModifierPageComponent,
     DialogConfirmationDeleteComponent,
+    EntrepriseDetailleeComponent,
+    InfoFieldComponent,
   ],
 
   imports: [
