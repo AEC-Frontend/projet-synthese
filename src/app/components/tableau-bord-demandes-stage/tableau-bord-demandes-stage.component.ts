@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit  } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 
 import { DemandeDeStage } from 'src/app/models';
 import { DemandeDeStageService } from 'src/app/services/demande-de-stage/demande-de-stage.service';
@@ -11,108 +11,84 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-tableau-bord-demandes-stage',
-templateUrl: './tableau-bord-demandes-stage.component.html',
-styleUrls: ['./tableau-bord-demandes-stage.component.scss']
+  templateUrl: './tableau-bord-demandes-stage.component.html',
+  styleUrls: ['./tableau-bord-demandes-stage.component.scss'],
 })
-
 export class TableauBordDemandesStageComponent {
   newDemandedestage: DemandeDeStage[] = [];
-  dataSourceDemandeStage: MatTableDataSource<DemandeDeStage> = new MatTableDataSource();
+  dataSourceDemandeStage: MatTableDataSource<DemandeDeStage> =
+    new MatTableDataSource();
 
-  displayedColumns: string[] = [
-    'profil', 
-    'etablissement', 
-    'date',
-    'actions'
-  ];
+  displayedColumns: string[] = ['profil', 'etablissement', 'date', 'actions'];
 
-    newdemandeDeStage : DemandeDeStage = {
-      _id:'',
-      createdAt: '',
-      updatedAt: '',
-      titre: '',
-      description: '',
-      startDate: '',
-      enterprise: {
-        _id: '',
-        createdAt: '',
-        updatedAt: '',
-        name: '',
-        description: '',
-        imageUrl: '',
-        contactName: '',
-        contactEmail: '',
-        contactPhone: '',
-        address: '',
-        city: '',
-        province: '',
-        postalCode: '',
-        published: true,
-      },
-      endDate: '',
-      program: '',
-      requirements: '',
-      stageType: {
-        __typename: '',
-        label: '',
-        value: '',
-      },
-      hoursPerWeek: 0,
-      additionalInfo: '',
-      paid: true,
-      published: true,
-      skills: {
-        __typename: '',
-        label: '',
-        value: '',
-      },
-      active: true,
-      region: {
-        __typename: '',
-        label: '',
-        value: '',
-      },
-      activitySector: '',
-      city: '',
-      resume: ''
-    };
+  newdemandeDeStage: DemandeDeStage = {
+    _id: '',
+    createdAt: '',
+    updatedAt: '',
+    titre: '',
+    description: '',
+    startDate: '',
+    enterprise: '',
+    endDate: '',
+    program: '',
+    requirements: '',
+    stageType: {
+      __typename: '',
+      label: '',
+      value: '',
+    },
+    hoursPerWeek: 0,
+    additionalInfo: '',
+    paid: true,
+    published: true,
+    skills: {
+      __typename: '',
+      label: '',
+      value: '',
+    },
+    active: true,
+    region: {
+      __typename: '',
+      label: '',
+      value: '',
+    },
+    activitySector: '',
+    city: '',
+    resume: '',
+  };
 
-    
-
-    
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) tableDemandeDeStages!: MatTable<DemandeDeStage>;
 
   constructor(
-    private demandeDeStageService: DemandeDeStageService, 
-    private _snackBar: MatSnackBar,  
+    private demandeDeStageService: DemandeDeStageService,
+    private _snackBar: MatSnackBar,
     public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.getDemandeDeStages();
   }
-  
-  getDemandeDeStages() { 
-    this.demandeDeStageService.getDemandeDeStages().subscribe(
-      resultat => {
-        console.log(resultat);
 
-        var result: DemandeDeStage[] = [];
-        var demandeDeStages = ((resultat.success && resultat.data !== undefined) ? resultat.data : []);
-        demandeDeStages.forEach(function(demandeDeStage: DemandeDeStage){
-          if(!demandeDeStage.active){
-            result.push(demandeDeStage);
-          }
-        });
+  getDemandeDeStages() {
+    this.demandeDeStageService.getDemandeDeStages().subscribe((resultat) => {
+      console.log(resultat);
 
-        this.dataSourceDemandeStage = new MatTableDataSource(result);
-        this.dataSourceDemandeStage.paginator = this.paginator;
-        this.dataSourceDemandeStage.sort = this.sort;
-        this.tableDemandeDeStages.renderRows();
-      }
-    );
+      var result: DemandeDeStage[] = [];
+      var demandeDeStages =
+        resultat.success && resultat.data !== undefined ? resultat.data : [];
+      demandeDeStages.forEach(function (demandeDeStage: DemandeDeStage) {
+        if (!demandeDeStage.active) {
+          result.push(demandeDeStage);
+        }
+      });
+
+      this.dataSourceDemandeStage = new MatTableDataSource(result);
+      this.dataSourceDemandeStage.paginator = this.paginator;
+      this.dataSourceDemandeStage.sort = this.sort;
+      this.tableDemandeDeStages.renderRows();
+    });
   }
 
   activesClick() {
@@ -121,15 +97,15 @@ export class TableauBordDemandesStageComponent {
     demandeDeStages.forEach((demandeDeStage: DemandeDeStage) => {
       demandeDeStage.active = true;
       let demandeDeStagePartial: Partial<DemandeDeStage> = {
-        active: true
-      }
+        active: true,
+      };
       console.log(demandeDeStage._id);
 
-      this.demandeDeStageService.updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id!).subscribe(
-        _ => {
-         this.getDemandeDeStages();
-        }
-      );
+      this.demandeDeStageService
+        .updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id!)
+        .subscribe((_) => {
+          this.getDemandeDeStages();
+        });
     });
   }
 
@@ -137,13 +113,13 @@ export class TableauBordDemandesStageComponent {
     demandeDeStage.active = !demandeDeStage.active;
 
     let demandeDeStagePartial: Partial<DemandeDeStage> = {
-      active: demandeDeStage.active
-    }
+      active: demandeDeStage.active,
+    };
 
-    this.demandeDeStageService.updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id).subscribe(
-      _ => {
-       this.getDemandeDeStages();
-      }
-    );
+    this.demandeDeStageService
+      .updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id)
+      .subscribe((_) => {
+        this.getDemandeDeStages();
+      });
   }
 }
