@@ -27,9 +27,9 @@ export class OffreDeStageService {
   }
 
   getOffreDeStage(
-    _id: string
+    _id?: string
   ): Observable<{ success: boolean; data?: OffreDeStage }> {
-    return this.http.get<{ success: boolean; data?: OffreDeStage }>(
+    return this.http.get<{ success: boolean; data: OffreDeStage }>(
       `${this.url}/${_id}`,
       this.httpOptions
     );
@@ -57,7 +57,7 @@ export class OffreDeStageService {
   }
 
   deleteOffreDeStage(
-    _id: string
+    _id?: string
   ): Observable<{ success: boolean; data?: OffreDeStage }> {
     return this.http.delete<{ success: boolean; data?: OffreDeStage }>(
       `${this.url}/${_id}`,

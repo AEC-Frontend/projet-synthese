@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TableauDeBordPageComponent } from './pages/tableau-de-bord-page/tableau-de-bord-page.component';
 import { DemandesDeStagePageComponent } from './pages/demandes-de-stage-page/demandes-de-stage-page.component';
@@ -19,13 +19,19 @@ const routes: Routes = [
   { path: 'tableau-de-bord', component: TableauDeBordPageComponent },
   { path: 'demandes-de-stage', component: DemandesDeStagePageComponent },
   { path: 'entreprises', component: EntreprisesPageComponent },
-  { path: 'offres-de-stage', component: OffresDeStagePageComponent },
+  {
+    path: 'offres-de-stage',
+    children: [
+      { path: '', component: OffresDeStagePageComponent },
+      { path: 'ajout', component: OffreDeStageAjoutPageComponent },
+      { path: ':id', component: OffreDeStageDetailleeComponent },
+    ],
+  },
   { path: 'candidats', component: CandidatsPageComponent },
   { path: 'candidats/ajout', component: CandidatAjoutPageComponent },
   { path: 'entreprises/ajout', component: EntrepriseAjoutPageComponent },
   { path: 'offres-de-stage/ajout', component: OffreDeStageAjoutPageComponent },
   { path: 'demandes-de-stage/:id', component: DemandeDeStageComponent },
-  { path: 'offres-de-stage/:id', component: OffreDeStageDetailleeComponent },
 ];
 
 @NgModule({

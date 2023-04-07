@@ -1,106 +1,83 @@
-<div class="container">
-  <div class="title">
-    <p>Offre de stage</p>
-    <h1>Integrateur web junior</h1>
-    <h2 class="square">Acolyte communication</h2>
-  </div>
+<ng-container *ngIf="offreDeStage$ | async as offreDeStage">
+  <div class="container">
+    <div class="title">
+      <p>Offre de stage</p>
+      <h1>{{ offreDeStage.data!.title }}</h1>
+      <h2 class="square">{{ offreDeStage.data!.enterprise }}</h2>
+    </div>
 
-  <div class="icons">
-    <a href=""><mat-icon class="check-icon">check</mat-icon></a>
-    <a href=""><mat-icon class="edit-icon">edit</mat-icon></a>
-    <a href=""><mat-icon class="close-icon">close</mat-icon></a>
-  </div>
-  <div class="card-container">
-    <mat-card class="mat-card">
-      <h2>Description de la tâche</h2>
-      <p class="description-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-        amet quam justo. Aliquam interdum facilisis eros, ut dapibus quam
-        hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis
-        tortor quis pharetra. Nulla dictum erat id nisl pulvinar, ac aliquam
-        lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus
-        ut ante efficitur, venenatis purus sit amet, condimentum leo.
-        Pellentesque nulla sem, consectetur.
-        <br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-        amet quam justo. Aliquam interdum facilisis eros, ut dapibus quam
-        hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis
-        tortor quis pharetra. Nulla dictum erat id nisl pulvinar, ac aliquam
-        lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus
-        ut ante efficitur.
-      </p>
-
-      <section class="sub-title">
-        <h1>Formation demandées</h1>
-        <p>Diplome d'études colegial ou éequivalent</p>
-      </section>
-
-      <section class="sub-title">
-        <h1>Exigences</h1>
+    <div class="icons">
+      <a routerLink=""><mat-icon class="check-icon">check</mat-icon></a>
+      <a routerLink=""><mat-icon class="edit-icon">edit</mat-icon></a>
+      <button
+        class="delete-button"
+        type="button"
+        (click)="deleteOffreDeStage(offreDeStage.data!._id!)"
+      >
+        <mat-icon class="close-icon">close</mat-icon>
+      </button>
+    </div>
+    <div class="card-container">
+      <mat-card class="mat-card">
+        <h2>Description de la tâche</h2>
         <p class="description-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-          amet quam justo. Aliquam interdum facilisis eros, ut dapibus quam
-          hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis
-          tortor quis pharetra. Nulla dictum erat id nisl pulvinar, ac aliquam
-          lectus laoreet. Aliquam commodo pulvinar odio vitae interdum.
-          Phasellus ut ante efficitur, venenatis purus sit amet, condimentum
-          leo. Pellentesque nulla sem, consectetur.
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-          amet quam justo. Aliquam interdum facilisis eros, ut dapibus quam
-          hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis
-          tortor quis pharetra. Nulla dictum erat id nisl pulvinar, ac aliquam
-          lectus laoreet. Aliquam commodo pulvinar odio vitae interdum.
-          Phasellus ut ante efficitur.
+          {{ offreDeStage.data!.description }}
         </p>
-      </section>
 
-      <h3 class="section-title">Informations sur le stage</h3>
+        <section class="sub-title">
+          <h1>Formation demandées</h1>
+          <p>{{ offreDeStage.data!.program }}</p>
+        </section>
 
-      <div class="main-container">
-        <div class="inner-div">
-          <p>Type de stage</p>
-          <h1>Temps plein</h1>
-        </div>
+        <section class="sub-title">
+          <h1>Exigences</h1>
+          <p class="description-text">
+            {{ offreDeStage.data!.requirements }}
+          </p>
+        </section>
 
-        <div class="inner-div-right">
+        <h3 class="section-title">Informations sur le stage</h3>
+
+        <div class="main-container">
           <div class="inner-div">
-            <p>Date de début</p>
-            <h1>2022-05-25</h1>
+            <p>Type de stage</p>
+            <h1>{{ offreDeStage.data!.stageType }}</h1>
+          </div>
+
+          <div class="inner-div-right">
+            <div class="inner-div">
+              <p>Date de début</p>
+              <h1>{{ offreDeStage.data!.startDate }}</h1>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="main-container">
-        <div class="inner-div">
-          <p>Numbre d'heures par semaine</p>
-          <h1>35 heures par semaine</h1>
-        </div>
-
-        <div class="inner-div-right">
+        <div class="main-container">
           <div class="inner-div">
-            <p>Date de fin</p>
-            <h1>22-09-21</h1>
+            <p>Numbre d'heures par semaine</p>
+            <h1>{{ offreDeStage.data!.hoursPerWeek }}</h1>
+          </div>
+
+          <div class="inner-div-right">
+            <div class="inner-div">
+              <p>Date de fin</p>
+              <h1>{{ offreDeStage.data!.endDate }}</h1>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="main-container">
-        <div class="inner-div">
-          <p>Rémmuneration</p>
-          <h1>À discuter</h1>
+        <div class="main-container">
+          <div class="inner-div">
+            <p>Rémmuneration</p>
+            <h1>{{ offreDeStage.data!.paid }}</h1>
+          </div>
         </div>
-      </div>
 
-      <h3 class="section-title">Informations suplémentaires</h3>
-      <p class="description-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit
-        amet quam justo. Aliquam interdum facilisis eros, ut dapibus quam
-        hendrerit nec. Vestibulum vel blandit lorem. Praesent laoreet quis
-        tortor quis pharetra. Nulla dictum erat id nisl pulvinar, ac aliquam
-        lectus laoreet. Aliquam commodo pulvinar odio vitae interdum. Phasellus
-        ut ante efficitur.
-      </p>
-    </mat-card>
+        <h3 class="section-title">Informations suplémentaires</h3>
+        <p class="description-text">
+          {{ offreDeStage.data!.additionalInfo }}
+        </p>
+      </mat-card>
+    </div>
   </div>
-</div>
+</ng-container>
