@@ -28,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component';
+
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { UpperNavLinkComponent } from './components/upper-nav-link/upper-nav-link.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
@@ -47,15 +48,23 @@ import { RadioComponent } from './components/radio/radio.component';
 import { DatePickerComponent } from './components/date-picker/date-picker.component';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
-
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { OffreDeStageDetailleeComponent } from './offre-de-stage-detaillee/offre-de-stage-detaillee.component';
 import { TableauBordOffresStageComponent } from './components/tableau-bord-offres-stage/tableau-bord-offres-stage.component';
-
 import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
 import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
+import { DemandeDeStageAjoutPageComponent } from './pages/demande-de-stage-ajout-page/demande-de-stage-ajout-page.component';
 import { CardEntrepriseComponent } from './components/card-entreprise/card-entreprise.component';
+import { TableauDemandesStageComponent } from './components/tableau-demandes-stage/tableau-demandes-stage.component';
+import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/candidat-modifier-page.component';
+import { DialogConfirmationDeleteComponent } from './components/dialog-confirmation-delete/dialog-confirmation-delete.component';
+import { EntrepriseDetailleeComponent } from './pages/entreprise-detaillee/entreprise-detaillee.component';
+import { InfoFieldComponent } from './components/info-field/info-field.component';
+import { TableauOffreStageComponent } from './components/tableau-offre-stage/tableau-offre-stage.component';
+import { EntrepriseModifierPageComponent } from './pages/entreprise-modifier-page/entreprise-modifier-page.component';
+import { OffreDeStageModifierPageComponent } from './pages/offre-de-stage-modifier-page/offre-de-stage-modifier-page.component';
+import { CandidatDetailleComponent } from './pages/candidat-detaille/candidat-detaille.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +96,17 @@ import { CardEntrepriseComponent } from './components/card-entreprise/card-entre
     ValidationErrorComponent,
     TableauBordOffresStageComponent,
     CardCandidatComponent,
+    DemandeDeStageAjoutPageComponent,
     CardEntrepriseComponent,
+    TableauDemandesStageComponent,
+    CandidatModifierPageComponent,
+    DialogConfirmationDeleteComponent,
+    EntrepriseDetailleeComponent,
+    InfoFieldComponent,
+    TableauOffreStageComponent,
+    EntrepriseModifierPageComponent,
+    OffreDeStageModifierPageComponent,
+    CandidatDetailleComponent,
   ],
 
   imports: [

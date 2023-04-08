@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DemandeDeStage } from 'src/app/models';
+import { DemandeDeStage, DemandeDeStagePost } from 'src/app/models';
 import { API_SECRET_KEY, API_URL } from 'src/constants';
 
 @Injectable({
@@ -39,22 +39,22 @@ export class DemandeDeStageService {
   }
 
   createDemandeDeStage(
-    entreprise: DemandeDeStage
-  ): Observable<{ success: boolean; data?: DemandeDeStage }> {
-    return this.http.post<{ success: boolean; data?: DemandeDeStage }>(
+    demandeDeStage: DemandeDeStagePost
+  ): Observable<{ success: boolean; data?: DemandeDeStagePost }> {
+    return this.http.post<{ success: boolean; data?: DemandeDeStagePost }>(
       this.url,
-      entreprise,
+      { input: demandeDeStage },
       this.httpOptions
     );
   }
 
   updateDemandeDeStage(
-    entreprise: Partial<DemandeDeStage>,
+    demandeDeStage: Partial<DemandeDeStage>,
     _id: string
   ): Observable<{ success: boolean; data?: DemandeDeStage }> {
     return this.http.patch<{ success: boolean; data?: DemandeDeStage }>(
       `${this.url}/${_id}`,
-      entreprise,
+      { input: demandeDeStage },
       this.httpOptions
     );
   }

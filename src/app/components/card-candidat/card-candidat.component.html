@@ -1,20 +1,23 @@
 <!--- Cartes de candidats --->
-<a *ngFor="let candidat of candidats" routerLink="">
-    <mat-card class="candidatCard">
-        <mat-icon>person</mat-icon>
-        <div>
-            <mat-card-header>
-                <mat-card-title>
-                    {{ candidat.name }}
-                </mat-card-title>
-                <mat-card-subtitle>
-                    <p>{{ candidat.jobTitle }}</p> 
-                </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <p>{{ candidat.email }}</p>
-                <p>{{ candidat.phone }}</p>
-            </mat-card-content>
-        </div>  
-    </mat-card>
+<a
+  *ngFor="let candidat of candidats"
+  [routerLink]="['/candidats', candidat._id]"
+>
+  <mat-card class="candidatCard">
+    <mat-icon>person</mat-icon>
+    <div>
+      <mat-card-header>
+        <mat-card-title>
+          {{ candidat.name }}
+        </mat-card-title>
+        <mat-card-subtitle>
+          <p>{{ candidat.jobTitle }}</p>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ candidat.email }}</p>
+        <p>{{ candidat.phone }}</p>
+      </mat-card-content>
+    </div>
+  </mat-card>
 </a>

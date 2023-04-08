@@ -36,22 +36,22 @@ export class OffreDeStageService {
   }
 
   createOffreDeStage(
-    entreprise: OffreDeStagePost
+    offreDeStage: OffreDeStagePost
   ): Observable<{ success: boolean; data?: OffreDeStage }> {
     return this.http.post<{ success: boolean; data?: OffreDeStage }>(
       this.url,
-      entreprise,
+      { input: offreDeStage },
       this.httpOptions
     );
   }
 
   updateOffreDeStage(
-    entreprise: Partial<OffreDeStage>,
+    offreDeStage: Partial<OffreDeStage>,
     _id: string
   ): Observable<{ success: boolean; data?: OffreDeStage }> {
     return this.http.patch<{ success: boolean; data?: OffreDeStage }>(
       `${this.url}/${_id}`,
-      entreprise,
+      { input: offreDeStage },
       this.httpOptions
     );
   }

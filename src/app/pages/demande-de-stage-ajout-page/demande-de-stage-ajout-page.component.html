@@ -1,0 +1,235 @@
+<form [formGroup]="stageForm">
+  <app-section-title
+    title="Ajouter une demande"
+    color="jaune"
+  ></app-section-title>
+
+  <div class="btnGroup">
+    <app-cancel-button></app-cancel-button>
+    <app-save-button
+      label="Sauvegarder"
+      color="turquoise"
+      [onSubmit]="onSubmit"
+    ></app-save-button>
+  </div>
+
+  <div class="firstLevelInput">
+    <app-title-input
+      label="Titre"
+      formControlName="titre"
+      [formErrorValidation]="
+        getFormControl('titre')!.invalid &&
+        (getFormControl('titre')!.dirty || getFormControl('titre')!.touched)
+          ? 'Veuillez entrer des données valides'
+          : ''
+      "
+    ></app-title-input>
+  </div>
+  <div class="details">
+    <div class="description">
+      <!-- <div class="nameWrapper">
+        <app-title-input
+          label="Nom et prénom"
+          formControlName="name"
+          [formErrorValidation]="
+            getFormControl('name')!.invalid &&
+            (getFormControl('name')!.dirty || getFormControl('name')!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-title-input>
+      </div> -->
+      <app-text-area
+        label="Présentation"
+        formControlName="description"
+        [formErrorValidation]="
+          getFormControl('description')!.invalid &&
+          (getFormControl('description')!.dirty ||
+            getFormControl('description')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-text-area>
+
+      <div class="programWrapper">
+        <app-input
+          label="Programme de formation"
+          formControlName="program"
+          [formErrorValidation]="
+            getFormControl('program')!.invalid &&
+            (getFormControl('program')!.dirty ||
+              getFormControl('program')!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-input>
+        <app-select
+          label="Établissement scolaire"
+          [formGroup]="stageForm"
+          [options]="entreprises"
+          controlName="enterprise"
+          [hasLeftBorder]="true"
+          [formErrorValidation]="
+            getFormControl('enterprise')!.invalid &&
+            (getFormControl('enterprise')!.dirty ||
+              getFormControl('enterprise')!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-select>
+        <app-select
+          label="Secteur d'activité"
+          [options]="activitySector"
+          [formGroup]="stageForm"
+          controlName="activitySector"
+          [hasLeftBorder]="true"
+          [formErrorValidation]="
+            getFormControl('activitySector')!.invalid &&
+            (getFormControl('activitySector')!.dirty ||
+              getFormControl('activitySector')!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-select>
+        <app-input
+          label="Ville"
+          formControlName="city"
+          [formErrorValidation]="
+            getFormControl('city')!.invalid &&
+            (getFormControl('city')!.dirty || getFormControl('city')!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-input>
+
+        <app-select
+          label="Région"
+          [options]="regions"
+          [formGroup]="stageForm"
+          controlName="region"
+          [hasLeftBorder]="true"
+          [formErrorValidation]="
+            getFormControl('region')!.invalid &&
+            (getFormControl('region')!.dirty ||
+              getFormControl('region')!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-select>
+      </div>
+      <app-text-area
+        label="Compétences"
+        formControlName="requirements"
+        [hasLeftBorder]="true"
+        [formErrorValidation]="
+          getFormControl('requirements')!.invalid &&
+          (getFormControl('requirements')!.dirty ||
+            getFormControl('requirements')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-text-area>
+    </div>
+
+    <p>Information sur le stage recherché</p>
+
+    <div class="information">
+      <app-select
+        label="Type de stage"
+        [options]="typeDeStage"
+        [formGroup]="stageForm"
+        controlName="stageType"
+        [hasLeftBorder]="true"
+        [formErrorValidation]="
+          getFormControl('stageType')!.invalid &&
+          (getFormControl('stageType')!.dirty ||
+            getFormControl('stageType')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-select>
+      <app-date-picker
+        label="Date de début"
+        [formGroup]="stageForm"
+        controlName="startDate"
+        [formErrorValidation]="
+          getFormControl('stageType')!.invalid &&
+          (getFormControl('stageType')!.dirty ||
+            getFormControl('stageType')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-date-picker>
+      <app-select
+        label="Nombre d'heures par semaine"
+        [formGroup]="stageForm"
+        controlName="hoursPerWeek"
+        [options]="nombreHeuresSemaine"
+        [hasLeftBorder]="true"
+        [formErrorValidation]="
+          getFormControl('hoursPerWeek')!.invalid &&
+          (getFormControl('hoursPerWeek')!.dirty ||
+            getFormControl('hoursPerWeek')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-select>
+      <app-date-picker
+        label="Date de fin"
+        [formGroup]="stageForm"
+        controlName="endDate"
+        [formErrorValidation]="
+          getFormControl('endDate')!.invalid &&
+          (getFormControl('endDate')!.dirty ||
+            getFormControl('endDate')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-date-picker>
+      <app-radio
+        label="Rémunération"
+        [formGroup]="stageForm"
+        [options]="renumeration"
+        controlName="paid"
+        [formErrorValidation]="
+          getFormControl('paid')!.invalid &&
+          (getFormControl('paid')!.dirty || getFormControl('paid')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-radio>
+    </div>
+
+    <div class="col">
+      <app-text-area
+        label="Informations supplémentaires"
+        color="turquoise"
+        formControlName="additionalInfo"
+        [formErrorValidation]="
+          getFormControl('additionalInfo')!.invalid &&
+          (getFormControl('additionalInfo')!.dirty ||
+            getFormControl('additionalInfo')!.touched)
+            ? 'Veuillez entrer des données valides'
+            : ''
+        "
+      ></app-text-area>
+      <div class="fileInput">
+        <app-input
+          label="C.V."
+          formControlName="resume"
+          [typeFile]="true"
+        ></app-input>
+        <button>Parcourir</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="btnGroup">
+    <app-cancel-button></app-cancel-button>
+    <app-save-button
+      label="Sauvegarder"
+      color="turquoise"
+      [onSubmit]="onSubmit"
+    ></app-save-button>
+  </div>
+</form>

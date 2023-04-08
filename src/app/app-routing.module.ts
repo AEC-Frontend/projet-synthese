@@ -12,18 +12,53 @@ import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entr
 import { OffreDeStageDetailleeComponent } from './offre-de-stage-detaillee/offre-de-stage-detaillee.component';
 import { DemandeDeStageComponent } from './pages/demande-de-stage/demande-de-stage.component';
 import { OffreDeStageAjoutPageComponent } from './pages/offre-de-stage-ajout-page/offre-de-stage-ajout-page.component';
+import { DemandeDeStageAjoutPageComponent } from './pages/demande-de-stage-ajout-page/demande-de-stage-ajout-page.component';
+import { CandidatModifierPageComponent } from './pages/candidat-modifier-page/candidat-modifier-page.component';
+import { EntrepriseDetailleeComponent } from './pages/entreprise-detaillee/entreprise-detaillee.component';
+import { EntrepriseModifierPageComponent } from './pages/entreprise-modifier-page/entreprise-modifier-page.component';
+import { OffreDeStageModifierPageComponent } from './pages/offre-de-stage-modifier-page/offre-de-stage-modifier-page.component';
+import { CandidatDetailleComponent } from './pages/candidat-detaille/candidat-detaille.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'page-login', pathMatch: 'full' },
   { path: 'page-login', component: PageLoginComponent },
   { path: 'tableau-de-bord', component: TableauDeBordPageComponent },
+<<<<<<< HEAD
   { path: 'demandes-de-stage', component: DemandesDeStagePageComponent },
   { path: 'entreprises', component: EntreprisesPageComponent },
+=======
+  {
+    path: 'demandes-de-stage',
+    children: [
+      { path: '', component: DemandesDeStagePageComponent },
+      {
+        path: 'ajout',
+        component: DemandeDeStageAjoutPageComponent,
+      },
+      { path: ':id', component: DemandeDeStageComponent },
+    ],
+  },
+  {
+    path: 'entreprises',
+    children: [
+      { path: '', component: EntreprisesPageComponent },
+      { path: 'ajout', component: EntrepriseAjoutPageComponent },
+      {
+        path: ':id',
+        children: [
+          { path: '', component: EntrepriseDetailleeComponent },
+          { path: 'edition', component: EntrepriseModifierPageComponent },
+        ],
+      },
+    ],
+  },
+>>>>>>> a44479cd4b097b021913d675d94c74784c5ae52c
   {
     path: 'offres-de-stage',
     children: [
       { path: '', component: OffresDeStagePageComponent },
       { path: 'ajout', component: OffreDeStageAjoutPageComponent },
+<<<<<<< HEAD
       { path: ':id', component: OffreDeStageDetailleeComponent },
     ],
   },
@@ -32,6 +67,34 @@ const routes: Routes = [
   { path: 'entreprises/ajout', component: EntrepriseAjoutPageComponent },
   { path: 'offres-de-stage/ajout', component: OffreDeStageAjoutPageComponent },
   { path: 'demandes-de-stage/:id', component: DemandeDeStageComponent },
+=======
+      {
+        path: ':id',
+        children: [
+          {
+            path: '',
+            component: OffreDeStageDetailleeComponent,
+          },
+          { path: 'edition', component: OffreDeStageModifierPageComponent },
+        ],
+      },
+    ],
+  },
+  {
+    path: 'candidats',
+    children: [
+      { path: '', component: CandidatsPageComponent },
+      { path: 'ajout', component: CandidatAjoutPageComponent },
+      {
+        path: ':id',
+        children: [
+          { path: '', component: CandidatDetailleComponent },
+          { path: 'edition', component: CandidatModifierPageComponent },
+        ],
+      },
+    ],
+  },
+>>>>>>> a44479cd4b097b021913d675d94c74784c5ae52c
 ];
 
 @NgModule({

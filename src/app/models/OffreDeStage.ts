@@ -6,7 +6,7 @@ export type OffreDeStage = {
   updatedAt?: string;
   title: string;
   description: string;
-  enterprise: Entreprise;
+  enterprise: string;
   startDate: string;
   endDate: string;
   program: string;

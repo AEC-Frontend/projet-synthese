@@ -1,0 +1,90 @@
+@import "../../../SCSS/vars";
+
+.tableSection{
+    width: 93%;
+    margin: auto;
+    padding: 100px;
+}
+
+//Header //
+h2 {
+    font-size: 3rem;
+    margin-bottom: 0;
+    font-weight: 500;
+    color: $gris-fonce;
+}
+
+.entetePlacement {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.boutonAjoutDemande {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: $rouge;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.boutonAjoutDemande:hover {
+    background-color: $rouge-fonce;
+    cursor: pointer;
+}
+
+// Table //
+.containerTable{
+    margin: auto;
+    background-color: $blanc;
+    border-radius: 10px;
+    padding: 100px;
+    margin-bottom: 100px;
+}
+
+
+/*------------------------------------------------------------------------------------------------*/
+/* MEDIA QUERIES xlarge: 1200px;*/
+@media screen and (max-width: $w-xlarge) {
+    .containerTable{
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+    }
+   
+    .tableSection{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* MEDIA QUERIES large: 992px;*/
+@media screen and (max-width: $w-large) {
+    .containerTable{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+  
+    .tableSection{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* MEDIA QUERIES $w-medium: 768px;; */
+@media screen and (max-width: $w-medium) {
+    h2{
+        font-size: 2rem;
+    }
+
+    .tableSection{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+

@@ -1,0 +1,45 @@
+<ng-container *ngIf="entreprise">
+  <div class="titleWrapper">
+    <img
+      [src]="entreprise.imageUrl || 'src/assets/img/logoEntreprise.jpg'"
+      alt="Logo de l'entreprise"
+    />
+    <app-section-title
+      subtitle="Entreprise"
+      [title]="entreprise.name"
+    ></app-section-title>
+  </div>
+
+  <div class="buttonGroup">
+    <button type="button" (click)="handlePublish()">
+      <mat-icon class="check-icon">check</mat-icon>
+    </button>
+    <a routerLink="edition"><mat-icon class="edit-icon">edit</mat-icon></a>
+    <button type="button" (click)="handleDontPublish()">
+      <mat-icon class="close-icon">close</mat-icon>
+    </button>
+  </div>
+
+  <div class="details">
+    <div>
+      <p class="presentationLabel">Courte présentation</p>
+      <p class="presentation">{{ entreprise.description }}</p>
+    </div>
+
+    <div>
+      <p class="label">Personne contact</p>
+      <p class="contactName">{{ entreprise.contactName }}</p>
+    </div>
+
+    <div>
+      <p class="label">Information de contact</p>
+      <div class="information">
+        <app-info-field
+          *ngFor="let field of informations"
+          [label]="field.label"
+          [info]="getEntrepriseFieldValue(field.field)"
+        ></app-info-field>
+      </div>
+    </div>
+  </div>
+</ng-container>

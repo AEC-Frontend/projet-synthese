@@ -13,10 +13,12 @@
 
 h2 {
   font-size: 2.7rem;
+  line-height: 2.9rem;
 }
 
 h3 {
   font-size: 1rem;
+  font-weight: 700;
   margin: 0;
   margin-bottom: 0.5rem;
 }
@@ -45,10 +47,14 @@ p {
   border-left-color: $mauve;
 }
 
+.jaune {
+  border-left-color: $jaune-fonce;
+}
+
 .margin-none {
   margin: 0;
 }
 
 .margin {
-  margin: 1rem 0;
+  margin: 0 0 2rem;
 }

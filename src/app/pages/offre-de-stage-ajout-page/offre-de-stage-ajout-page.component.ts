@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogConfirmationComponent } from 'src/app/components/dialog-confirmation/dialog-confirmation.component';
-import { Entreprise, OffreDeStage } from 'src/app/models';
 import { EntrepriseService } from 'src/app/services/entreprise/entreprise.service';
 import { OffreDeStageService } from 'src/app/services/offre-de-stage/offre-de-stage.service';
-import { TSelectOption } from 'src/app/types/TSelectOption';
+import {
+  NOMBRE_HEURES_SEMAINE,
+  RENUMERATION,
+  TYPE_DE_STAGE,
+} from 'src/constants';
 
 @Component({
   selector: 'app-offre-de-stage-ajout-page',
@@ -14,24 +17,9 @@ import { TSelectOption } from 'src/app/types/TSelectOption';
 })
 export class OffreDeStageAjoutPageComponent {
   entreprises: Array<{ value: string; label: string }> = [];
-  typeDeStage: TSelectOption[] = [
-    { value: 'TEMPS_PARTIEL', label: 'Temps partiel' },
-    { value: 'TEMPS_PLEIN', label: 'Temps plein' },
-  ];
-  nombreHeuresSemaine: TSelectOption[] = [
-    { value: '5', label: '5 heures' },
-    { value: '10', label: '10 heures' },
-    { value: '15', label: '15 heures' },
-    { value: '20', label: '20 heures' },
-    { value: '25', label: '25 heures' },
-    { value: '30', label: '30 heures' },
-    { value: '35', label: '35 heures' },
-  ];
-  renumeration: TSelectOption[] = [
-    { value: 'false', label: 'À discuter' },
-    { value: 'true', label: 'Stage rémunéré' },
-    { value: 'false', label: 'Stage non rémunéré' },
-  ];
+  typeDeStage = TYPE_DE_STAGE;
+  nombreHeuresSemaine = NOMBRE_HEURES_SEMAINE;
+  renumeration = RENUMERATION;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -46,10 +34,7 @@ export class OffreDeStageAjoutPageComponent {
     published: [true],
     paid: [false],
     additionalInfo: [''],
-    hoursPerWeek: [
-      parseInt(this.nombreHeuresSemaine[0].value),
-      Validators.required,
-    ],
+    hoursPerWeek: [this.nombreHeuresSemaine[0].value, Validators.required],
     stageType: [this.typeDeStage[0].value, Validators.required],
     requirements: ['', Validators.required],
     program: ['', Validators.required],
@@ -76,6 +61,8 @@ export class OffreDeStageAjoutPageComponent {
       this.offreDeStageService
         .createOffreDeStage({
           ...this.stageForm.getRawValue(),
+          hoursPerWeek: parseInt(this.stageForm.controls['hoursPerWeek'].value),
+          paid: 'false' ? false : true,
         })
         .subscribe(() => {
           this.openOffreDeStageAdditionConfirmation();
@@ -90,12 +77,10 @@ export class OffreDeStageAjoutPageComponent {
       .subscribe(({ data: entreprises }) => {
         if (entreprises) {
           this.entreprises = entreprises.map((entreprise) => ({
-            value: entreprise.name,
+            value: entreprise._id!,
             label: entreprise.name,
           }));
         }
-
-        console.log(this.entreprises);
       });
   }
 

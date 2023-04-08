@@ -1,0 +1,93 @@
+@import "../../../SCSS/vars";
+
+:host {
+  background-color: $gris-clair;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+}
+
+.btnGroup {
+  width: fit-content;
+  margin-left: auto;
+}
+
+.firstLevelInput {
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.details {
+  background-color: $blanc;
+  padding: 5rem;
+  margin-bottom: 2rem;
+}
+
+.programWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: $vert-turquoise;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.fileInput {
+  position: relative;
+  width: 50%;
+
+  button {
+    position: absolute;
+    top: 43px;
+    right: 1px;
+    height: 3.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $gris-clair;
+    color: $gris-fonce;
+    border-left: 1px solid $gris-fonce;
+    padding: 0 2rem;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    cursor: pointer;
+  }
+}
+
+.nameWrapper {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: $w-xlarge) {
+  .fileInput {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $w-large) {
+  .programWrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: $w-medium) {
+  .details {
+    padding: 3rem 2rem;
+  }
+  .information,
+  .programWrapper {
+    grid-template-columns: 1fr;
+  }
+}
