@@ -50,7 +50,7 @@ import { SectionTitleComponent } from './components/section-title/section-title.
 import { ValidationErrorComponent } from './components/validation-error/validation-error.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { OffreDeStageDetailleeComponent } from './offre-de-stage-detaillee/offre-de-stage-detaillee.component';
+import { OffreDeStageDetailleeComponent } from './pages/offre-de-stage-detaillee/offre-de-stage-detaillee.component';
 import { TableauBordOffresStageComponent } from './components/tableau-bord-offres-stage/tableau-bord-offres-stage.component';
 import { CardCandidatComponent } from './components/card-candidat/card-candidat.component';
 import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
@@ -65,6 +65,7 @@ import { TableauOffreStageComponent } from './components/tableau-offre-stage/tab
 import { EntrepriseModifierPageComponent } from './pages/entreprise-modifier-page/entreprise-modifier-page.component';
 import { OffreDeStageModifierPageComponent } from './pages/offre-de-stage-modifier-page/offre-de-stage-modifier-page.component';
 import { CandidatDetailleComponent } from './pages/candidat-detaille/candidat-detaille.component';
+import { DemandeDeStageEditionPageComponent } from './pages/demande-de-stage-edition-page/demande-de-stage-edition-page.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { CandidatDetailleComponent } from './pages/candidat-detaille/candidat-de
     EntrepriseModifierPageComponent,
     OffreDeStageModifierPageComponent,
     CandidatDetailleComponent,
+    DemandeDeStageEditionPageComponent,
   ],
 
   imports: [

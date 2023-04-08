@@ -13,7 +13,9 @@ import { CandidatService } from 'src/app/services/candidat/candidat.service';
   styleUrls: ['./candidat-modifier-page.component.scss'],
 })
 export class CandidatModifierPageComponent {
+  loading: boolean = true;
   candidat$!: Observable<{ success: boolean; data?: Candidat }>;
+  candidat: Candidat | null = null;
 
   textFields: Array<{ name: string; label: string }> = [
     { name: 'address', label: 'Adresse' },
@@ -42,7 +44,9 @@ export class CandidatModifierPageComponent {
     );
 
     this.candidat$.subscribe((candidat) => {
+      this.loading = false;
       if (candidat.data) {
+        this.candidat = candidat.data;
         this.candidatForm = this.formBuilder.nonNullable.group({
           description: [candidat.data.description, Validators.required],
           address: [candidat.data.address, Validators.required],
@@ -82,9 +86,11 @@ export class CandidatModifierPageComponent {
     }
 
     if (this.candidatForm.status === 'VALID') {
+      this.loading = true;
       this.candidatService
         .updateCandidat(this.candidatForm.getRawValue(), this.candidatId)
         .subscribe(() => {
+          this.loading = false;
           this.openCandidatAdditionConfirmation();
           this.candidatForm.reset();
         });

@@ -10,8 +10,7 @@ import { EntrepriseService } from 'src/app/services/entreprise/entreprise.servic
   styleUrls: ['./entreprise-ajout-page.component.scss'],
 })
 export class EntrepriseAjoutPageComponent {
-  isLoading = false;
-
+  loading: boolean = false;
   textFields: Array<{ name: string; label: string }> = [
     { name: 'address', label: 'Adresse' },
     { name: 'contactPhone', label: 'Téléphone' },
@@ -51,6 +50,7 @@ export class EntrepriseAjoutPageComponent {
   }
 
   onSubmit = () => {
+    this.loading = true;
     if (this.entrepriseForm.status === 'INVALID') {
       Object.keys(this.entrepriseForm.controls).forEach((key) => {
         const control =
@@ -70,11 +70,11 @@ export class EntrepriseAjoutPageComponent {
           ...this.entrepriseForm.getRawValue(),
         })
         .subscribe(() => {
+          this.loading = false;
           this.openCandidatAdditionConfirmation();
           this.entrepriseForm.reset();
         });
     }
-    this.isLoading = false;
   };
 
   openCandidatAdditionConfirmation(): void {

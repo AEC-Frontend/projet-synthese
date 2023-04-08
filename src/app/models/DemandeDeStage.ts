@@ -31,7 +31,11 @@ export type DemandeDeStage = {
     label: string;
     value: string;
   };
-  activitySector: string;
+  activitySector: {
+    __typename: string;
+    label: string;
+    value: string;
+  };
   city: string;
   resume: string;
 };

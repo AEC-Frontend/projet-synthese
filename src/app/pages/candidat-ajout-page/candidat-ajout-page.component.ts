@@ -50,7 +50,6 @@ export class CandidatAjoutPageComponent {
   }
 
   onSubmit = () => {
-    this.isLoading = true;
     if (this.candidatForm.status === 'INVALID') {
       Object.keys(this.candidatForm.controls).forEach((key) => {
         const control =
@@ -65,16 +64,17 @@ export class CandidatAjoutPageComponent {
     }
 
     if (this.candidatForm.status === 'VALID') {
+      this.isLoading = true;
       this.candidatService
         .createCandidat({
           ...this.candidatForm.getRawValue(),
         })
         .subscribe(() => {
+          this.isLoading = false;
           this.openCandidatAdditionConfirmation();
           this.candidatForm.reset();
         });
     }
-    this.isLoading = false;
   };
 
   openCandidatAdditionConfirmation(): void {

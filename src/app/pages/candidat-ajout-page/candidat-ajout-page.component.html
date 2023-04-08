@@ -1,81 +1,85 @@
-<app-section-title
-  color="mauve"
-  title="Ajouter un candidat"
-></app-section-title>
+<ng-container *ngIf="isLoading"></ng-container>
 
-<form [formGroup]="candidatForm">
-  <div class="btnGroup">
-    <app-cancel-button></app-cancel-button>
-    <app-save-button
-      [onSubmit]="onSubmit"
-      color="mauve"
-      label="Sauvegarder"
-    ></app-save-button>
-  </div>
+<ng-container *ngIf="!isLoading">
+  <app-section-title
+    color="mauve"
+    title="Ajouter un candidat"
+  ></app-section-title>
 
-  <div class="firstLevelInput">
-    <app-title-input
-      label="Nom et prénom"
-      formControlName="name"
-      [formErrorValidation]="
-        getFormControl('name')!.invalid &&
-        (getFormControl('name')!.dirty || getFormControl('name')!.touched)
-          ? 'Veuillez entrer des données valide'
-          : ''
-      "
-    ></app-title-input>
-    <app-title-input
-      label="Poste"
-      formControlName="jobTitle"
-      [formErrorValidation]="
-        getFormControl('jobTitle')!.invalid &&
-        (getFormControl('jobTitle')!.dirty ||
-          getFormControl('jobTitle')!.touched)
-          ? 'Veuillez entrer des données valide'
-          : ''
-      "
-    ></app-title-input>
-  </div>
+  <form [formGroup]="candidatForm">
+    <div class="btnGroup">
+      <app-cancel-button></app-cancel-button>
+      <app-save-button
+        [onSubmit]="onSubmit"
+        color="mauve"
+        label="Sauvegarder"
+      ></app-save-button>
+    </div>
 
-  <div class="details">
-    <app-text-area
-      label="Courte présentation"
-      [biggerLabel]="true"
-      color="turquoise"
-      formControlName="description"
-      [formErrorValidation]="
-        getFormControl('description')!.invalid &&
-        (getFormControl('description')!.dirty ||
-          getFormControl('description')!.touched)
-          ? 'Veuillez entrer des données valides'
-          : ''
-      "
-    ></app-text-area>
-
-    <p>Informations personnelles</p>
-
-    <div class="informations">
-      <app-input
-        *ngFor="let textField of textFields"
-        [label]="textField.label"
-        [formControlName]="textField.name"
+    <div class="firstLevelInput">
+      <app-title-input
+        label="Nom et prénom"
+        formControlName="name"
         [formErrorValidation]="
-          getFormControl(textField.name)!.invalid &&
-          (getFormControl(textField.name)!.dirty ||
-            getFormControl(textField.name)!.touched)
+          getFormControl('name')!.invalid &&
+          (getFormControl('name')!.dirty || getFormControl('name')!.touched)
+            ? 'Veuillez entrer des données valide'
+            : ''
+        "
+      ></app-title-input>
+      <app-title-input
+        label="Poste"
+        formControlName="jobTitle"
+        [formErrorValidation]="
+          getFormControl('jobTitle')!.invalid &&
+          (getFormControl('jobTitle')!.dirty ||
+            getFormControl('jobTitle')!.touched)
+            ? 'Veuillez entrer des données valide'
+            : ''
+        "
+      ></app-title-input>
+    </div>
+
+    <div class="details">
+      <app-text-area
+        label="Courte présentation"
+        [biggerLabel]="true"
+        color="turquoise"
+        formControlName="description"
+        [formErrorValidation]="
+          getFormControl('description')!.invalid &&
+          (getFormControl('description')!.dirty ||
+            getFormControl('description')!.touched)
             ? 'Veuillez entrer des données valides'
             : ''
         "
-      ></app-input>
-    </div>
-  </div>
+      ></app-text-area>
 
-  <div class="btnGroup">
-    <app-cancel-button></app-cancel-button>
-    <app-save-button
-      [onSubmit]="onSubmit"
-      color="mauve"
-      label="Sauvegarder"
-    ></app-save-button>
-  </div>
-</form>
+      <p>Informations personnelles</p>
+
+      <div class="informations">
+        <app-input
+          *ngFor="let textField of textFields"
+          [label]="textField.label"
+          [formControlName]="textField.name"
+          [formErrorValidation]="
+            getFormControl(textField.name)!.invalid &&
+            (getFormControl(textField.name)!.dirty ||
+              getFormControl(textField.name)!.touched)
+              ? 'Veuillez entrer des données valides'
+              : ''
+          "
+        ></app-input>
+      </div>
+    </div>
+
+    <div class="btnGroup">
+      <app-cancel-button></app-cancel-button>
+      <app-save-button
+        [onSubmit]="onSubmit"
+        color="mauve"
+        label="Sauvegarder"
+      ></app-save-button>
+    </div>
+  </form>
+</ng-container>

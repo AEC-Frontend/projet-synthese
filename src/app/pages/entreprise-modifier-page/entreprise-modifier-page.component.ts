@@ -14,7 +14,8 @@ import { EntrepriseService } from 'src/app/services/entreprise/entreprise.servic
 })
 export class EntrepriseModifierPageComponent {
   entreprise$!: Observable<{ success: boolean; data?: Entreprise }>;
-
+  entreprise: Entreprise | null = null;
+  loading: boolean = true;
   textFields: Array<{ name: string; label: string }> = [
     { name: 'address', label: 'Adresse' },
     { name: 'contactPhone', label: 'Téléphone' },
@@ -42,6 +43,7 @@ export class EntrepriseModifierPageComponent {
     );
     this.entreprise$.subscribe((entreprise) => {
       if (entreprise.data) {
+        this.entreprise = entreprise.data;
         this.entrepriseForm = this.formBuilder.nonNullable.group({
           name: [entreprise.data.name, Validators.required],
           imageUrl: [entreprise.data.imageUrl, Validators.required],
@@ -59,6 +61,7 @@ export class EntrepriseModifierPageComponent {
         });
         this.entrepriseId = entreprise.data._id!;
       }
+      this.loading = false;
     });
   }
 
@@ -87,9 +90,11 @@ export class EntrepriseModifierPageComponent {
     }
 
     if (this.entrepriseForm.status === 'VALID') {
+      this.loading = true;
       this.entrepriseService
         .updateEntreprise(this.entrepriseForm.getRawValue(), this.entrepriseId)
         .subscribe(() => {
+          this.loading = false;
           this.openCandidatAdditionConfirmation();
           this.entrepriseForm.reset();
         });

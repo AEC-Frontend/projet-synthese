@@ -1,7 +1,11 @@
-<ng-container *ngIf="entreprise$ | async as entreprise">
+<ng-container *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</ng-container>
+
+<ng-container *ngIf="!loading && entreprise">
   <div class="titleWrapper">
     <img
-      [src]="entreprise.data?.imageUrl || 'src/assets/img/logoEntreprise.jpg'"
+      [src]="entreprise.imageUrl || 'src/assets/img/logoEntreprise.jpg'"
       alt="Logo de l'entreprise"
     />
     <app-section-title

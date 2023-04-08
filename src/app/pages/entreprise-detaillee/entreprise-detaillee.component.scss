@@ -10,6 +10,10 @@
 .titleWrapper {
   display: flex;
   column-gap: 0.5rem;
+
+  img {
+    max-height: 114px;
+  }
 }
 
 .buttonGroup {

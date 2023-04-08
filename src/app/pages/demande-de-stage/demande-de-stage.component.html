@@ -1,4 +1,8 @@
-<div class="container" *ngIf="demandeDeStage">
+<ng-container *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</ng-container>
+
+<div class="container" *ngIf="demandeDeStage && !loading">
   <app-section-title
     [title]="demandeDeStage.titre"
     subtitle="Demande de stage"
@@ -6,13 +10,16 @@
   ></app-section-title>
 
   <div class="icons">
-    <button type="button"><mat-icon class="check-icon">check</mat-icon></button>
+    <button type="button" (click)="handlePublish()">
+      <mat-icon class="check-icon">check</mat-icon>
+    </button>
     <a routerLink="edition"><mat-icon class="edit-icon">edit</mat-icon></a>
-    <button type="button"><mat-icon class="close-icon">close</mat-icon></button>
+    <button type="button" (click)="handleDontPublish()">
+      <mat-icon class="close-icon">close</mat-icon>
+    </button>
   </div>
   <div class="card-container">
     <mat-card class="mat-card">
-      <h2>{{ demandeDeStage._id }}</h2>
       <p class="description-text">
         {{ demandeDeStage.description }}
       </p>
