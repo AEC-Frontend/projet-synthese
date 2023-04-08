@@ -1,6 +1,6 @@
-import { Component, ViewChild,OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 
-import { OffreDeStage } from 'src/app/models';
+import { Entreprise, OffreDeStage } from 'src/app/models';
 import { OffreDeStageService } from 'src/app/services/offre-de-stage/offre-de-stage.service';
 
 import { MatTable, MatTableDataSource } from '@angular/material/table';
@@ -9,15 +9,18 @@ import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogConfirmationDeleteComponent } from '../dialog-confirmation-delete/dialog-confirmation-delete.component';
+import { EntrepriseService } from 'src/app/services/entreprise/entreprise.service';
 
 @Component({
   selector: 'app-tableau-offre-stage',
   templateUrl: './tableau-offre-stage.component.html',
-  styleUrls: ['./tableau-offre-stage.component.scss']
+  styleUrls: ['./tableau-offre-stage.component.scss'],
 })
 export class TableauOffreStageComponent implements OnInit {
+  loading: boolean = false;
   newOffreDeStage: OffreDeStage[] = [];
-  dataSourceOffreDeStage: MatTableDataSource<OffreDeStage> = new MatTableDataSource();
+  dataSourceOffreDeStage: MatTableDataSource<OffreDeStage> =
+    new MatTableDataSource();
 
   displayedColumns: string[] = [
     'poste',
@@ -27,43 +30,43 @@ export class TableauOffreStageComponent implements OnInit {
     'actions',
   ];
 
-  newoffreDeStage : OffreDeStage = {
-      _id:'',
-      createdAt: '',
-      updatedAt: '',
-      title: '',
-      description: '',
-      enterprise: '',
-      startDate: '',
-      endDate: '',
-      program: '',
-      requirements: '',
-      stageType: '',
-      hoursPerWeek: 0,
-      additionalInfo: '',
-      paid: true,
-      published: true,
-      active: true
-    };
+  newoffreDeStage: OffreDeStage = {
+    _id: '',
+    createdAt: '',
+    updatedAt: '',
+    title: '',
+    description: '',
+    enterprise: '',
+    startDate: '',
+    endDate: '',
+    program: '',
+    requirements: '',
+    stageType: '',
+    hoursPerWeek: 0,
+    additionalInfo: '',
+    paid: true,
+    published: true,
+    active: true,
+  };
 
-    
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) tableOffreDeStage!: MatTable<OffreDeStage>;
 
   constructor(
-    private offreDeStageService: OffreDeStageService, 
-    private _snackBar: MatSnackBar,  
+    private offreDeStageService: OffreDeStageService,
+    private _snackBar: MatSnackBar,
     public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.getOffreDeStages();
   }
-  
-  getOffreDeStages() { 
+
+  getOffreDeStages() {
+    this.loading = true;
     this.offreDeStageService.getOffreDeStages().subscribe((resultat) => {
-      console.log(resultat);
+      this.loading = false;
       this.dataSourceOffreDeStage = new MatTableDataSource(
         resultat.success && resultat.data !== undefined ? resultat.data : []
       );

@@ -18,6 +18,7 @@ import { EntrepriseDetailleeComponent } from './pages/entreprise-detaillee/entre
 import { EntrepriseModifierPageComponent } from './pages/entreprise-modifier-page/entreprise-modifier-page.component';
 import { OffreDeStageModifierPageComponent } from './pages/offre-de-stage-modifier-page/offre-de-stage-modifier-page.component';
 import { CandidatDetailleComponent } from './pages/candidat-detaille/candidat-detaille.component';
+import { DemandeDeStageEditionPageComponent } from './pages/demande-de-stage-edition-page/demande-de-stage-edition-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'page-login', pathMatch: 'full' },
@@ -31,7 +32,13 @@ const routes: Routes = [
         path: 'ajout',
         component: DemandeDeStageAjoutPageComponent,
       },
-      { path: ':id', component: DemandeDeStageComponent },
+      {
+        path: ':id',
+        children: [
+          { path: '', component: DemandeDeStageComponent },
+          { path: 'edition', component: DemandeDeStageEditionPageComponent },
+        ],
+      },
     ],
   },
   {

@@ -53,7 +53,6 @@ export class DemandeDeStageComponent {
 
     this.demandeDeStage$.subscribe((demandeDeStage) => {
       if (demandeDeStage.data) {
-        console.log(demandeDeStage.data);
         this.demandeDeStage = demandeDeStage.data;
       }
     });

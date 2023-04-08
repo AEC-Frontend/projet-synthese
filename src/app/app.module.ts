@@ -65,6 +65,7 @@ import { TableauOffreStageComponent } from './components/tableau-offre-stage/tab
 import { EntrepriseModifierPageComponent } from './pages/entreprise-modifier-page/entreprise-modifier-page.component';
 import { OffreDeStageModifierPageComponent } from './pages/offre-de-stage-modifier-page/offre-de-stage-modifier-page.component';
 import { CandidatDetailleComponent } from './pages/candidat-detaille/candidat-detaille.component';
+import { DemandeDeStageEditionPageComponent } from './pages/demande-de-stage-edition-page/demande-de-stage-edition-page.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { CandidatDetailleComponent } from './pages/candidat-detaille/candidat-de
     EntrepriseModifierPageComponent,
     OffreDeStageModifierPageComponent,
     CandidatDetailleComponent,
+    DemandeDeStageEditionPageComponent,
   ],
 
   imports: [

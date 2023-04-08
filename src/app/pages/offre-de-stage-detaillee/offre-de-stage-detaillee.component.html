@@ -1,17 +1,21 @@
-<ng-container *ngIf="offreDeStage$ | async as offreDeStage">
+<ng-container *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</ng-container>
+
+<ng-container *ngIf="!loading && offreDeStage">
   <div class="container">
     <div class="title">
-      <p>Offre de stage</p>
-      <h1>{{ offreDeStage.data!.title }}</h1>
-      <h2 class="square">{{ offreDeStage.data!.enterprise }}</h2>
+      <p>Offree de stage</p>
+      <h1>{{ offreDeStage.title }}</h1>
+      <h2 class="square">{{ offreDeStage.enterprise }}</h2>
     </div>
 
     <div class="icons">
-      <button type="button" (click)="handlePublish(offreDeStage.data!._id!)">
+      <button type="button" (click)="handlePublish(offreDeStage._id!)">
         <mat-icon class="check-icon">check</mat-icon>
       </button>
-      <a routerLink=""><mat-icon class="edit-icon">edit</mat-icon></a>
-      <button type="button" (click)="handleDontPublish(offreDeStage.data!._id!)">
+      <a routerLink="edition"><mat-icon class="edit-icon">edit</mat-icon></a>
+      <button type="button" (click)="handleDontPublish(offreDeStage._id!)">
         <mat-icon class="close-icon">close</mat-icon>
       </button>
     </div>
@@ -19,18 +23,18 @@
       <mat-card class="mat-card">
         <h2>Description de la tâche</h2>
         <p class="description-text">
-          {{ offreDeStage.data!.description }}
+          {{ offreDeStage.description }}
         </p>
 
         <section class="sub-title">
           <h1>Formation demandées</h1>
-          <p>{{ offreDeStage.data!.program }}</p>
+          <p>{{ offreDeStage.program }}</p>
         </section>
 
         <section class="sub-title">
           <h1>Exigences</h1>
           <p class="description-text">
-            {{ offreDeStage.data!.requirements }}
+            {{ offreDeStage.requirements }}
           </p>
         </section>
 
@@ -39,13 +43,13 @@
         <div class="main-container">
           <div class="inner-div">
             <p>Type de stage</p>
-            <h1>{{ offreDeStage.data!.stageType }}</h1>
+            <h1>{{ offreDeStage.stageType }}</h1>
           </div>
 
           <div class="inner-div-right">
             <div class="inner-div">
               <p>Date de début</p>
-              <h1>{{ offreDeStage.data!.startDate }}</h1>
+              <h1>{{ offreDeStage.startDate }}</h1>
             </div>
           </div>
         </div>
@@ -53,13 +57,13 @@
         <div class="main-container">
           <div class="inner-div">
             <p>Numbre d'heures par semaine</p>
-            <h1>{{ offreDeStage.data!.hoursPerWeek }}</h1>
+            <h1>{{ offreDeStage.hoursPerWeek }}</h1>
           </div>
 
           <div class="inner-div-right">
             <div class="inner-div">
               <p>Date de fin</p>
-              <h1>{{ offreDeStage.data!.endDate }}</h1>
+              <h1>{{ offreDeStage.endDate }}</h1>
             </div>
           </div>
         </div>
@@ -67,13 +71,13 @@
         <div class="main-container">
           <div class="inner-div">
             <p>Rémmuneration</p>
-            <h1>{{ offreDeStage.data!.paid }}</h1>
+            <h1>{{ offreDeStage.paid }}</h1>
           </div>
         </div>
 
         <h3 class="section-title">Informations suplémentaires</h3>
         <p class="description-text">
-          {{ offreDeStage.data!.additionalInfo }}
+          {{ offreDeStage.additionalInfo }}
         </p>
       </mat-card>
     </div>

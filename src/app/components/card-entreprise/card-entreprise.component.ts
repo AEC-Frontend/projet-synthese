@@ -5,25 +5,26 @@ import { EntrepriseService } from 'src/app/services/entreprise/entreprise.servic
 @Component({
   selector: 'app-card-entreprise',
   templateUrl: './card-entreprise.component.html',
-  styleUrls: ['./card-entreprise.component.scss']
+  styleUrls: ['./card-entreprise.component.scss'],
 })
 export class CardEntrepriseComponent implements OnInit {
-  entreprises : Entreprise[] = [];
-  
- constructor(private entrepriseService: EntrepriseService) { }
+  loading: boolean = true;
+  entreprises: Entreprise[] = [];
+
+  constructor(private entrepriseService: EntrepriseService) {}
 
   ngOnInit(): void {
-   this.getEntreprises();
+    this.getEntreprises();
   }
 
   getEntreprises(): void {
-    this.entrepriseService.getEntreprises()
-    .subscribe(
-      resultat => this.entreprises = (resultat.success && resultat.data !== undefined) ? resultat.data : []);
+    this.entrepriseService.getEntreprises().subscribe((resultat) => {
+      this.entreprises =
+        resultat.success && resultat.data !== undefined ? resultat.data : [];
+      this.loading = false;
+    });
   }
 }
 
-
- {
-
+{
 }

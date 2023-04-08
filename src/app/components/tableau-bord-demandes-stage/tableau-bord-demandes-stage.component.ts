@@ -8,6 +8,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogConfirmationDeleteComponent } from '../dialog-confirmation-delete/dialog-confirmation-delete.component';
 
 @Component({
   selector: 'app-tableau-bord-demandes-stage',
@@ -15,6 +16,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./tableau-bord-demandes-stage.component.scss'],
 })
 export class TableauBordDemandesStageComponent {
+  loading: boolean = false;
   newDemandedestage: DemandeDeStage[] = [];
   dataSourceDemandeStage: MatTableDataSource<DemandeDeStage> =
     new MatTableDataSource();
@@ -52,7 +54,11 @@ export class TableauBordDemandesStageComponent {
       label: '',
       value: '',
     },
-    activitySector: '',
+    activitySector: {
+      __typename: '',
+      label: '',
+      value: '',
+    },
     city: '',
     resume: '',
   };
@@ -72,9 +78,8 @@ export class TableauBordDemandesStageComponent {
   }
 
   getDemandeDeStages() {
+    this.loading = true;
     this.demandeDeStageService.getDemandeDeStages().subscribe((resultat) => {
-      console.log(resultat);
-
       var result: DemandeDeStage[] = [];
       var demandeDeStages =
         resultat.success && resultat.data !== undefined ? resultat.data : [];
@@ -83,7 +88,7 @@ export class TableauBordDemandesStageComponent {
           result.push(demandeDeStage);
         }
       });
-
+      this.loading = false;
       this.dataSourceDemandeStage = new MatTableDataSource(result);
       this.dataSourceDemandeStage.paginator = this.paginator;
       this.dataSourceDemandeStage.sort = this.sort;
@@ -92,6 +97,7 @@ export class TableauBordDemandesStageComponent {
   }
 
   activesClick() {
+    this.loading = true;
     var demandeDeStages: DemandeDeStage[] = this.dataSourceDemandeStage.data;
     this.demandeDeStageService;
     demandeDeStages.forEach((demandeDeStage: DemandeDeStage) => {
@@ -105,11 +111,13 @@ export class TableauBordDemandesStageComponent {
         .updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id!)
         .subscribe((_) => {
           this.getDemandeDeStages();
+          this.loading = false;
         });
     });
   }
 
   activeClick(demandeDeStage: DemandeDeStage) {
+    this.loading = true;
     demandeDeStage.active = !demandeDeStage.active;
 
     let demandeDeStagePartial: Partial<DemandeDeStage> = {
@@ -120,6 +128,24 @@ export class TableauBordDemandesStageComponent {
       .updateDemandeDeStage(demandeDeStagePartial, demandeDeStage._id)
       .subscribe((_) => {
         this.getDemandeDeStages();
+        this.loading = false;
       });
+  }
+
+  openDialog(id: string) {
+    const dialogRef = this.dialog.open(DialogConfirmationDeleteComponent, {
+      data: {
+        service: 'demandeDeStage',
+        id,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('Les données ont été supprimée');
+      this._snackBar.open(result, undefined, {
+        duration: 2000,
+      });
+      this.getDemandeDeStages();
+    });
   }
 }

@@ -15,6 +15,7 @@ import { DialogConfirmationDeleteComponent } from '../dialog-confirmation-delete
   styleUrls: ['./tableau-demandes-stage.component.scss'],
 })
 export class TableauDemandesStageComponent implements OnInit {
+  loading: boolean = false;
   newdemandedestage: DemandeDeStage[] = [];
   dataSourceDemandeStage: MatTableDataSource<DemandeDeStage> =
     new MatTableDataSource();
@@ -58,7 +59,11 @@ export class TableauDemandesStageComponent implements OnInit {
       label: '',
       value: '',
     },
-    activitySector: '',
+    activitySector: {
+      __typename: '',
+      label: '',
+      value: '',
+    },
     city: '',
     resume: '',
   };
@@ -78,8 +83,9 @@ export class TableauDemandesStageComponent implements OnInit {
   }
 
   getDemandeDeStages() {
+    this.loading = true;
     this.demandeDeStageService.getDemandeDeStages().subscribe((resultat) => {
-      console.log(resultat);
+      this.loading = false;
       this.dataSourceDemandeStage = new MatTableDataSource(
         resultat.success && resultat.data !== undefined ? resultat.data : []
       );

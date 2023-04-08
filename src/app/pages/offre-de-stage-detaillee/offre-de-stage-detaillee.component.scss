@@ -1,4 +1,4 @@
-@import "../../SCSS/vars";
+@import "../../../SCSS/vars";
 
 :host {
   display: flex;
@@ -136,6 +136,9 @@ h2 {
   padding: 20px 0px 0px 5px;
 }
 
+button {
+  cursor: pointer;
+}
 /* Media queries */
 @media only screen and (max-width: $w-medium) {
   .container {

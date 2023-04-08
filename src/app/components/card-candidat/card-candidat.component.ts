@@ -5,23 +5,23 @@ import { CandidatService } from 'src/app/services/candidat/candidat.service';
 @Component({
   selector: 'app-card-candidat',
   templateUrl: './card-candidat.component.html',
-  styleUrls: ['./card-candidat.component.scss']
+  styleUrls: ['./card-candidat.component.scss'],
 })
-
 export class CardCandidatComponent implements OnInit {
-  candidats : Candidat[] = [];
-  
- constructor(private candidatService: CandidatService) { }
+  loading: boolean = true;
+  candidats: Candidat[] = [];
+
+  constructor(private candidatService: CandidatService) {}
 
   ngOnInit(): void {
-   this.getCandidats();
+    this.getCandidats();
   }
 
   getCandidats(): void {
-    this.candidatService.getCandidats()
-    .subscribe(
-      resultat => this.candidats = (resultat.success && resultat.data !== undefined) ? resultat.data : []);
+    this.candidatService.getCandidats().subscribe((resultat) => {
+      this.candidats =
+        resultat.success && resultat.data !== undefined ? resultat.data : [];
+      this.loading = false;
+    });
   }
 }
-
-
