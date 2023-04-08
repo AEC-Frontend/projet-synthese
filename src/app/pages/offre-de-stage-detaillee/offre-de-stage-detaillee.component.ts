@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { OffreDeStageService } from '../services/offre-de-stage/offre-de-stage.service';
-import { OffreDeStage } from '../models';
+import { OffreDeStageService } from '../../services/offre-de-stage/offre-de-stage.service';
+import { OffreDeStage } from '../../models';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';

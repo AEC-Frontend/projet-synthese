@@ -9,7 +9,7 @@ import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { CandidatAjoutPageComponent } from './pages/candidat-ajout-page/candidat-ajout-page.component';
 import { EntrepriseAjoutPageComponent } from './pages/entreprise-ajout-page/entreprise-ajout-page.component';
 
-import { OffreDeStageDetailleeComponent } from './offre-de-stage-detaillee/offre-de-stage-detaillee.component';
+import { OffreDeStageDetailleeComponent } from './pages/offre-de-stage-detaillee/offre-de-stage-detaillee.component';
 import { DemandeDeStageComponent } from './pages/demande-de-stage/demande-de-stage.component';
 import { OffreDeStageAjoutPageComponent } from './pages/offre-de-stage-ajout-page/offre-de-stage-ajout-page.component';
 import { DemandeDeStageAjoutPageComponent } from './pages/demande-de-stage-ajout-page/demande-de-stage-ajout-page.component';
@@ -23,10 +23,6 @@ const routes: Routes = [
   { path: '', redirectTo: 'page-login', pathMatch: 'full' },
   { path: 'page-login', component: PageLoginComponent },
   { path: 'tableau-de-bord', component: TableauDeBordPageComponent },
-<<<<<<< HEAD
-  { path: 'demandes-de-stage', component: DemandesDeStagePageComponent },
-  { path: 'entreprises', component: EntreprisesPageComponent },
-=======
   {
     path: 'demandes-de-stage',
     children: [
@@ -52,22 +48,11 @@ const routes: Routes = [
       },
     ],
   },
->>>>>>> a44479cd4b097b021913d675d94c74784c5ae52c
   {
     path: 'offres-de-stage',
     children: [
       { path: '', component: OffresDeStagePageComponent },
       { path: 'ajout', component: OffreDeStageAjoutPageComponent },
-<<<<<<< HEAD
-      { path: ':id', component: OffreDeStageDetailleeComponent },
-    ],
-  },
-  { path: 'candidats', component: CandidatsPageComponent },
-  { path: 'candidats/ajout', component: CandidatAjoutPageComponent },
-  { path: 'entreprises/ajout', component: EntrepriseAjoutPageComponent },
-  { path: 'offres-de-stage/ajout', component: OffreDeStageAjoutPageComponent },
-  { path: 'demandes-de-stage/:id', component: DemandeDeStageComponent },
-=======
       {
         path: ':id',
         children: [
@@ -94,7 +79,6 @@ const routes: Routes = [
       },
     ],
   },
->>>>>>> a44479cd4b097b021913d675d94c74784c5ae52c
 ];
 
 @NgModule({

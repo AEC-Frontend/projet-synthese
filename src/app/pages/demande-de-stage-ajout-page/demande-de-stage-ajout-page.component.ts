@@ -26,6 +26,8 @@ export class DemandeDeStageAjoutPageComponent {
   activitySector = ACTIVITY_SECTOR;
   regions = REGIONS;
 
+  loading: boolean = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private offreDeStageService: DemandeDeStageService,
@@ -69,6 +71,7 @@ export class DemandeDeStageAjoutPageComponent {
     }
 
     if (this.stageForm.status === 'VALID') {
+      this.loading = true;
       this.offreDeStageService
         .createDemandeDeStage({
           ...this.stageForm.getRawValue(),
@@ -89,6 +92,7 @@ export class DemandeDeStageAjoutPageComponent {
           },
         })
         .subscribe(() => {
+          this.loading = false;
           this.openDemandeDeStageAdditionConfirmation();
           this.stageForm.reset();
         });

@@ -6,7 +6,10 @@ export const API_SECRET_KEY =
 
 export const REGIONS: TSelectOption[] = [
   { value: 'BAS_SAINT_LAURENT', label: 'Bas-St-Laurent' },
-  { value: 'GASPESIE', label: 'Gaspésie-Iles-de-la-Madeleine' },
+  {
+    value: 'GASPESIE_ILES_DE_LA_MADELEINE',
+    label: 'Gaspésie-Iles-de-la-Madeleine',
+  },
   { value: 'SAGUENAY_LAC_SAINT_JEAN', label: 'Saguenay-Lac-St-Jean' },
   { value: 'NORD-DU-QUEBEC', label: 'Nord-du-Québec' },
   { value: 'BAS_SAINT_LAURENT', label: 'Bas-St-Laurent' },

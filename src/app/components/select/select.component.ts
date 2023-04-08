@@ -21,6 +21,7 @@ export class SelectComponent {
   @Input() hasLeftBorder: boolean = false;
   @Input() formErrorValidation: string = '';
   @Output() controlChange = new EventEmitter<FormControl>();
+  @Input() placeholder: string = '';
 
   formControl: FormControl | undefined;
 
