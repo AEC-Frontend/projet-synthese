@@ -7,13 +7,11 @@
     </div>
 
     <div class="icons">
-      <a routerLink=""><mat-icon class="check-icon">check</mat-icon></a>
+      <button type="button" (click)="handlePublish(offreDeStage.data!._id!)">
+        <mat-icon class="check-icon">check</mat-icon>
+      </button>
       <a routerLink=""><mat-icon class="edit-icon">edit</mat-icon></a>
-      <button
-        class="delete-button"
-        type="button"
-        (click)="deleteOffreDeStage(offreDeStage.data!._id!)"
-      >
+      <button type="button" (click)="handleDontPublish(offreDeStage.data!._id!)">
         <mat-icon class="close-icon">close</mat-icon>
       </button>
     </div>

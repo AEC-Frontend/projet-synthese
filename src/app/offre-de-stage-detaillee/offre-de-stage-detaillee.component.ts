@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OffreDeStageService } from '../services/offre-de-stage/offre-de-stage.service';
 import { OffreDeStage } from '../models';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-offre-de-stage-detaillee',
@@ -14,7 +15,9 @@ export class OffreDeStageDetailleeComponent {
 
   constructor(
     private offredeStageService: OffreDeStageService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -29,11 +32,32 @@ export class OffreDeStageDetailleeComponent {
     );
   }
 
-  deleteOffreDeStage(_id: string) {
+  handlePublish(id: string) {
     this.offredeStageService
-      .deleteOffreDeStage(_id?.valueOf())
-      .subscribe((_) => {
-        this.offreDeStage$ = this.getCurrentOffreDeStage();
+      .updateOffreDeStage({ published: true }, id)
+      .subscribe(() => {
+        this.showSnackBar("L'offre de stage a bien été publiée");
+        this.router.navigate(['/tableau-de-bord']);
+      });
+  }
+
+  handleDontPublish(id: string) {
+    this.offredeStageService
+      .updateOffreDeStage({ published: false }, id)
+      .subscribe(() => {
+        this.showSnackBar("L'offre de stage n'a pas été publiée");
+        this.router.navigate(['/tableau-de-bord']);
+      });
+  }
+
+  showSnackBar(message: string, action?: string) {
+    this._snackBar
+      .open(message, action)
+      .afterOpened()
+      .subscribe(() => {
+        setTimeout(() => {
+          this._snackBar.dismiss();
+        }, 5000);
       });
   }
 }
