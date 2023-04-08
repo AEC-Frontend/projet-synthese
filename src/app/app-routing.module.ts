@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TableauDeBordPageComponent } from './pages/tableau-de-bord-page/tableau-de-bord-page.component';
 import { DemandesDeStagePageComponent } from './pages/demandes-de-stage-page/demandes-de-stage-page.component';
@@ -23,6 +23,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'page-login', pathMatch: 'full' },
   { path: 'page-login', component: PageLoginComponent },
   { path: 'tableau-de-bord', component: TableauDeBordPageComponent },
+<<<<<<< HEAD
+  { path: 'demandes-de-stage', component: DemandesDeStagePageComponent },
+  { path: 'entreprises', component: EntreprisesPageComponent },
+=======
   {
     path: 'demandes-de-stage',
     children: [
@@ -48,11 +52,22 @@ const routes: Routes = [
       },
     ],
   },
+>>>>>>> a44479cd4b097b021913d675d94c74784c5ae52c
   {
     path: 'offres-de-stage',
     children: [
       { path: '', component: OffresDeStagePageComponent },
       { path: 'ajout', component: OffreDeStageAjoutPageComponent },
+<<<<<<< HEAD
+      { path: ':id', component: OffreDeStageDetailleeComponent },
+    ],
+  },
+  { path: 'candidats', component: CandidatsPageComponent },
+  { path: 'candidats/ajout', component: CandidatAjoutPageComponent },
+  { path: 'entreprises/ajout', component: EntrepriseAjoutPageComponent },
+  { path: 'offres-de-stage/ajout', component: OffreDeStageAjoutPageComponent },
+  { path: 'demandes-de-stage/:id', component: DemandeDeStageComponent },
+=======
       {
         path: ':id',
         children: [
@@ -79,6 +94,7 @@ const routes: Routes = [
       },
     ],
   },
+>>>>>>> a44479cd4b097b021913d675d94c74784c5ae52c
 ];
 
 @NgModule({
