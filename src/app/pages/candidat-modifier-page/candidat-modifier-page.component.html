@@ -1,9 +1,11 @@
-<ng-container *ngIf="candidat$ | async as candidat">
+<ng-container *ngIf="loading"><mat-spinner></mat-spinner></ng-container>
+
+<ng-container *ngIf="!loading && candidat">
   <app-section-title
     color="mauve"
-    [title]="candidat.data!.name"
+    [title]="candidat.name"
     subtitle="Candidat"
-    [entreprise]="candidat.data!.jobTitle"
+    [entreprise]="candidat.jobTitle"
   ></app-section-title>
 
   <form [formGroup]="candidatForm">
@@ -54,7 +56,7 @@
       <app-save-button
         [onSubmit]="onSubmit"
         color="mauve"
-        label="Sauvegarder"
+        label="Mettre à jour"
       ></app-save-button>
     </div>
   </form>
