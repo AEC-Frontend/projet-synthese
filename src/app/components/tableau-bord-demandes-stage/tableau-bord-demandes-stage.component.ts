@@ -80,6 +80,7 @@ export class TableauBordDemandesStageComponent {
   getDemandeDeStages() {
     this.loading = true;
     this.demandeDeStageService.getDemandeDeStages().subscribe((resultat) => {
+      this.loading = false;
       var result: DemandeDeStage[] = [];
       var demandeDeStages =
         resultat.success && resultat.data !== undefined ? resultat.data : [];
@@ -88,7 +89,7 @@ export class TableauBordDemandesStageComponent {
           result.push(demandeDeStage);
         }
       });
-      this.loading = false;
+
       this.dataSourceDemandeStage = new MatTableDataSource(result);
       this.dataSourceDemandeStage.paginator = this.paginator;
       this.dataSourceDemandeStage.sort = this.sort;

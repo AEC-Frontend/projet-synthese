@@ -57,30 +57,33 @@ export class DemandeDeStageEditionPageComponent {
     if (this.stageForm!.status === 'VALID') {
       this.loading = true;
       this.demandeDeStageService
-        .createDemandeDeStage({
-          ...this.stageForm!.getRawValue(),
-          hoursPerWeek: parseInt(
-            this.stageForm!.controls['hoursPerWeek'].value
-          ),
-          paid: 'false' ? false : true,
-          region: {
-            value: this.stageForm!.controls['region'].value,
-            label: this.regions.find(
-              (region) =>
-                region.value === this.stageForm!.controls['region'].value
-            )!.label,
+        .updateDemandeDeStage(
+          {
+            ...this.stageForm!.getRawValue(),
+            hoursPerWeek: parseInt(
+              this.stageForm!.controls['hoursPerWeek'].value
+            ),
+            paid: 'false' ? false : true,
+            region: {
+              value: this.stageForm!.controls['region'].value,
+              label: this.regions.find(
+                (region) =>
+                  region.value === this.stageForm!.controls['region'].value
+              )!.label,
+            },
+            stageType: {
+              value: this.stageForm!.controls['stageType'].value,
+              label: this.typeDeStage.find(
+                (tds) =>
+                  tds.value === this.stageForm!.controls['stageType'].value
+              )!.label,
+            },
           },
-          stageType: {
-            value: this.stageForm!.controls['stageType'].value,
-            label: this.typeDeStage.find(
-              (tds) => tds.value === this.stageForm!.controls['stageType'].value
-            )!.label,
-          },
-        })
+          this.demandeDeStage!._id
+        )
         .subscribe(() => {
-          this.loading = false;
           this.openDemandeDeStageAdditionConfirmation();
-          this.stageForm!.reset();
+          this.loading = false;
         });
     }
   };
